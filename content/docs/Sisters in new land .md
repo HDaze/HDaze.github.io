@@ -1,8 +1,8 @@
 +++
-title = 'sisters in new land'
+title = 'Sister, We Were the Sea in the New Land'
 date = 2024-05-13T13:27:46-07:00
 +++
-# Sisters in new land
+## Sister, We Were the Sea in the New Land
 
 Take a breath, and  
 back to where you were,   
