@@ -15,4 +15,13 @@ theme = 'hugo-book'
  BookSection = '*'
 
 front_page_content = ["blog", "诗"]
- 
+ menu = [
+        {Name = "About", URL = "/about/", HasChildren = false},
+        {Name = "blog", URL = "/blog/", Pre = "Recent", HasChildren = true, Limit = 5},
+        {Name = "诗", URL = "/诗/", Pre = "Recent", HasChildren = true, Limit = 5},
+    ]
+      rss_icon = true
+
+[taxonomies]
+    series = 'series'
+    tags = 'tags'
