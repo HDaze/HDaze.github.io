@@ -18,15 +18,16 @@ pluralizelisttitles = false
     
  menu = [
         {Name = "About", URL = "/about/", HasChildren = false},
-        {Name = "博客", URL = "/blog/", Pre = "Recent", HasChildren = true, Limit = 5},
-        {Name = "诗", URL = "/诗/", Pre = "Recent", HasChildren = true, Limit = 5},
+      #   {Name = "博客", URL = "/blog/", Pre = "Recent", HasChildren = false, Limit = 5},
+        {Name = "博客", URL = "/blog/", HasChildren = false},
+        {Name = "诗", URL = "/诗/",  HasChildren = false},
     ]
+    
       rss_icon = true
  
       
     mastodon_url = "https://m.cmx.im/@HDaze"
    
-
   
 
     # Hex colors for your sidebar.
@@ -78,8 +79,10 @@ pluralizelisttitles = false
                                           # For this to work though og_image and brand_url must be a path inside the assets directory
                                           # e.g. /assets/images/site/og-image.png becomes images/site/og-image.png
     # publisher_icon = ""                 # path to publisher icon - defaults to favicon, used in schema
+
 [params.meta]
     favicon = true
+
 [taxonomies]
     series = 'series'
     tags = 'tags'
