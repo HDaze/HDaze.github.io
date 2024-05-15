@@ -12,6 +12,6 @@ theme = 'hugo-book'
 
   BookLogo = 'HDaze.png'
 
-  BookSection = 'docs' 
-  BookMenuBundle = '/menu'
+  BookSection = '*' 
+  
  
