@@ -1,0 +1,3 @@
+[submodule "posion"]
+    path = poison
+    url = git://github.com/lukeorth/poison.git
