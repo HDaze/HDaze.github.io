@@ -2,4 +2,4 @@
 headless = true
 +++
 
-- [诗]({{< relref "/docs" >}})
+- [诗]({{< relref "/docs/" >}})
