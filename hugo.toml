@@ -13,5 +13,6 @@ theme = 'hugo-book'
   BookLogo = 'HDaze.png'
 
  BookSection = '*'
-  
+
+front_page_content = ["blog", "诗"]
  
