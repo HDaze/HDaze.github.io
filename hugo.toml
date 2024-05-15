@@ -5,11 +5,6 @@ theme = 'poison'
 
 
 [params]
-  
-# NOTE: If using Disqus as commenting engine, uncomment and configure this line
-# disqusShortname = "yourDisqusShortname"
-
-[params]
     brand = "HDaze"                      # name of your site - appears in the sidebar
     # remote_brand_image = 'https://github.com/USERNAME.png' # path to a remote file
     brand_image = "HDaze.png"    # path to the image shown in the sidebar
