@@ -8,10 +8,10 @@ pluralizelisttitles = false
 [params]
     brand = "HDaze"                      # name of your site - appears in the sidebar
     # remote_brand_image = 'https://github.com/USERNAME.png' # path to a remote file
-    brand_image = "hdazeblog.png"    # path to the image shown in the sidebar
+    brand_image = "HDaze/static/logo.png"    # path to the image shown in the sidebar
     description = "HDaze's Blog" # Used as default meta description if not specified in front matter
     dark_mode = false                      # optional - defaults to false
-    favicon = "HDaze/static/favicon.png  "         # path to favicon (defaults to favicon.png)
+    favicon = "HDaze/static/favicon.png"         # path to favicon (defaults to favicon.png)
 
     front_page_content = ["about","blog", "诗"] # Equivalent to the default value, add page bundle names to include them on the front page.
 
@@ -19,7 +19,7 @@ pluralizelisttitles = false
  menu = [
         {Name = "关于我|About", URL = "/about/", HasChildren = false},
         {Name = "博客|Blog", URL = "/blog/", HasChildren = false},
-        {Name = "诗|Poems", URL = "/诗/",  HasChildren = false},
+        {Name = "黑雨|Poems", URL = "/诗/",  HasChildren = false},
     ]
     
       rss_icon = true
