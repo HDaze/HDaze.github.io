@@ -8,7 +8,7 @@ pluralizelisttitles = false
 [params]
     brand = "HDaze"                      # name of your site - appears in the sidebar
     # remote_brand_image = 'https://github.com/USERNAME.png' # path to a remote file
-    brand_image = "HDaze.png"    # path to the image shown in the sidebar
+    brand_image = "hdazeblog.png"    # path to the image shown in the sidebar
     description = "HDaze's Blog" # Used as default meta description if not specified in front matter
     dark_mode = false                      # optional - defaults to false
     favicon = "HDaze/static/favicon.png  "         # path to favicon (defaults to favicon.png)
