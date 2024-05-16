@@ -13,14 +13,13 @@ pluralizelisttitles = false
     dark_mode = false                      # optional - defaults to false
     favicon = "HDaze/static/favicon.png  "         # path to favicon (defaults to favicon.png)
 
-    front_page_content = ["blog", "诗"] # Equivalent to the default value, add page bundle names to include them on the front page.
+    front_page_content = ["about","blog", "诗"] # Equivalent to the default value, add page bundle names to include them on the front page.
 
     
  menu = [
-        {Name = "About", URL = "/about/", HasChildren = false},
-      #   {Name = "博客", URL = "/blog/", Pre = "Recent", HasChildren = false, Limit = 5},
-        {Name = "博客", URL = "/blog/", HasChildren = false},
-        {Name = "诗", URL = "/诗/",  HasChildren = false},
+        {Name = "关于我|About", URL = "/about/", HasChildren = false},
+        {Name = "博客|Blog", URL = "/blog/", HasChildren = false},
+        {Name = "诗|Poems", URL = "/诗/",  HasChildren = false},
     ]
     
       rss_icon = true
