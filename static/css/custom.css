@@ -1,6 +1,5 @@
 /* /static/css/custom.css */
 
-/* Existing CSS */
 
 .full-width-image {
     width: 100%;
@@ -133,5 +132,50 @@
 }
 
 .tagged-posts-column a:hover {
+    text-decoration: underline;
+}
+
+.archive-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.archive-link a {
+    font-size: 1.2em;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.archive-link a:hover {
+    text-decoration: underline;
+}
+.archives {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.year {
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.archive-item {
+    margin-bottom: 5px;
+}
+
+.archive-date {
+    font-size: 0.9em;
+    color: #666;
+    margin-right: 10px;
+}
+
+.archive-item a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.archive-item a:hover {
     text-decoration: underline;
 }

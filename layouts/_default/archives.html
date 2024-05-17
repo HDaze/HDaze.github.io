@@ -1,0 +1,16 @@
+{{ define "main" -}}
+<h1 class="title">Archives</h1>
+<div class="archives">
+    {{ range .Site.RegularPages.GroupByDate "2006" }}
+        <h2 class="year">{{ .Key }}</h2>
+        <ul>
+            {{ range .Pages }}
+                <li class="archive-item">
+                    <span class="archive-date">{{ .Date.Format "January 2" }}</span>
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </li>
+            {{ end }}
+        </ul>
+    {{ end }}
+</div>
+{{ end }}
