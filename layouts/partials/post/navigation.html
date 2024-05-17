@@ -22,17 +22,8 @@
         </ul>
     </p>
     {{ end }}
-    {{ if .PrevInSection }}
-        <a class="previous-post" href="{{ .PrevInSection.Permalink }}?ref=footer">
-            <span style="font-weight:bold;">« Previous</span><br>{{ .PrevInSection.Title | truncate 50 "..."}}</a>
-    {{ end }}
-    {{ if .NextInSection }}
-        <div class="next-post">
-            <a href="{{ .NextInSection.Permalink }}?ref=footer">
-                <span style="font-weight:bold;">Next »</span><br>{{ .NextInSection.Title | truncate 50 "..." }}</a>
-        </div>
-    {{ end }}
 </div>
+
 <nav class="post-navigation">
   <div class="post-nav-links">
     {{ with .PrevInSection }}
