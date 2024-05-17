@@ -1,0 +1,19 @@
+{{ define "main" -}}
+<div class="posts">
+    {{ $frontPageTypes := default (slice "blog" "诗") .Site.Params.front_page_content }}
+    {{ range (.Paginate (where .Site.RegularPages "Type" "in" $frontPageTypes)).Pages }}
+    <article class="post">
+        {{ partial "post/info.html" . }}
+        <div class="summary">
+            {{ .Summary }}
+        </div>
+        {{ if .Truncated }}
+        <div class="read-more-link">
+            <a href="{{ .RelPermalink }}">Read More…</a>
+        </div>
+        {{ end }}
+    </article>
+    {{- end }}
+</div>
+{{ partial "pagination.html" . }}
+{{- end }}
