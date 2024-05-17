@@ -1,0 +1,10 @@
+<div class="widget category">
+    <h3>Categories</h3>
+    <div class="category-label">
+        {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+            <a href="{{ "/categories/" | relURL }}{{ $name | urlize }}" class="category-label">
+                {{ $name }}<span class="category-count">({{ len $taxonomy.Pages }})</span>
+            </a>
+        {{ end }}
+    </div>
+</div>

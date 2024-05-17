@@ -1,0 +1,11 @@
+<div class="widget tagCloud">
+    <h3>Tags</h3>
+    <div class="tagCloud-tags">
+        {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+            {{ $tagCount := len $taxonomy.Pages }}
+            <a href="{{ "/tags/" | relURL }}{{ $name | urlize }}" class="tagCloud-tag">
+                {{ $name }}<span class="tagCloud-count">({{ $tagCount }})</span>
+            </a>
+        {{ end }}
+    </div>
+</div>
