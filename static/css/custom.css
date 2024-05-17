@@ -1,6 +1,6 @@
 /* /static/css/custom.css */
 
-
+/* Full-width image styles */
 .full-width-image {
     width: 100%;
     height: auto;
@@ -9,6 +9,7 @@
     margin-right: auto;
 }
 
+/* Featured image styles */
 .featured-image {
     max-width: 600px;  /* Adjust the size as needed */
     max-height: 200px; /* Adjust the size as needed */
@@ -18,10 +19,8 @@
     margin-left: auto;
     margin-right: auto;
 }
-/* /static/css/custom.css */
 
-/* /static/css/custom.css */
-
+/* Post card styles */
 .entries {
     list-style: none;
     padding: 0;
@@ -97,6 +96,7 @@
     text-decoration: underline;
 }
 
+/* Archive link styles */
 .archive-link {
     text-align: center;
     margin-top: 20px;
@@ -112,6 +112,7 @@
     text-decoration: underline;
 }
 
+/* Archives page styles */
 .archives {
     padding: 20px;
     background-color: #f9f9f9;
@@ -143,18 +144,12 @@
     text-decoration: underline;
 }
 
+/* Recent updates section */
 .recent-updates {
     margin-top: 40px;
 }
 
-/* /static/css/custom.css */
-
-/* /static/css/custom.css */
-
-/* General styles for the widgets */
-/* /static/css/custom.css */
-
-/* General styles for the widgets */
+/* General styles for widgets */
 .widget {
     margin-bottom: 20px;
 }
@@ -164,7 +159,7 @@
     margin-bottom: 10px;
 }
 
-/* Styles for tags */
+/* Tag styles */
 .tags {
     list-style-type: none;
     padding: 0;
@@ -189,7 +184,7 @@
     color: #fff;
 }
 
-/* Styles for series */
+/* Series styles */
 .series {
     list-style-type: none;
     padding: 0;
@@ -212,4 +207,84 @@
 .series-item:hover {
     background-color: #007bff;
     color: #fff;
+}
+
+/* Tag Cloud styles */
+.tagCloud {
+    margin-bottom: 20px;
+}
+
+.tagCloud-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tagCloud-tag {
+    display: inline-block;
+    font-size: 14px;
+    color: var(--color-link);
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    margin: 2px;
+    text-decoration: none;
+}
+
+.tagCloud-tag:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.tagCloud-count {
+    color: var(--body-text-color);
+    margin-left: 5px;
+}
+
+/* Category styles */
+.category {
+    margin-bottom: 20px;
+}
+
+.category-label {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.category-label a {
+    display: inline-block;
+    font-size: 14px;
+    color: var(--color-link);
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    margin: 2px;
+    text-decoration: none;
+}
+
+.category-label a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.category-count {
+    color: var(--body-text-color);
+    margin-left: 5px;
+}
+
+/* Main content and sidebar layout */
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.posts {
+    flex: 0 1 70%;
+}
+
+.sidebar-widgets {
+    flex: 0 1 25%;
+    margin-left: 20px;
 }
