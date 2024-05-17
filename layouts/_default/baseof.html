@@ -10,17 +10,15 @@
             {{ block "main" . }}
             {{ end }}
         </main>
-        {{ if and (not (eq .Kind "home")) (not (eq .Kind "section")) }}
         {{ block "sidebar" . }}
             {{ if .IsHome }}
-                {{ partial "sidebar/tags.html" . }}
-                {{ partial "sidebar/series.html" . }}
-            {{ else if .IsPage }}
+                {{ partial "sidebar/tagcloud.html" . }}
+                {{ partial "sidebar/seriescloud.html" . }}
+            {{ else if eq .Kind "page" }}
                 {{ if and (not .Params.hideToc) (not .Site.Params.hideToc) }}
                     {{ partial "table_of_contents.html" . }}
                 {{ end }}
             {{ end }}
-        {{ end }}
         {{ end }}
     </div>
 </body>
