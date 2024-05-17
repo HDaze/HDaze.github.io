@@ -3,8 +3,7 @@ title = '黑雨'
 date = 2024-05-13T13:27:46-07:00
 tags = ['诗']
 featuredImage = "black.jpg"
-description = "在那敞开中  
-已经不再生产恐惧和忧虑"
+description = "在那敞开中 已经不再生产恐惧和忧虑"
 +++
  ## 黑雨  
  {{< featuredImage >}}
