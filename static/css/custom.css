@@ -15,3 +15,69 @@
     margin-left: auto;
     margin-right: auto;
 }
+/* /static/css/custom.css */
+
+.entries {
+    list-style: none;
+    padding: 0;
+}
+
+.post-item {
+    border-bottom: 1px solid #eaeaea;
+    padding: 15px 0;
+    margin-bottom: 15px;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-header .title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.post-header .published {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.summary {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #333;
+}
+
+.tags {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tags li {
+    margin-right: 10px;
+}
+
+.tags a {
+    text-decoration: none;
+    color: #007bff;
+    background: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.tags a:hover {
+    background: #007bff;
+    color: #fff;
+}
+
+.year-header {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 20px 0;
+    color: #333;
+}
