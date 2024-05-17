@@ -20,6 +20,10 @@
         </article>
         {{- end }}
     </div>
+    <div class="sidebar-widgets">
+        {{ partial "sidebar/tagcloud.html" . }}
+        {{ partial "sidebar/seriescloud.html" . }}
+    </div>
 </div>
 {{ partial "pagination.html" . }}
 {{- end }}
