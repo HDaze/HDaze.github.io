@@ -15,20 +15,14 @@
                 </div>
                 <div class="summary">
                     {{ if .Params.description }}
-                        {{ .Params.description }}
+                        {{ .Params.description | truncate 50 }}
                     {{ else }}
-                        {{ .Summary }}
+                        {{ .Summary | truncate 50 }}
+                    {{ end }}
+                    {{ if or (.Params.description | len | gt 50) (.Summary | len | gt 50) }}
+                        <a href="{{ .RelPermalink }}">Read More…</a>
                     {{ end }}
                 </div>
-                {{ if .Params.tags }}
-                <ul class="tags">
-                    {{ range .Params.tags }}
-                    <li class="tag-{{ . }}">
-                        <a href="{{ "tags/" | absLangURL }}{{ . | urlize }}">{{ . }}</a>
-                    </li>
-                    {{ end }}
-                </ul>
-                {{ end }}
             </li>
         {{ end }}
     {{ end }}
