@@ -1,43 +1,23 @@
 <div class="tagged-posts">
     <div class="tagged-posts-columns">
-        <!-- 工作/学习 Group -->
-        <div class="tagged-posts-column">
-            <h3>工作/学习</h3>
-            <ul>
-                {{ range where .Site.RegularPages "Params.tags" "intersect" (slice "工作" "学习") }}
-                    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-                {{ end }}
-            </ul>
-        </div>
-
-        <!-- 诗 Group -->
-        <div class="tagged-posts-column">
-            <h3>诗</h3>
-            <ul>
-                {{ range where .Site.RegularPages "Params.tags" "intersect" (slice "诗") }}
-                    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-                {{ end }}
-            </ul>
-        </div>
-
-        <!-- 书影音 Group -->
-        <div class="tagged-posts-column">
-            <h3>书影音</h3>
-            <ul>
-                {{ range where .Site.RegularPages "Params.tags" "intersect" (slice "书" "影视" "音乐") }}
-                    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-                {{ end }}
-            </ul>
-        </div>
-
-        <!-- 随笔总结 Group -->
-        <div class="tagged-posts-column">
-            <h3>随笔总结</h3>
-            <ul>
-                {{ range where .Site.RegularPages "Params.tags" "intersect" (slice "随笔" "总结") }}
-                    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-                {{ end }}
-            </ul>
-        </div>
+        {{ $tagGroups := slice
+            (dict "name" "工作/学习" "tags" (slice "工作" "学习"))
+            (dict "name" "诗" "tags" (slice "诗"))
+            (dict "name" "书影音" "tags" (slice "书" "影视" "音乐"))
+            (dict "name" "随笔总结" "tags" (slice "随笔" "总结"))
+        }}
+        {{ range $tagGroups }}
+            {{ $posts := where .Site.RegularPages "Params.tags" "intersect" .tags }}
+            {{ if $posts }}
+            <div class="tagged-posts-column">
+                <h3>{{ .name }}</h3>
+                <ul>
+                    {{ range $posts }}
+                        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+        {{ end }}
     </div>
 </div>

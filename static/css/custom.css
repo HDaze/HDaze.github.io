@@ -20,6 +20,8 @@
 }
 /* /static/css/custom.css */
 
+/* /static/css/custom.css */
+
 .entries {
     list-style: none;
     padding: 0;
@@ -32,9 +34,16 @@
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
-    width: 100%;  /* Ensure the card is full-width */
+    width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #fff;
+    transition: box-shadow 0.3s, transform 0.3s;
+    border: none;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .post-image img {
@@ -131,4 +140,8 @@
 
 .archive-item a:hover {
     text-decoration: underline;
+}
+
+.recent-updates {
+    margin-top: 40px;
 }
