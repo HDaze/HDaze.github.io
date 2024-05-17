@@ -7,8 +7,8 @@
             (dict "name" "随笔总结" "tags" (slice "随笔" "总结"))
         }}
         {{ range $tagGroups }}
-            {{ $posts := where .Site.RegularPages "Params.tags" "intersect" .tags }}
-            {{ if $posts }}
+            {{ $posts := where (site.RegularPages) "Params.tags" "intersect" .tags }}
+            {{ if gt (len $posts) 0 }}
             <div class="tagged-posts-column">
                 <h3>{{ .name }}</h3>
                 <ul>
