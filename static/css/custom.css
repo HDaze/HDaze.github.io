@@ -1,3 +1,6 @@
+/* /static/css/custom.css */
+
+/* Existing CSS */
 
 .full-width-image {
     width: 100%;
@@ -6,6 +9,7 @@
     margin-left: auto;
     margin-right: auto;
 }
+
 .featured-image {
     max-width: 600px;  /* Adjust the size as needed */
     max-height: 200px; /* Adjust the size as needed */
@@ -15,7 +19,6 @@
     margin-left: auto;
     margin-right: auto;
 }
-/* /static/css/custom.css */
 
 .entries {
     display: flex;
@@ -40,7 +43,7 @@
     transform: translateY(-5px);
 }
 
-.post-image img {
+.post-image {
     width: 100%;
     height: auto;
     display: block;
@@ -87,5 +90,48 @@
 }
 
 .summary a:hover {
+    text-decoration: underline;
+}
+
+/* New CSS for Tagged Posts Section */
+
+.tagged-posts {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.tagged-posts-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.tagged-posts-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+.tagged-posts-column h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.tagged-posts-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tagged-posts-column li {
+    margin-bottom: 5px;
+}
+
+.tagged-posts-column a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.tagged-posts-column a:hover {
     text-decoration: underline;
 }

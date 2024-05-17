@@ -1,5 +1,6 @@
 {{ define "main" -}}
 <h1 class="title">{{ .Title }}</h1>
+{{ partial "tagged-posts.html" . }}
 <div class="entries">
     {{ $frontPageTypes := default (slice "blog" "诗") .Site.Params.front_page_content }}
     {{ range (.Paginate (where .Site.RegularPages "Type" "in" $frontPageTypes)).Pages }}
