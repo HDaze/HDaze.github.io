@@ -1,41 +1,25 @@
 {{ define "main" -}}
-<h1 class="title">{{ .Title }}</h1>
-{{ partial "tagged-posts.html" . }}
-<div class="recent-updates">
-    <h2>最近更新</h2>
-</div>
-<div class="entries">
-    {{ $frontPageTypes := default (slice "blog" "诗") .Site.Params.front_page_content }}
-    {{ range (.Paginate (where .Site.RegularPages "Type" "in" $frontPageTypes)).Pages }}
-        <div class="post-card">
-            {{ if .Params.featuredImage }}
-            <div class="post-image">
-                <img src="{{ .Params.featuredImage | absURL }}" alt="{{ .Title }}" class="featured-image">
+<div class="main-content">
+    <div class="posts">
+        {{ $frontPageTypes := default (slice "blog" "诗") .Site.Params.front_page_content }}
+        {{ range (.Paginate (where .Site.RegularPages "Type" "in" $frontPageTypes)).Pages }}
+        <article class="post">
+            {{ partial "post/info.html" . }}
+            <div class="summary">
+                {{ .Summary | truncate 50 }}
+            </div>
+            {{ if .Truncated }}
+            <div class="read-more-link">
+                <a href="{{ .RelPermalink }}">Read More…</a>
             </div>
             {{ end }}
-            <div class="post-content">
-                <div class="post-header">
-                    <h2 class="post-title">
-                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                    </h2>
-                    <span class="post-date">{{ .Date | time.Format ":date_long" }}</span>
-                </div>
-                <div class="summary">
-                    {{ if .Params.description }}
-                        {{ .Params.description | truncate 50 }}
-                        {{ if gt (len .Params.description) 50 }}
-                            <a href="{{ .RelPermalink }}">Read More…</a>
-                        {{ end }}
-                    {{ else }}
-                        {{ .Summary | truncate 50 }}
-                        {{ if gt (len .Summary) 50 }}
-                            <a href="{{ .RelPermalink }}">Read More…</a>
-                        {{ end }}
-                    {{ end }}
-                </div>
-            </div>
-        </div>
-    {{ end }}
+        </article>
+        {{- end }}
+    </div>
+    <div class="sidebar-widgets">
+        {{ partial "tag_cloud.html" . }}
+        {{ partial "category_list.html" . }}
+    </div>
 </div>
 {{ partial "pagination.html" . }}
 {{- end }}

@@ -12,24 +12,4 @@
     {{ end }}
 </div>
 
-<nav class="post-navigation">
-  <div class="post-nav-links">
-    {{ with .PrevInSection }}
-    <div class="post-nav-prev">
-      <a href="{{ .Permalink }}" rel="prev">
-        <span class="post-nav-title">Previous Post</span>
-        <span class="post-nav-name">{{ .Title }}</span>
-      </a>
-    </div>
-    {{ end }}
-
-    {{ with .NextInSection }}
-    <div class="post-nav-next">
-      <a href="{{ .Permalink }}" rel="next">
-        <span class="post-nav-title">Next Post</span>
-        <span class="post-nav-name">{{ .Title }}</span>
-      </a>
-    </div>
-    {{ end }}
-  </div>
 </nav>
