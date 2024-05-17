@@ -146,3 +146,67 @@
 .recent-updates {
     margin-top: 40px;
 }
+
+/* /static/css/custom.css */
+
+/* /static/css/custom.css */
+
+/* General styles for the widgets */
+.widget {
+    margin-bottom: 20px;
+}
+
+.widget h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Styles for tags */
+.tags {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tags li {
+    margin-bottom: 5px;
+}
+
+.tag {
+    display: block;
+    background-color: #f0f0f0;
+    border-radius: 3px;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    color: #333;
+    text-decoration: none;
+}
+
+.tag:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Styles for series */
+.series {
+    list-style-type: none;
+    padding: 0;
+}
+
+.series li {
+    margin-bottom: 5px;
+}
+
+.series-item {
+    display: block;
+    background-color: #f0f0f0;
+    border-radius: 3px;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    color: #333;
+    text-decoration: none;
+}
+
+.series-item:hover {
+    background-color: #007bff;
+    color: #fff;
+}
