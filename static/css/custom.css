@@ -264,3 +264,11 @@
     flex: 0 1 25%;
     margin-left: 20px;
 }
+
+#heatmap {
+    max-width: 600px;
+    height: 180px;
+    padding: 2px;
+    text-align: center;
+    margin: 0 auto 20px; /* Center the heatmap and add bottom margin */
+}
