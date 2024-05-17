@@ -18,31 +18,26 @@
     margin-left: auto;
     margin-right: auto;
 }
+/* /static/css/custom.css */
 
 .entries {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 .post-card {
     border: 1px solid #eaeaea;
     border-radius: 8px;
     overflow: hidden;
-    width: 300px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;  /* Ensure the card is full-width */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
     background-color: #fff;
 }
 
-.post-card:hover {
-    transform: translateY(-5px);
-}
-
-.post-image {
+.post-image img {
     width: 100%;
     height: auto;
     display: block;
@@ -92,49 +87,6 @@
     text-decoration: underline;
 }
 
-/* New CSS for Tagged Posts Section */
-
-.tagged-posts {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-.tagged-posts-columns {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.tagged-posts-column {
-    flex: 1;
-    min-width: 200px;
-}
-
-.tagged-posts-column h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
-
-.tagged-posts-column ul {
-    list-style: none;
-    padding: 0;
-}
-
-.tagged-posts-column li {
-    margin-bottom: 5px;
-}
-
-.tagged-posts-column a {
-    text-decoration: none;
-    color: #007bff;
-}
-
-.tagged-posts-column a:hover {
-    text-decoration: underline;
-}
-
 .archive-link {
     text-align: center;
     margin-top: 20px;
@@ -149,6 +101,7 @@
 .archive-link a:hover {
     text-decoration: underline;
 }
+
 .archives {
     padding: 20px;
     background-color: #f9f9f9;
