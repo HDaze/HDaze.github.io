@@ -17,6 +17,7 @@
         {{ else }}
           {{ .Scratch.Set "readingTime" "min" }}
         {{ end }}
+
         <span>{{ .ReadingTime }} {{ .Scratch.Get "readingTime" }} read</span>
       </span>
     </div>
@@ -30,17 +31,28 @@
       {{ end }}
     </ul>
     {{ end }}
+
+    {{ if .Params.series }}
+    <ul class="series">
+      {{ range .Params.series }}
+      <li class="series-{{ . }}">
+        <a href="{{ "series/" | absLangURL }}{{ . | urlize }}">{{ . }}</a>
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
   </div>
 
+  {{ $Site := .Site }}
   {{ if .Params.series }}
   <p class="seriesname">
-    Series: <a href="{{ .Site.BaseURL }}series/{{ .Params.series | urlize }}">{{ .Params.series }}</a>
+    Series: <a href="{{ $Site.BaseURL }}series/{{ index .Params.series 0 | urlize }}">{{ index .Params.series 0 }}</a>
   </p>
   {{ end }}
 
   {{ if .Params.featuredImage }}
   <p>
-    <img src="{{.Params.featuredImage}}" alt="{{ .Title }}" class="featured-image"><br>
+    <img src="{{.Params.featuredImage}}"><br>
   </p>
   {{ end }}
 </div>
