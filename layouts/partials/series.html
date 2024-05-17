@@ -1,0 +1,10 @@
+<div class="widget">
+    <h3>Series</h3>
+    <ul>
+        {{ range $name, $taxonomy := .Site.Taxonomies.series }}
+        <li>
+            <a href="{{ "series/" | absURL }}{{ $name | urlize }}">{{ $name }}</a> ({{ len $taxonomy }})
+        </li>
+        {{ end }}
+    </ul>
+</div>
