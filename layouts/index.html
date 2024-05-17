@@ -6,17 +6,9 @@
         {{ range (.Paginate (where .Site.RegularPages "Type" "in" .Site.Params.front_page_content)).Pages }}
         <article class="post-card">
             <div class="post-content">
-                <header class="post-header">
-                    <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-                    <div class="post-date">{{ .Date.Format "January 2, 2006" }}</div>
-                </header>
-                <ul class="tags">
-                    {{ range .Params.tags }}
-                    <li><a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>
-                    {{ end }}
-                </ul>
+                {{ partial "post/info.html" . }}
                 <div class="summary">
-                    {{ .Summary | truncate 50 }}
+                    {{ .Summary | truncate 150 }}
                     {{ if .Truncated }}
                     <div class="read-more-link">
                         <a href="{{ .RelPermalink }}">Read More…</a>
@@ -27,31 +19,9 @@
         </article>
         {{- end }}
     </div>
-
     <aside class="sidebar-widgets">
-        <!-- Tags Section -->
-        <section class="widget">
-            <h3>Tags</h3>
-            <ul class="tags">
-                {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-                <li>
-                    <a href="{{ "tags/" | relURL }}{{ $name | urlize }}">{{ $name }} ({{ len $taxonomy.Pages }})</a>
-                </li>
-                {{ end }}
-            </ul>
-        </section>
-
-        <!-- Categories Section -->
-        <section class="widget">
-            <h3>Categories</h3>
-            <ul class="categories">
-                {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-                <li>
-                    <a href="{{ "categories/" | relURL }}{{ $name | urlize }}">{{ $name }} ({{ len $taxonomy.Pages }})</a>
-                </li>
-                {{ end }}
-            </ul>
-        </section>
+        {{ partial "sidebar/tags.html" . }}
+        {{ partial "sidebar/series.html" . }}
     </aside>
 </div>
 {{ partial "pagination.html" . }}
