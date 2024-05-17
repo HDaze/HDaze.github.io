@@ -1,23 +1,37 @@
 {{ define "main" -}}
-<div class="posts">
+<h1 class="title">{{ .Title }}</h1>
+<div class="entries">
     {{ $frontPageTypes := default (slice "blog" "诗") .Site.Params.front_page_content }}
     {{ range (.Paginate (where .Site.RegularPages "Type" "in" $frontPageTypes)).Pages }}
-    <article class="post">
-        {{ partial "post/info.html" . }}
-        <div class="summary">
-            {{ if .Params.description }}
-                {{ .Params.description }}
-            {{ else }}
-                {{ .Summary }}
+        <div class="post-card">
+            {{ if .Params.featuredImage }}
+            <div class="post-image">
+                <img src="{{ .Params.featuredImage | absURL }}" alt="{{ .Title }}" class="featured-image">
+            </div>
             {{ end }}
+            <div class="post-content">
+                <div class="post-header">
+                    <h2 class="post-title">
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    </h2>
+                    <span class="post-date">{{ .Date | time.Format ":date_long" }}</span>
+                </div>
+                <div class="summary">
+                    {{ if .Params.description }}
+                        {{ .Params.description | truncate 50 }}
+                        {{ if gt (len .Params.description) 50 }}
+                            <a href="{{ .RelPermalink }}">Read More…</a>
+                        {{ end }}
+                    {{ else }}
+                        {{ .Summary | truncate 50 }}
+                        {{ if gt (len .Summary) 50 }}
+                            <a href="{{ .RelPermalink }}">Read More…</a>
+                        {{ end }}
+                    {{ end }}
+                </div>
+            </div>
         </div>
-        {{ if .Truncated }}
-        <div class="read-more-link">
-            <a href="{{ .RelPermalink }}">Read More…</a>
-        </div>
-        {{ end }}
-    </article>
-    {{- end }}
+    {{ end }}
 </div>
 {{ partial "pagination.html" . }}
 {{- end }}
