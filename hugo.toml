@@ -17,7 +17,7 @@ pluralizelisttitles = false
 
     
 menu = [
-    {Name = "首页|Home", URL = "/", HasChildren = false},
+    {Name = "首页|Home", URL = "/home/", HasChildren = false},
     {Name = "关于我|About", URL = "/about/", HasChildren = false},
     {Name = "博客|Blog", URL = "/blog/", HasChildren = false},
     {Name = "黑雨|Poems", URL = "/诗/", HasChildren = false},
