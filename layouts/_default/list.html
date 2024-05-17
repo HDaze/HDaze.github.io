@@ -4,30 +4,38 @@
     {{ range .Pages.GroupByDate "2006" }}
         <h3 class="year-header">{{ .Key }}</h3>
         {{ range .Pages }}
-            <li class="post-item">
-                <div class="post-header">
-                    <span class="title">
-                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                    </span>
-                    <span class="published">
-                        <time class="post-date">{{ .Date | time.Format ":date_long" }}</time>
-                    </span>
+            <li class="post-card">
+                {{ if .Params.featuredImage }}
+                <div class="post-image">
+                    <img src="{{ .Params.featuredImage | absURL }}" alt="{{ .Title }}">
                 </div>
-                <div class="summary">
-                    {{ if .Params.description }}
-                        {{ .Params.description | truncate 150 }}
-                        {{ if gt (len .Params.description) 150 }}
-                            <a href="{{ .RelPermalink }}">Read More…</a>
+                {{ end }}
+                <div class="post-content">
+                    <div class="post-header">
+                        <h2 class="post-title">
+                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        </h2>
+                        <span class="post-date">{{ .Date | time.Format ":date_long" }}</span>
+                    </div>
+                    <div class="summary">
+                        {{ if .Params.description }}
+                            {{ .Params.description | truncate 50 }}
+                            {{ if gt (len .Params.description) 50 }}
+                                <a href="{{ .RelPermalink }}">Read More…</a>
+                            {{ end }}
+                        {{ else }}
+                            {{ .Summary | truncate 50 }}
+                            {{ if gt (len .Summary) 50 }}
+                                <a href="{{ .RelPermalink }}">Read More…</a>
+                            {{ end }}
                         {{ end }}
-                    {{ else }}
-                        {{ .Summary | truncate 150 }}
-                        {{ if gt (len .Summary) 150 }}
-                            <a href="{{ .RelPermalink }}">Read More…</a>
-                        {{ end }}
-                    {{ end }}
+                    </div>
                 </div>
             </li>
         {{ end }}
     {{ end }}
 </ul>
+<div class="archive-link">
+    <a href="/archives/">View Archives</a>
+</div>
 {{ end }}

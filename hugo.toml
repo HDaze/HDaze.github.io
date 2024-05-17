@@ -16,10 +16,11 @@ pluralizelisttitles = false
     front_page_content = ["about","blog", "诗"] # Equivalent to the default value, add page bundle names to include them on the front page.
 
     
- menu = [
+ menu = [ {Name = "首页|Home", URL = "/", HasChildren = false},
         {Name = "关于我|About", URL = "/about/", HasChildren = false},
         {Name = "博客|Blog", URL = "/blog/", HasChildren = false},
         {Name = "黑雨|Poems", URL = "/诗/",  HasChildren = false},
+        {Name = "归档|Archives", URL = "/archives/", HasChildren = false},
     ]
     
       rss_icon = true
