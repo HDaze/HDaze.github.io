@@ -12,8 +12,10 @@
         </main>
         {{ block "sidebar" . }}
             {{ if .IsHome }}
-                {{ partial "sidebar/tagcloud.html" . }}
-                {{ partial "sidebar/seriescloud.html" . }}
+                <div class="sidebar-widgets">
+                    {{ partial "sidebar/tagcloud.html" . }}
+                    {{ partial "sidebar/seriescloud.html" . }}
+                </div>
             {{ else if eq .Kind "page" }}
                 {{ if and (not .Params.hideToc) (not .Site.Params.hideToc) }}
                     {{ partial "table_of_contents.html" . }}

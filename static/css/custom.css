@@ -261,8 +261,13 @@
 }
 
 .sidebar-widgets {
-    flex: 0 1 25%;
-    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Add space between widgets */
+    margin-top: 20px; /* Add space above the first widget */
+}
+.sidebar-widgets .widget {
+    margin-bottom: 20px;
 }
 
 #heatmap {
