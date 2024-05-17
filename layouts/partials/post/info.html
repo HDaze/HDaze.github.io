@@ -31,24 +31,7 @@
       {{ end }}
     </ul>
     {{ end }}
-
-    {{ if .Params.series }}
-    <ul class="series">
-      {{ range .Params.series }}
-      <li class="series-{{ . }}">
-        <a href="{{ "series/" | absLangURL }}{{ . | urlize }}">{{ . }}</a>
-      </li>
-      {{ end }}
-    </ul>
-    {{ end }}
   </div>
-
-  {{ $Site := .Site }}
-  {{ if .Params.series }}
-  <p class="seriesname">
-    Series: <a href="{{ $Site.BaseURL }}series/{{ index .Params.series 0 | urlize }}">{{ index .Params.series 0 }}</a>
-  </p>
-  {{ end }}
 
   {{ if .Params.featuredImage }}
   <p>

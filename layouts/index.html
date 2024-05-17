@@ -1,24 +1,23 @@
 {{ define "main" -}}
 <div class="main-content">
     <div class="posts">
-        {{ $frontPageTypes := default (slice "blog" "诗") .Site.Params.front_page_content }}
-        {{ range (.Paginate (where .Site.RegularPages "Type" "in" $frontPageTypes)).Pages }}
-        <article class="post">
-            {{ partial "post/info.html" . }}
-            <div class="summary">
-                {{ .Summary | truncate 50 }}
+        {{ partial "tagged-posts.html" . }}
+        <h2>最近更新</h2>
+        {{ range (.Paginate (where .Site.RegularPages "Type" "in" .Site.Params.front_page_content)).Pages }}
+        <article class="post-card">
+            <div class="post-content">
+                {{ partial "post/info.html" . }}
+                <div class="summary">
+                    {{ .Summary | truncate 150 }}
+                    {{ if .Truncated }}
+                    <div class="read-more-link">
+                        <a href="{{ .RelPermalink }}">Read More…</a>
+                    </div>
+                    {{ end }}
+                </div>
             </div>
-            {{ if .Truncated }}
-            <div class="read-more-link">
-                <a href="{{ .RelPermalink }}">Read More…</a>
-            </div>
-            {{ end }}
         </article>
         {{- end }}
-    </div>
-    <div class="sidebar-widgets">
-        {{ partial "tag_cloud.html" . }}
-        {{ partial "category_list.html" . }}
     </div>
 </div>
 {{ partial "pagination.html" . }}
