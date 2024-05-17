@@ -11,13 +11,10 @@
             {{ end }}
         </main>
         {{ block "sidebar" . }}
-            {{ if not .IsHome }}
-                {{ if and (not .Params.hideToc) (not .Site.Params.hideToc) }}
-                    {{ partial "table_of_contents.html" . }}
-                {{ end }}
-                               
-            {{ end }}
+        {{ if and (not .IsHome) (not .Params.hideToc) (not .Site.Params.hideToc) }}
+            {{ partial "table_of_contents.html" . }}
         {{ end }}
-    </div>
+    {{ end }}
+</div>
 </body>
 </html>
