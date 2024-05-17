@@ -1,0 +1,14 @@
+<div class="tagged-posts">
+    <div class="tagged-posts-columns">
+        {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+            <div class="tagged-posts-column">
+                <h3>{{ $name }}</h3>
+                <ul>
+                    {{ range $taxonomy.Pages }}
+                        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
+        {{ end }}
+    </div>
+</div>
