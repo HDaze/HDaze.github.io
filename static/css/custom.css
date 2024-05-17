@@ -17,6 +17,8 @@
 }
 /* /static/css/custom.css */
 
+/* /static/css/custom.css */
+
 .entries {
     list-style: none;
     padding: 0;
@@ -32,6 +34,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .post-header .title {
@@ -45,34 +48,9 @@
 }
 
 .summary {
-    margin-top: 10px;
     font-size: 1em;
     color: #333;
-}
-
-.tags {
-    list-style: none;
-    padding: 0;
     margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.tags li {
-    margin-right: 10px;
-}
-
-.tags a {
-    text-decoration: none;
-    color: #007bff;
-    background: #f0f0f0;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-.tags a:hover {
-    background: #007bff;
-    color: #fff;
 }
 
 .year-header {
