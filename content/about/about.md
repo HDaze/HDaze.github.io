@@ -3,7 +3,7 @@ title = 'About'
 date = 2024-05-12T22:23:35-07:00
 
 +++
-
+![About Image](about.jpg) { .full-width-image }
 你好，这里是HDAZE。  
 
 欢迎来到我的博客,  
