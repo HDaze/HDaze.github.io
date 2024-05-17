@@ -13,7 +13,7 @@ pluralizelisttitles = false
     dark_mode = false                      # optional - defaults to false
     favicon = "/favicon.png"         # path to favicon (defaults to favicon.png)
 
-    front_page_content = ["about","blog", "诗"] # Equivalent to the default value, add page bundle names to include them on the front page.
+    front_page_content = ["blog", "诗"] # Equivalent to the default value, add page bundle names to include them on the front page.
 
     
 menu = [
