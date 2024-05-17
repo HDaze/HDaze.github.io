@@ -85,3 +85,6 @@ pluralizelisttitles = false
 [taxonomies]
     series = 'series'
     tags = 'tags'
+
+# Add this to your config.toml if not already present
+summaryLength = 70  # Adjust the number of words to fit your needs
