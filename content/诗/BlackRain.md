@@ -2,6 +2,7 @@
 title = '黑雨'
 date = 2024-05-13T13:27:46-07:00
 tags = ['诗']
+featuredImage = "black.jpg"
 +++
  ## 黑雨  
  
