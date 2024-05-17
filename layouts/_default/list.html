@@ -11,6 +11,22 @@
                 <span class="published">
                     <time class="pull-right post-list">{{ .Date | time.Format ":date_long" }}</time>
                 </span>
+                <div class="summary">
+                    {{ if .Params.description }}
+                        {{ .Params.description }}
+                    {{ else }}
+                        {{ .Summary }}
+                    {{ end }}
+                </div>
+                {{ if .Params.tags }}
+                <ul class="tags">
+                    {{ range .Params.tags }}
+                    <li class="tag-{{ . }}">
+                        <a href="{{ "tags/" | absLangURL }}{{ . | urlize }}">{{ . }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+                {{ end }}
             </li>
         {{ end }}
     {{ end }}

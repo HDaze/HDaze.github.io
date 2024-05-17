@@ -1,9 +1,8 @@
 +++
-title = 'Sister, We Were the Sea in the New Land'
+title = 'Sister, We are the Sea in the New Land'
 date = 2024-05-13T13:27:46-07:00
 tags = ['诗']
 +++
-## Sister, We Were the Sea in the New Land
 
 Take a breath, and  
 back to where you were,   
