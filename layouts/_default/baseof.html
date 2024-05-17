@@ -1,11 +1,25 @@
-{{ partial "head/head.html" . }}
-    <body class="{{if .Site.Params.layoutReverse}}layout-reverse {{end}}{{if .Site.Params.dark_mode}}dark-theme{{end}}">
-        <div class="wrapper">
-            {{ partial "sidebar/sidebar.html" . }}
-            <main class="content container">
-                {{ block "main" . -}}{{- end }}
-            </main>
-            {{ block "sidebar" . }}{{ end }}
-        </div>
-    </body>
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    {{ partial "head/head.html" . }}
+</head>
+<body class="{{ if .Site.Params.layoutReverse }}layout-reverse {{ end }}{{ if .Site.Params.dark_mode }}dark-theme{{ end }}">
+    <div class="wrapper">
+        {{ partial "sidebar/sidebar.html" . }}
+        <main class="content container">
+            {{ block "main" . }}
+            {{ end }}
+        </main>
+        {{ block "sidebar" . }}
+            {{ if .IsHome }}
+                {{ partial "tags.html" . }}
+                {{ partial "series.html" . }}
+            {{ else }}
+                {{ if and (not .Params.hideToc) (not .Site.Params.hideToc) }}
+                    {{ partial "table_of_contents.html" . }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    </div>
+</body>
 </html>
