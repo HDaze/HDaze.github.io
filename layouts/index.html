@@ -1,5 +1,6 @@
 {{ define "main" -}}
 <div class="main-content full-width">
+    {{ partial "heatmap.html" . }}
     <div class="posts">
         {{ partial "tagged-posts.html" . }}
         <hr style="margin-top: 20px; margin-bottom: 20px;">
@@ -20,7 +21,6 @@
         </article>
         {{- end }}
     </div>
-   
-</div>
+  </div>
 {{ partial "pagination.html" . }}
 {{- end }}
