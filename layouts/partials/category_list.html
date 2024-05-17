@@ -1,10 +1,10 @@
 <div class="widget">
-    <h3>Categories</h3>
-    <ul class="categories">
-        {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+    <h3>series</h3>
+    <ul class="series">
+        {{ range $name, $taxonomy := .Site.Taxonomies.series }}
         <li>
-            <a href="{{ "/categories/" | relURL }}{{ $name | urlize }}" class="category">
-                {{ $name }}<span class="category-count">({{ len $taxonomy.Pages }})</span>
+            <a href="{{ "/series/" | relURL }}{{ $name | urlize }}" class="series">
+                {{ $name }}<span class="series-count">({{ len $taxonomy.Pages }})</span>
             </a>
         </li>
         {{ end }}
