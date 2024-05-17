@@ -7,7 +7,7 @@
     margin-right: auto;
 }
 .featured-image {
-    max-width: 100%;  /* Adjust the size as needed */
+    max-width: 600px;  /* Adjust the size as needed */
     max-height: 200px; /* Adjust the size as needed */
     width: 100%;
     height: auto;
