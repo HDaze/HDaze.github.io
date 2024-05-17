@@ -15,12 +15,15 @@
                 </div>
                 <div class="summary">
                     {{ if .Params.description }}
-                        {{ .Params.description | truncate 50 }}
+                        {{ .Params.description | truncate 150 }}
+                        {{ if gt (len .Params.description) 150 }}
+                            <a href="{{ .RelPermalink }}">Read More…</a>
+                        {{ end }}
                     {{ else }}
-                        {{ .Summary | truncate 50 }}
-                    {{ end }}
-                    {{ if or (.Params.description | len | gt 50) (.Summary | len | gt 50) }}
-                        <a href="{{ .RelPermalink }}">Read More…</a>
+                        {{ .Summary | truncate 150 }}
+                        {{ if gt (len .Summary) 150 }}
+                            <a href="{{ .RelPermalink }}">Read More…</a>
+                        {{ end }}
                     {{ end }}
                 </div>
             </li>
