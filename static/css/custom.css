@@ -20,15 +20,13 @@
 }
 /* /static/css/custom.css */
 
-/* /static/css/custom.css */
-
 .entries {
     list-style: none;
     padding: 0;
 }
 
 .post-card {
-    border: 1px solid #eaeaea;
+    border: 1px solid transparent;
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 20px;
@@ -37,13 +35,13 @@
     width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #fff;
-    transition: box-shadow 0.3s, transform 0.3s;
-    border: none;
+    transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
 }
 
 .post-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-color: #eaeaea;
 }
 
 .post-image img {
