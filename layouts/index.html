@@ -2,6 +2,7 @@
 <div class="main-content">
     <div class="posts">
         {{ partial "tagged-posts.html" . }}
+        <hr style="margin-top: 20px; margin-bottom: 20px;">
         <h2>最近更新</h2>
         {{ range (.Paginate (where .Site.RegularPages "Type" "in" .Site.Params.front_page_content)).Pages }}
         <article class="post-card">
