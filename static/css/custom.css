@@ -20,6 +20,8 @@
 }
 /* /static/css/custom.css */
 
+/* /static/css/custom.css */
+
 .entries {
     list-style: none;
     padding: 0;
@@ -52,6 +54,7 @@
 
 .post-content {
     padding: 15px;
+    flex: 1;
 }
 
 .post-header {
