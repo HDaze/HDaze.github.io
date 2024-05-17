@@ -1,3 +1,5 @@
+/* /static/css/custom.css */
+
 /* Full-width image styles */
 .full-width-image {
     width: 100%;
@@ -165,13 +167,11 @@
 }
 
 .tags li {
-    display: inline-block;
-    margin-right: 10px;
     margin-bottom: 5px;
 }
 
 .tag {
-    display: inline-block;
+    display: block;
     background-color: #f0f0f0;
     border-radius: 3px;
     padding: 5px 10px;
@@ -189,17 +189,14 @@
 .series {
     list-style-type: none;
     padding: 0;
-    margin: 0;
 }
 
 .series li {
-    display: inline-block;
-    margin-right: 10px;
     margin-bottom: 5px;
 }
 
 .series-item {
-    display: inline-block;
+    display: block;
     background-color: #f0f0f0;
     border-radius: 3px;
     padding: 5px 10px;
@@ -241,38 +238,6 @@
 }
 
 .tagCloud-count {
-    color: var(--body-text-color);
-    margin-left: 5px;
-}
-
-/* Category styles */
-.category {
-    margin-bottom: 20px;
-}
-
-.category-label {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.category-label a {
-    display: inline-block;
-    font-size: 14px;
-    color: var(--color-link);
-    padding: 5px 10px;
-    background-color: #f0f0f0;
-    border-radius: 12px;
-    margin: 2px;
-    text-decoration: none;
-}
-
-.category-label a:hover {
-    background-color: #007bff;
-    color: #fff;
-}
-
-.category-count {
     color: var(--body-text-color);
     margin-left: 5px;
 }
