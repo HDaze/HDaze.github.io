@@ -5,7 +5,11 @@
     <article class="post">
         {{ partial "post/info.html" . }}
         <div class="summary">
-            {{ .Summary }}
+            {{ if .Params.description }}
+                {{ .Params.description }}
+            {{ else }}
+                {{ .Summary }}
+            {{ end }}
         </div>
         {{ if .Truncated }}
         <div class="read-more-link">

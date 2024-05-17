@@ -87,4 +87,4 @@ pluralizelisttitles = false
     tags = 'tags'
 
 # Add this to your config.toml if not already present
-summaryLength = 70  # Adjust the number of words to fit your needs
+summaryLength = 20  # Adjust the number of words to fit your needs
