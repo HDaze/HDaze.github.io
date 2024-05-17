@@ -1,9 +1,9 @@
 <div class="widget">
     <h3>Series</h3>
-    <ul>
+    <ul class="series">
         {{ range $name, $taxonomy := .Site.Taxonomies.series }}
         <li>
-            <a href="{{ "series/" | absURL }}{{ $name | urlize }}">{{ $name }}</a> ({{ len $taxonomy }})
+            <a href="{{ "series/" | absURL }}{{ $name | urlize }}" class="series-item">{{ $name }} ({{ len $taxonomy }})</a>
         </li>
         {{ end }}
     </ul>
