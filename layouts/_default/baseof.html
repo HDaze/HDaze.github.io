@@ -10,7 +10,7 @@
             {{ block "main" . }}
             {{ end }}
         </main>
-        {{ if and (not .IsHome) (not .IsList) }}
+        {{ if and (not (eq .Kind "home")) (not (eq .Kind "section")) }}
         {{ block "sidebar" . }}
             {{ if .IsHome }}
                 {{ partial "sidebar/tags.html" . }}
