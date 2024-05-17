@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ .Title }}</title>
+    <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
+    {{ if .Params.custom_css }}
+        <link rel="stylesheet" href="{{ .Params.custom_css | relURL }}">
+    {{ end }}
+</head>
+<body>
+    {{ partial "header.html" . }}
+    {{ block "main" . }}{{ end }}
+    {{ partial "footer.html" . }}
+</body>
+</html>
