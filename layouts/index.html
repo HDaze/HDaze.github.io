@@ -4,6 +4,14 @@
         <h2 style="margin-top: 20px;">To find, and to be found</h2>
         {{ partial "tagged-posts.html" . }}
         <hr style="margin-top: 20px; margin-bottom: 20px;">
+        <div class="year-progress-container">
+            <h2>Year Progress</h2>
+            <div id="year-progress-bar" class="year-progress-bar">
+                <div id="year-progress-fill" class="year-progress-fill"></div>
+            </div>
+            <div id="year-progress-text" class="year-progress-text"></div>
+        </div>
+        <hr style="margin-top: 20px; margin-bottom: 20px;">
         {{ partial "heatmap.html" . }}
         <hr style="margin-top: 20px; margin-bottom: 20px;">
         <h2 style="margin-top: 20px;">最近更新</h2>
@@ -26,4 +34,18 @@
     
 </div>
 {{ partial "pagination.html" . }}
+<script>
+    function updateYearProgress() {
+        const now = new Date();
+        const start = new Date(now.getFullYear(), 0, 0);
+        const end = new Date(now.getFullYear() + 1, 0, 0);
+        const yearElapsed = (now - start) / (end - start);
+        const percentage = Math.floor(yearElapsed * 100);
+
+        document.getElementById('year-progress-fill').style.width = percentage + '%';
+        document.getElementById('year-progress-text').innerText = percentage + '%';
+    }
+
+    updateYearProgress();
+</script>
 {{- end }}

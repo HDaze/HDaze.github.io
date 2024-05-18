@@ -11,7 +11,7 @@
   {{ range ((where .Site.RegularPages "Type" "post")) }}
     var key = "{{ .Date.Format "2006-01-02" }}";
     var value = dataMap.get(key);
-    var wordCount = {{ div .WordCount 1000.0 | lang.FormatNumber 1 }};
+    var wordCount = {{ .WordCount }};
     var link = "{{ .RelPermalink }}";
     var title = "{{ .Title }}";
     
@@ -22,7 +22,7 @@
 
   var data = [];
   for (const [key, value] of dataMap.entries()) {
-    data.push([key, value.wordCount]);
+    data.push([key, Math.ceil(value.wordCount / 500)]);
   }
   
   var startDate = new Date();
@@ -71,12 +71,12 @@
     tooltip: {
       formatter: function (p) {
         const post = dataMap.get(p.data[0]);
-        return post.title + ' | ' + post.wordCount + ' 千字';
+        return post.title + ' | ' + (post.wordCount) + ' 字';
       }
     },
     visualMap: {
-        min: 0,
-        max: 10,
+        min: 1,
+        max: 20,  // Assuming the maximum word count category is 10000 words
         type: 'piecewise',
         orient: 'horizontal',
         left: 'center',
@@ -85,8 +85,8 @@
         inRange: {   
           color: ['#7aa8744c', '#7AA874'] 
         },
-        splitNumber: 4,
-        text: ['千字', ''],
+        splitNumber: 20,
+        text: ['字数', ''],
         showLabel: true,
         itemGap: 20,
     },
