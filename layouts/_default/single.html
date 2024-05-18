@@ -6,6 +6,21 @@
     {{ partial "post/listmonk_email_newsletters.html" . }}
   {{ end }}
   {{ partial "post/navigation.html" . }}
+
+  <!-- Twikoo comment section -->
+  <div id="tcomment"></div>
+  <script src="https://cdn.staticfile.net/twikoo/1.6.34/twikoo.all.min.js"></script>
+  <script>
+    twikoo.init({
+      envId: 'https://thehd.netlify.app/.netlify/functions/twikoo', // Replace 'YOUR_ENV_ID' with your actual environment ID
+      el: '#tcomment', // Container element
+      // region: 'ap-guangzhou', // Uncomment if using Tencent Cloud environment, set to 'ap-shanghai' or 'ap-guangzhou'
+      // path: location.pathname, // Custom JS path for distinguishing different articles, if necessary
+      // lang: 'zh-CN', // Manually set comment area language, if necessary
+    });
+  </script>
+  <!-- End of Twikoo comment section -->
+
   {{ if or (.Site.Params.remark42) (.Site.DisqusShortname) }}
     {{ partial "post/comments.html" . }}
   {{ end }}
