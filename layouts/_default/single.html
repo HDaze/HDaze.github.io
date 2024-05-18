@@ -6,7 +6,7 @@
     {{ partial "post/listmonk_email_newsletters.html" . }}
   {{ end }}
   {{ partial "post/navigation.html" . }}
-
+</div>
   <!-- Twikoo comment section -->
   <div id="tcomment"></div>
   <script src="https://cdn.staticfile.net/twikoo/1.6.34/twikoo.all.min.js"></script>
@@ -20,12 +20,7 @@
     });
   </script>
   <!-- End of Twikoo comment section -->
-
-  {{ if or (.Site.Params.remark42) (.Site.DisqusShortname) }}
-    {{ partial "post/comments.html" . }}
-  {{ end }}
-</div>
-{{- end }}
+  {{- end }}
 {{ define "sidebar" }}
   {{ if and (not .Params.hideToc) (not .Site.Params.hideToc) }}
     {{ partial "table_of_contents.html" . }}
