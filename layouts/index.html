@@ -4,13 +4,25 @@
         <h2 style="margin-top: 20px;">To find, and to be found</h2>
         {{ partial "tagged-posts.html" . }}
         <hr style="margin-top: 20px; margin-bottom: 20px;">
-        <div class="year-progress-container">
-            <h2>Year Progress</h2>
-            <div id="year-progress-bar" class="year-progress-bar">
-                <div id="year-progress-fill" class="year-progress-fill"></div>
-            </div>
-            <div id="year-progress-text" class="year-progress-text"></div>
-        </div>
+        <div class="year-progress" id="progress"></div>
+        <script>
+            let now = new Date();
+            let startOfYear = new Date(now.getFullYear(), 0, 1);
+            let endOfYear = new Date(now.getFullYear(), 11, 31);
+            let totalDays = Math.round((endOfYear - startOfYear) / (1000 * 60 * 60 * 24));
+            let passedDays = Math.round((now - startOfYear) / (1000 * 60 * 60 * 24));
+            let percentage = Math.round((passedDays / totalDays) * 100);
+            let progressBar = "";
+            for (var i = 0; i < 50; i++) {
+                if (i < percentage / 2) {
+                    progressBar += "■";
+                } else {
+                    progressBar += "□";
+                }
+            }
+            document.getElementById('progress').innerText = "Year progress: " + progressBar + " " + percentage + "%";
+        </script>
+    
         <hr style="margin-top: 20px; margin-bottom: 20px;">
         {{ partial "heatmap.html" . }}
         <hr style="margin-top: 20px; margin-bottom: 20px;">
@@ -34,18 +46,5 @@
     
 </div>
 {{ partial "pagination.html" . }}
-<script>
-    function updateYearProgress() {
-        const now = new Date();
-        const start = new Date(now.getFullYear(), 0, 1);
-        const end = new Date(now.getFullYear() + 1, 0, 1);
-        const yearElapsed = (now - start) / (end - start);
-        const percentage = Math.floor(yearElapsed * 100);
 
-        document.getElementById('year-progress-fill').style.width = percentage + '%';
-        document.getElementById('year-progress-text').innerText = percentage + '%';
-    }
-
-    updateYearProgress();
-</script>
 {{- end }}
