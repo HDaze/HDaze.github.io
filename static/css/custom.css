@@ -404,3 +404,13 @@
     margin-top: 5px;
     font-size: 1.2em;
 }
+
+.footer {
+    margin-bottom: 40px;
+  }
+  
+  .previous-post, .next-post {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+  }
