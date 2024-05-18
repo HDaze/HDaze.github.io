@@ -3,7 +3,7 @@ title = 'About'
 date = 2024-05-12T22:23:35-07:00
 featuredImage = "/about.jpg"
 +++
-{{< featured-image >}}  
+
 
 你好，这里是HDAZE。  
 
