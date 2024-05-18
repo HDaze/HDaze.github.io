@@ -1,0 +1,17 @@
+{{- $currentDay := now.Format "2" | int -}}
+{{- $currentMonth := now.Format "1" | int -}}
+{{- $daysInYear := 365 -}}
+{{- if eq (mod (now.Format "2006" | int) 0) 0 }}
+  {{- $daysInYear = 366 -}}
+{{- end -}}
+{{- $daysSoFar := 0 -}}
+{{- range seq 1 $currentMonth -}}
+  {{- $daysSoFar = add $daysSoFar (time "2006" now.Format "2006").AddDate 0 . -1 | time.Duration "24h" | durationDays -}}
+{{- end -}}
+{{- $daysSoFar = add $daysSoFar $currentDay -}}
+{{- $progress := div (mul $daysSoFar 100) $daysInYear -}}
+{{- $filled := div $progress 2 -}}
+{{- $empty := sub 50 $filled -}}
+<div class="progress-bar">
+  <span>{{ strings.Repeat "■" $filled }}{{ strings.Repeat "□" $empty }} {{ $progress }}%</span>
+</div>
