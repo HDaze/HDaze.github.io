@@ -10,9 +10,10 @@ featuredImage = "/about.jpg"
 欢迎来到我的博客,  
 这里存放我的读书笔记和一些随笔/诗.
 
- 最近在看的书：
+ ## 最近在看的书：
 
 
 {{< neodb "https://neodb.social/book/5aIKjOYhPiOEUmG63KMtnt" >}}
 
-
+## 最近思考
+- placeholder
