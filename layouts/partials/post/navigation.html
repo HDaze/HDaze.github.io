@@ -1,5 +1,4 @@
-<hr>
-<div class="footer">
+<div class="footer" style="margin-bottom: 40px;">
     {{ if .PrevInSection }}
         <a class="previous-post" href="{{ .PrevInSection.Permalink }}?ref=footer">
             <span style="font-weight:bold;">« Previous</span><br>{{ .PrevInSection.Title | truncate 50 "..."}}</a>
@@ -11,5 +10,3 @@
         </div>
     {{ end }}
 </div>
-
-</nav>

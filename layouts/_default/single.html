@@ -2,25 +2,21 @@
 <div class="post">
   {{ partial "post/info.html" . }}
   {{ .Content }}
-  {{ if (.Site.Params.listmonk) }}
-    {{ partial "post/listmonk_email_newsletters.html" . }}
-  {{ end }}
-  {{ partial "post/navigation.html" . }}
+  <div class="navigation-section">
+    {{ partial "post/navigation.html" . }}
+  </div>
 </div>
-  <!-- Twikoo comment section -->
-  <div id="tcomment"></div>
-  <script src="https://cdn.staticfile.net/twikoo/1.6.34/twikoo.all.min.js"></script>
-  <script>
-    twikoo.init({
-      envId: 'https://thehd.netlify.app/.netlify/functions/twikoo', // Replace 'YOUR_ENV_ID' with your actual environment ID
-      el: '#tcomment', // Container element
-      // region: 'ap-guangzhou', // Uncomment if using Tencent Cloud environment, set to 'ap-shanghai' or 'ap-guangzhou'
-      // path: location.pathname, // Custom JS path for distinguishing different articles, if necessary
-      // lang: 'zh-CN', // Manually set comment area language, if necessary
-    });
-  </script>
-  <!-- End of Twikoo comment section -->
-  {{- end }}
+<!-- Twikoo comment section -->
+<div id="tcomment" style="margin-top: 40px;"></div>
+<script src="https://cdn.staticfile.net/twikoo/1.6.34/twikoo.all.min.js"></script>
+<script>
+  twikoo.init({
+    envId: 'https://thehd.netlify.app/.netlify/functions/twikoo',
+    el: '#tcomment',
+  });
+</script>
+<!-- End of Twikoo comment section -->
+{{- end }}
 {{ define "sidebar" }}
   {{ if and (not .Params.hideToc) (not .Site.Params.hideToc) }}
     {{ partial "table_of_contents.html" . }}
