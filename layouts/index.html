@@ -2,27 +2,7 @@
 <div class="main-content full-width">
     <div class="posts">
         <h2 style="margin-top: 20px;">To find, and to be found</h2>
-        {{ partial "tagged-posts.html" . }}
-        <hr style="margin-top: 20px; margin-bottom: 20px;">
-        <div class="year-progress" id="progress"></div>
-        <script>
-            let now = new Date();
-            let startOfYear = new Date(now.getFullYear(), 0, 1);
-            let endOfYear = new Date(now.getFullYear(), 11, 31);
-            let totalDays = Math.round((endOfYear - startOfYear) / (1000 * 60 * 60 * 24));
-            let passedDays = Math.round((now - startOfYear) / (1000 * 60 * 60 * 24));
-            let percentage = Math.round((passedDays / totalDays) * 100);
-            let progressBar = "";
-            for (var i = 0; i < 50; i++) {
-                if (i < percentage / 2) {
-                    progressBar += "■";
-                } else {
-                    progressBar += "□";
-                }
-            }
-            document.getElementById('progress').innerText = "Year progress: " + progressBar + " " + percentage + "%";
-        </script>
-    
+        {{ partial "tagged-posts.html" . }}         
         <hr style="margin-top: 20px; margin-bottom: 20px;">
         {{ partial "heatmap.html" . }}
         <hr style="margin-top: 20px; margin-bottom: 20px;">
