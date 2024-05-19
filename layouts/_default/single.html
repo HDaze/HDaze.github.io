@@ -5,7 +5,9 @@
   <div class="footer-navigation" style="margin-bottom: 20px;">
     {{ partial "post/navigation.html" . }}
   </div>
-  {{ partial "post/comments.html" . }}
+  <div class="post-comments" style="margin-top: 20px;">
+    {{ partial "post/comments.html" . }}
+  </div>
 </div>
 {{- end }}
 {{ define "sidebar" }}
