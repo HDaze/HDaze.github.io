@@ -53,7 +53,7 @@
 
 .post-image img {
     width: 100%;
-    height: auto;
+    height: 60px;
     display: block;
 }
 
@@ -93,7 +93,7 @@
 }
 
 .summary a {
-    display: inline-block;
+    display: block;
     margin-top: 10px;
     color: #007bff;
 }
@@ -414,9 +414,7 @@
     margin: 10px 0;
     font-weight: bold;
   }
-  #tcomment {
-    margin-top: 20px;
-  }
+
   
   /* Ensure navigation and comments are vertically stacked */
   .footer-navigation {
@@ -424,5 +422,5 @@
   }
   
   .post-comments {
-    margin-top: 20px;
+    margin-top: 40px;
   }
