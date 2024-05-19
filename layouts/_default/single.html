@@ -5,15 +5,8 @@
   <div class="footer-navigation" style="margin-bottom: 20px;">
     {{ partial "post/navigation.html" . }}
   </div>
-  <div id="tcomment" style="margin-top: 20px;"></div>
+  {{ partial "post/comments.html" . }}
 </div>
-<script src="https://cdn.staticfile.net/twikoo/1.6.34/twikoo.all.min.js"></script>
-<script>
-  twikoo.init({
-    envId: 'https://thehd.netlify.app/.netlify/functions/twikoo',
-    el: '#tcomment',
-  });
-</script>
 {{- end }}
 {{ define "sidebar" }}
   {{ if and (not .Params.hideToc) (not .Site.Params.hideToc) }}
