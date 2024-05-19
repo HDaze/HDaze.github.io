@@ -2,12 +2,11 @@
 <div class="post">
   {{ partial "post/info.html" . }}
   {{ .Content }}
-  <div class="navigation-section">
+  <div class="footer-navigation" style="margin-bottom: 20px;">
     {{ partial "post/navigation.html" . }}
   </div>
+  <div id="tcomment" style="margin-top: 20px;"></div>
 </div>
-<!-- Twikoo comment section -->
-<div id="tcomment" style="margin-top: 40px;"></div>
 <script src="https://cdn.staticfile.net/twikoo/1.6.34/twikoo.all.min.js"></script>
 <script>
   twikoo.init({
@@ -15,7 +14,6 @@
     el: '#tcomment',
   });
 </script>
-<!-- End of Twikoo comment section -->
 {{- end }}
 {{ define "sidebar" }}
   {{ if and (not .Params.hideToc) (not .Site.Params.hideToc) }}
