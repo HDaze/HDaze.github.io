@@ -414,3 +414,13 @@
     margin: 10px 0;
     font-weight: bold;
   }
+  #tcomment {
+    margin-top: 20px;
+  }
+  
+  /* Ensure navigation and comments are vertically stacked */
+  .footer-navigation {
+    margin-bottom: 20px;
+  }
+  
+ 
