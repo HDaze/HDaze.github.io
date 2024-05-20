@@ -2,9 +2,9 @@
 <div class="main-content full-width">
     <div class="posts">
         <h2 style="margin-top: 20px;">To find, and to be found</h2>
-        {{ partial "tagged-posts.html" . }}         
+        {{ partial "tagged-posts.html" }}         
         <hr class="subtle-line">
-      
+        {{ partial "heatmap.html" . }}
         <h2 style="margin-top: 20px;">最近更新</h2>
         {{ range (.Paginate (where .Site.RegularPages "Type" "in" .Site.Params.front_page_content)).Pages }}
         <article class="post-card">
@@ -22,8 +22,6 @@
         </article>
         {{- end }}
     </div>
-    
 </div>
 {{ partial "pagination.html" . }}
-
 {{- end }}

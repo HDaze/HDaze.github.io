@@ -15,14 +15,14 @@
     var link = "{{ .RelPermalink }}";
     var title = "{{ .Title }}";
     
-    if (value == null || wordCount > value[0]) {
+    if (value == null || wordCount > value.wordCount) {
       dataMap.set(key, {wordCount, link, title});
     }
   {{- end -}}
 
   var data = [];
   for (const [key, value] of dataMap.entries()) {
-    data.push([key, Math.ceil(value.wordCount / 500)]);
+    data.push([key, value.wordCount]);
   }
   
   var startDate = new Date();
@@ -81,17 +81,22 @@
       }
     },
     visualMap: {
-        min: 1,
-        max: 20,
+        min: 0,
+        max: 7,
         type: 'piecewise',
         orient: 'horizontal',
         left: 'center',
         top: 30,
         inRange: {   
-          color: ['#7aa8744c', '#7AA874']
+          color: ['#eeeeee', '#a6d96a', '#66bd63', '#1a9850', '#006837']
         },
-        splitNumber: 20,
-        text: ['字数', ''],
+        pieces: [
+          {min: 6001, label: '> 6000', color: '#006837'},
+          {min: 4001, max: 6000, label: '4000-6000', color: '#1a9850'},
+          {min: 2001, max: 4000, label: '2000-4000', color: '#66bd63'},
+          {min: 1, max: 2000, label: '1-2000', color: '#a6d96a'},
+          {value: 0, label: '0', color: '#eeeeee'}
+        ],
         showLabel: true,
         itemGap: 20,
         textStyle: {
@@ -119,7 +124,7 @@
     series: {
         type: 'heatmap',
         coordinateSystem: 'calendar',
-        data: data,
+        data: data.map(item => [item[0], Math.min(7, Math.ceil(item[1] / 2000))]), // Normalize word count into 0-7 range
     }
   };
   myChart.setOption(option);
