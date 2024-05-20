@@ -3,9 +3,8 @@
     <div class="posts">
         <h2 style="margin-top: 20px;">To find, and to be found</h2>
         {{ partial "tagged-posts.html" . }}         
-        <hr style="margin-top: 20px; margin-bottom: 20px;">
-        {{ partial "heatmap.html" . }}
-        <hr style="margin-top: 20px; margin-bottom: 20px;">
+        <hr class="subtle-line">
+      
         <h2 style="margin-top: 20px;">最近更新</h2>
         {{ range (.Paginate (where .Site.RegularPages "Type" "in" .Site.Params.front_page_content)).Pages }}
         <article class="post-card">
