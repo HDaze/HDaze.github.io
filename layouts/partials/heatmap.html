@@ -66,29 +66,37 @@
     title: {
         top: 0,
         left: 'center',
-        text: '博客日历'
+        text: '博客日历',
+        textStyle: {
+            color: document.body.classList.contains('dark-theme') ? '#fff' : '#000'
+        }
     },
     tooltip: {
       formatter: function (p) {
         const post = dataMap.get(p.data[0]);
         return post.title + ' | ' + (post.wordCount) + ' 字';
+      },
+      textStyle: {
+          color: document.body.classList.contains('dark-theme') ? '#fff' : '#000'
       }
     },
     visualMap: {
         min: 1,
-        max: 20,  // Assuming the maximum word count category is 10000 words
+        max: 20,
         type: 'piecewise',
         orient: 'horizontal',
         left: 'center',
         top: 30,
-        
         inRange: {   
-          color: ['#7aa8744c', '#7AA874'] 
+          color: ['#7aa8744c', '#7AA874']
         },
         splitNumber: 20,
         text: ['字数', ''],
         showLabel: true,
         itemGap: 20,
+        textStyle: {
+            color: document.body.classList.contains('dark-theme') ? '#fff' : '#000'
+        }
     },
     calendar: {
         top: 80,
@@ -97,7 +105,7 @@
         cellSize: ['auto', 12],
         range: getRangeArr(),
         itemStyle: {
-            color: '#F1F1F1',
+            color: document.body.classList.contains('dark-theme') ? '#333' : '#F1F1F1',
             borderWidth: 2.5,
             borderColor: '#fff',
         },

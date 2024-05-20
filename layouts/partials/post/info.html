@@ -35,7 +35,6 @@
 
   {{ if .Params.featuredImage }}
   <p>
-    <img src="{{.Params.featuredImage}}"><br>
+    <img src="{{ .Params.featuredImage }}" alt="{{ .Title }}" class="homepage-featured-image"><br>
   </p>
-  {{ end }}
-</div>
+{{ end }}

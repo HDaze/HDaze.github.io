@@ -13,11 +13,16 @@
 .featured-image {
     
     width: 100%;
-    height: 20px;
-    display: block;
+    height: auto;
+    max-height: 200px;
     object-fit: cover;
-    margin-left: auto;
-    margin-right: auto;
+   
+}
+.homepage-featured-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px; /* Adjust the height as needed */
+    object-fit: cover; /* This ensures the image covers the area without distortion */
 }
 .full-width {
     width: 100%;
@@ -53,8 +58,9 @@
 
 .post-image img {
     width: 100%;
-    height: 60px;
-    display: block;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
 }
 
 .post-content {
@@ -272,7 +278,7 @@
 
 #heatmap {
     max-width: 600px;
-    height: 180px;
+    height: 200px;
     padding: 2px;
     text-align: center;
     margin: 0 auto 20px; /* Center the heatmap and add bottom margin */
@@ -373,38 +379,6 @@
 }
 /* db-card -------- end */
 
-.progress-bar {
-    font-family: monospace;
-    font-size: 1.2em;  /* Adjust the size as needed */
-    color: #007bff;   /* Adjust the color as needed */
-}
-/* Year progress styles */
-.year-progress-container {
-    margin: 20px 0;
-    text-align: center;
-}
-
-.year-progress-bar {
-    width: 100%;
-    height: 20px;
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-}
-
-.year-progress-fill {
-    height: 100%;
-    background-color: #007bff;
-    width: 0;
-    transition: width 0.5s ease;
-}
-
-.year-progress-text {
-    margin-top: 5px;
-    font-size: 1.2em;
-}
-
 .footer {
     margin-bottom: 40px;
   }
@@ -424,3 +398,60 @@
   .post-comments {
     margin-top: 40px;
   }
+  .subtle-line {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 0;
+    height: 1px;
+    background: #9c9c9c; /* Light gray color */
+  }
+  
+  .footer-navigation a {
+    font-weight: normal; /* Remove bold font */
+    color: #007bff; /* Default link color */
+  }
+  
+  .footer-navigation a:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }
+  
+ /* Custom styles for dark theme */
+body.dark-theme .post-card {
+    background-color: #333; /* Dark gray background for cards */
+    color: #fff; /* Light text color for better contrast */
+}
+
+body.dark-theme .post-card a {
+    color: #fff; /* Light color for links and titles */
+}
+
+body.dark-theme .heatmap {
+    background-color: #333; /* Dark gray background for heatmap */
+    color: #fff; /* Light text color for better contrast */
+}
+
+body.dark-theme .post-title a {
+    color: #fff; /* Light color for post titles */
+}
+
+body.dark-theme .post-title a:hover {
+    color: #bbb; /* Slightly darker color on hover for better visibility */
+}
+
+/* Make the lines less visible and subtle */
+.subtle-line {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 0;
+    height: 1px;
+    background: #7b7b7b; /* Light gray color */
+}
+
+.footer-navigation a {
+    font-weight: normal; /* Remove bold font */
+    color: #007bff; /* Default link color */
+}
+
+.footer-navigation a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}

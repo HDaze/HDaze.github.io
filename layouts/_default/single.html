@@ -5,12 +5,16 @@
   {{ if (.Site.Params.listmonk) }}
     {{ partial "post/listmonk_email_newsletters.html" . }}
   {{ end }}
-  
+  <hr class="subtle-line">
+  <div class="footer-navigation">
     {{ partial "post/navigation.html" . }}
-  
+  </div>
+  <hr class="subtle-line">
+  <div class="post-comments">
     {{ partial "post/comments.html" . }}
-
+  </div>
 </div>
+
 {{- end }}
 {{ define "sidebar" }}
   {{ if and (not .Params.hideToc) (not .Site.Params.hideToc) }}
