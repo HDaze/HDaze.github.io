@@ -3,14 +3,9 @@
 <head>
     {{ partial "head/head.html" . }}
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DPGNBHMMQL"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-DPGNBHMMQL');
-    </script>
+    {{ if eq (getenv "HUGO_ENV") "production" }}
+      {{ partial "google_analytics.html" . }}
+    {{ end }}
 </head>
 <body class="{{ if .Site.Params.layoutReverse }}layout-reverse {{ end }}{{ if .Site.Params.dark_mode }}dark-theme{{ end }}">
     <div class="wrapper">
