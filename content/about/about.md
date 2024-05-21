@@ -3,7 +3,7 @@ title = 'About'
 date = 2024-05-12T22:23:35-07:00
 featuredImage = "/about.jpg"
 +++
-
+{{featured-image}}
 
 你好，这里是HDAZE。  
 
@@ -21,7 +21,8 @@ featuredImage = "/about.jpg"
 
 
 ## 最近重温的电影
-{{< neodb “https://neodb.social/movie/4KJx5lLS4jcLNt6ktZ9bAK”>}}
+
+{{< neodb "https://neodb.social/movie/4KJx5lLS4jcLNt6ktZ9bAK" >}}
 
 ## 最近思考  
 自己的阅读习惯和读书笔记。之前读书更多是娱乐性，现在也是，但希望能加入更多思考和总结。这也是创建这个博客的初衷。
