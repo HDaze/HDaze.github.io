@@ -109,6 +109,7 @@ body {
 body > .wrapper {
     display: flex;
     height: 100%;
+    font-size: 16px;
 }
 .container.content {
     overflow-y: auto;
@@ -130,6 +131,7 @@ body > .wrapper {
 
 .sidebar {
     background-color: var(--sidebar-bg-color);
+    text-align: center;
 }
 .lead {
   text-align: center;
@@ -352,3 +354,4 @@ div.highlight pre {
 .current {
     color: var(--text-color);
 }
+

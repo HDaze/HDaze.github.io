@@ -1,4 +1,5 @@
 <div id="heatmap" style="max-width: 600px; height: 180px; padding: 2px; text-align: center;"></div>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/echarts.min.js"></script>
 <script type="text/javascript">
   var chartDom = document.getElementById('heatmap');
   var myChart = echarts.init(chartDom);
@@ -8,31 +9,27 @@
   var option;
 
   var dataMap = new Map();
-  {{ range ((where .Site.RegularPages "Type" "post")) }}
+  {{ range ((where .Site.RegularPages "blog" "诗")) }}
     var key = "{{ .Date.Format "2006-01-02" }}";
     var value = dataMap.get(key);
     var wordCount = {{ .WordCount }};
     var link = "{{ .RelPermalink }}";
     var title = "{{ .Title }}";
     
-    if (value == null || wordCount > value.wordCount) {
+    if (value == null || wordCount > value[0]) {
       dataMap.set(key, {wordCount, link, title});
     }
   {{- end -}}
 
   var data = [];
   for (const [key, value] of dataMap.entries()) {
-    data.push([key, value.wordCount]);
+    data.push([key, Math.ceil(value.wordCount / 1000)]);
   }
   
   var startDate = new Date();
   var year_Mill = startDate.setFullYear((startDate.getFullYear() - 1));
   startDate = +new Date(year_Mill);
   var endDate = +new Date();
-
-  var dayTime = 3600 * 24 * 1000;
-  startDate = echarts.format.formatTime('yyyy-MM-dd', startDate);
-  endDate = echarts.format.formatTime('yyyy-MM-dd', endDate);
 
   function heatmap_width(months){             
     var startDate = new Date();
@@ -48,8 +45,8 @@
         startDate,
         endDate
     ]);
-    return showmonth;
-  }
+    return showmonth
+  };
 
   function getRangeArr() {
     const windowWidth = window.innerWidth;
@@ -66,42 +63,29 @@
     title: {
         top: 0,
         left: 'center',
-        text: '博客日历',
-        textStyle: {
-            color: document.body.classList.contains('dark-theme') ? '#fff' : '#000'
-        }
+        text: '博客产量'
     },
     tooltip: {
       formatter: function (p) {
         const post = dataMap.get(p.data[0]);
-        return post.title + ' | ' + (post.wordCount) + ' 字';
-      },
-      textStyle: {
-          color: document.body.classList.contains('dark-theme') ? '#fff' : '#000'
+        return post.title + ' | ' + post.wordCount + ' 字';
       }
     },
     visualMap: {
         min: 0,
-        max: 7,
+        max: 10,
         type: 'piecewise',
         orient: 'horizontal',
         left: 'center',
         top: 30,
+        
         inRange: {   
-          color: ['#eeeeee', '#a6d96a', '#66bd63', '#1a9850', '#006837']
+          color: ['#7aa8744c', '#7AA874'] 
         },
-        pieces: [
-          {min: 6001, label: '> 6000', color: '#006837'},
-          {min: 4001, max: 6000, label: '4000-6000', color: '#1a9850'},
-          {min: 2001, max: 4000, label: '2000-4000', color: '#66bd63'},
-          {min: 1, max: 2000, label: '1-2000', color: '#a6d96a'},
-          {value: 0, label: '0', color: '#eeeeee'}
-        ],
+        splitNumber: 4,
+        text: ['千字', ''],
         showLabel: true,
         itemGap: 20,
-        textStyle: {
-            color: document.body.classList.contains('dark-theme') ? '#fff' : '#000'
-        }
     },
     calendar: {
         top: 80,
@@ -110,7 +94,7 @@
         cellSize: ['auto', 12],
         range: getRangeArr(),
         itemStyle: {
-            color: document.body.classList.contains('dark-theme') ? '#333' : '#F1F1F1',
+            color: '#F1F1F1',
             borderWidth: 2.5,
             borderColor: '#fff',
         },
@@ -124,15 +108,66 @@
     series: {
         type: 'heatmap',
         coordinateSystem: 'calendar',
-        data: data.map(item => [item[0], Math.min(7, Math.ceil(item[1] / 2000))]), // Normalize word count into 0-7 range
+        data: data,
     }
   };
+  
   myChart.setOption(option);
+
+  if (document.body.classList.contains('dark-theme')) {
+    myChart.setOption({
+      visualMap: {
+        inRange: {
+          color: ['#444', '#777']
+        }
+      },
+      calendar: {
+        itemStyle: {
+          color: '#333',
+          borderColor: '#555',
+        }
+      }
+    });
+  }
+
   myChart.on('click', function(params) {
     if (params.componentType === 'series') {
       const post = dataMap.get(params.data[0]);
       const link = window.location.origin + post.link;
       window.open(link, '_blank').focus();
+    }
+  });
+
+  const btn = document.querySelector(".btn-light-dark");
+  btn.addEventListener("click", function () {
+    if (document.body.classList.contains("dark-theme")) {
+      myChart.setOption({
+        visualMap: {
+          inRange: {
+            color: ['#444', '#777']
+          }
+        },
+        calendar: {
+          itemStyle: {
+            color: '#333',
+            borderColor: '#555',
+          }
+        }
+      });
+    } else {
+      myChart.setOption({
+        visualMap: {
+          inRange: {
+            color: ['#7aa8744c', '#7AA874']
+          }
+        },
+        calendar: {
+          itemStyle: {
+            color: '#F1F1F1',
+            borderColor: '#fff',
+          }
+        }
+      });
     }
   });
 </script>

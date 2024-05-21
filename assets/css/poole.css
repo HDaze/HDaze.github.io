@@ -34,6 +34,79 @@
  *
  * Update the foundational and global aspects of the page.
  */
+ :root {
+  /* Light Theme Colors */
+  --background-color-light: #F5F5F5;
+  --text-color-light: #333333;
+  --secondary-text-color-light: #555555;
+  --link-color-light: #007BFF;
+  --header-color-light: #222222;
+  --border-color-light: #DDDDDD;
+  --highlight-color-light: #FFDD57;
+  --accent-color-light: #FFC107;
+  
+  /* Dark Theme Colors */
+  --background-color-dark: #2C2C2C;
+  --text-color-dark: #CCCCCC;
+  --secondary-text-color-dark: #AAAAAA;
+  --link-color-dark: #62A8FF;
+  --header-color-dark: #E0E0E0;
+  --border-color-dark: #444444;
+  --highlight-color-dark: #FFDD57;
+  --accent-color-dark: #FFC107;
+}
+
+/* Default light theme */
+body {
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+}
+
+a {
+  color: var(--link-color-light);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--header-color-light);
+}
+
+.container.content {
+  border-color: var(--border-color-light);
+}
+
+.highlight {
+  background-color: var(--highlight-color-light);
+}
+
+.accent {
+  color: var(--accent-color-light);
+}
+
+/* Dark mode */
+body.dark-theme {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
+}
+
+body.dark-mode a {
+  color: var(--link-color-dark);
+}
+
+body.dark-mode h1, h2, h3, h4, h5, h6 {
+  color: var(--header-color-dark);
+}
+
+body.dark-mode .container.content {
+  border-color: var(--border-color-dark);
+}
+
+body.dark-mode .highlight {
+  background-color: var(--highlight-color-dark);
+}
+
+body.dark-mode .accent {
+  color: var(--accent-color-dark);
+}
 
 * {
   -webkit-box-sizing: border-box;
@@ -59,14 +132,14 @@ html {
 }
 
 body {
-  color: #515151;
+  color: var(--text-color-light);
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
 
 /* No `:visited` state is required by default (browsers will use `a`) */
 a {
-  color: var(--link-color);
+  color: var(--link-color-light);
   text-decoration: none;
 }
 /* `:focus` is linked to `:hover` for basic accessibility */
@@ -80,7 +153,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: .5rem;
   font-weight: 400;
   line-height: 1.25;
-  color: #313131;
+  color: var(--header-color-light);
   text-rendering: optimizeLegibility;
 }
 h1 {

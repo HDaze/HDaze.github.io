@@ -398,17 +398,18 @@
   .post-comments {
     margin-top: 40px;
   }
+  
   .subtle-line {
     margin-top: 5px;
     margin-bottom: 5px;
     border: 0;
     height: 1px;
-    background: #9c9c9c; /* Light gray color */
+    background: #8b8a8a; /* Light gray color */
   }
   
   .footer-navigation a {
     font-weight: normal; /* Remove bold font */
-    color: #007bff; /* Default link color */
+    color: #366da8; /* Default link color */
   }
   
   .footer-navigation a:hover {
@@ -449,9 +450,57 @@ body.dark-theme .post-title a:hover {
 
 .footer-navigation a {
     font-weight: normal; /* Remove bold font */
-    color: #007bff; /* Default link color */
+    color: #366da8; /* Default link color */
 }
 
 .footer-navigation a:hover {
     text-decoration: underline; /* Add underline on hover */
+}
+
+/* General styles for tagged posts */
+.tagged-posts {
+    padding: 1em;
+}
+
+.tagged-posts-column h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: var(--header-color); /* Assuming you have a variable for header color */
+}
+
+/* Styling for the post list to be muted blue */
+.tagged-posts-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tagged-posts-column ul li {
+    margin-bottom: 0.5em;
+}
+
+.tagged-posts-column ul li a {
+    color: #5B8AB6; /* Muted blue color */
+    text-decoration: none;
+}
+
+.tagged-posts-column ul li a:hover,
+.tagged-posts-column ul li a:focus {
+    color: #41729F; /* Slightly darker muted blue for hover/focus */
+    text-decoration: underline;
+}
+
+/* Ensure tags remain the same color */
+.tagged-posts .tag {
+    color: var(--tag-color); /* Assuming you have a variable for tag color */
+}
+
+/* Additional styles for better appearance */
+.tagged-posts-column {
+    margin-bottom: 2em;
+}
+
+.tagged-posts-column h3 {
+    border-bottom: 2px solid var(--header-color); /* Add a border to distinguish sections */
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
 }
