@@ -507,9 +507,8 @@ body.dark-theme .post-title a:hover {
 
 .timeline-container {
     display: flex;
-    justify-content: flex-start;
-    overflow-x: auto;
-    white-space: nowrap;
+    flex-wrap: wrap; /* Allow items to wrap to a new line */
+    justify-content: center;
     padding: 20px 0;
     position: relative;
   }
@@ -528,9 +527,9 @@ body.dark-theme .post-title a:hover {
   .timeline-item {
     position: relative;
     display: inline-block;
-    text-align: left; /* Align text to the left */
-    margin: 0 20px;
-    width: 120px; /* Reduced width */
+    text-align: center;
+    margin: 20px;
+    width: 120px; /* Adjusted width */
   }
   
   .timeline-item::before {
@@ -553,14 +552,14 @@ body.dark-theme .post-title a:hover {
     border-radius: 4px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     position: relative;
-    top: -30px; /* Adjust to align the content properly */
+    top: -20px; /* Adjust to align the content properly */
     z-index: 2;
-    font-size: 0.7em; /* Reduced text size */
+    font-size: 0.8em; /* Adjust text size */
   }
   
   .timeline-date {
     position: absolute;
-    top: 65%; /* Adjust as needed */
+    top: 100%; /* Place below the item */
     left: 50%;
     transform: translate(-50%, 0);
     font-size: 0.7em; /* Reduced date text size */
@@ -572,6 +571,8 @@ body.dark-theme .post-title a:hover {
       width: 100%;
     }
   
-    
+    .timeline-container::before {
+      display: none;
+    }
   }
   
