@@ -1,11 +1,4 @@
 <!-- layouts/shortcodes/timeline.html -->
 <div class="timeline-container">
-  {{ $content := delimit (split .Inner "<!--more-->") "<!--more-->" }}
-  {{ range split $content "<!--more-->" }}
-  <div class="timeline-item">
-    <div class="timeline-content">
-      {{ . | markdownify }}
-    </div>
-  </div>
-  {{ end }}
+  {{ .Inner }}
 </div>
