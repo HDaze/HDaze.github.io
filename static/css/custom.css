@@ -528,9 +528,9 @@ body.dark-theme .post-title a:hover {
   .timeline-item {
     position: relative;
     display: inline-block;
-    text-align: center;
-    margin: 0 10px;
-    width: 150px; /* Reduced width */
+    text-align: left; /* Align text to the left */
+    margin: 0 20px;
+    width: 120px; /* Reduced width */
   }
   
   .timeline-item::before {
@@ -572,8 +572,6 @@ body.dark-theme .post-title a:hover {
       width: 100%;
     }
   
-    .timeline-container::before {
-      display: none;
-    }
+    
   }
   
