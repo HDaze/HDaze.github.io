@@ -507,7 +507,7 @@ body.dark-theme .post-title a:hover {
 
 .timeline-container {
     display: flex;
-    flex-wrap: wrap; /* Allow items to wrap to a new line */
+    flex-wrap: wrap;
     justify-content: center;
     padding: 20px 0;
     position: relative;
@@ -526,7 +526,9 @@ body.dark-theme .post-title a:hover {
   
   .timeline-item {
     position: relative;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     margin: 20px;
     width: 120px; /* Adjusted width */
@@ -558,12 +560,9 @@ body.dark-theme .post-title a:hover {
   }
   
   .timeline-date {
-    position: absolute;
-    top: 100%; /* Place below the item */
-    left: 50%;
-    transform: translate(-50%, 0);
     font-size: 0.7em; /* Reduced date text size */
     color: #007bff;
+    margin-top: 10px; /* Space between content and date */
   }
   
   @media (max-width: 600px) {
