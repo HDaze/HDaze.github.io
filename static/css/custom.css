@@ -191,7 +191,7 @@
 }
 
 .tag:hover, .series-item:hover, .tagCloud-tag:hover {
-    background-color: #C98474; /* Tag hover background */
+    background-color: #465c8b; /* Tag hover background */
     color: #FFF; /* Tag hover text color */
 }
 
@@ -300,7 +300,7 @@
     position: absolute; 
     top: 0; 
     right: 0; 
-    background: #C98474; 
+    background: #465c8b; 
     padding: 1px 8px; 
     font-size: small; 
     font-style: italic; 
@@ -323,7 +323,7 @@
 }
 .rating .allstardark { 
     position: relative; 
-    color: #C98474; 
+    color: #465c8b; 
     height: 16px; 
     width: 80px; 
     background-size: auto 100%; 
@@ -544,44 +544,44 @@ body.dark-theme .post-title a:hover {
 
 /* Sidebar styles */
 .sidebar {
-    background-color: #DFDCE3; /* Sidebar background */
+    background-color: #F5EBE0; /* Sidebar background */
     color: #333; /* Default text color */
     padding: 20px;
     border-radius: 8px;
 }
 
 .sidebar .title {
-    color: #B56357; /* Title color */
+    color: #6b7a8f; /* Title color */
 }
 
 .sidebar .sidebar-nav {
-    background-color: #DFDCE3; /* Menu background */
+    background-color: #F5EBE0; /* Menu background */
     color: #333; /* Default text color */
 }
 
 .sidebar .sidebar-nav .heading {
-    color: #B56357; /* Heading color */
+    color: #c98474; /* Heading color */
 }
 
 .sidebar .sidebar-nav .bullet a {
-    color: #C98474; /* Link color */
+    color: #c98474; /* Link color */
     text-decoration: none; /* Remove underline */
     display: block;
     padding: 10px 0;
 }
 
 .sidebar .sidebar-nav .bullet a:hover {
-    color: #B56357; /* Link hover color */
+    color: #c98474; /* Link hover color */
 }
 
 .sidebar .social-icons a {
-    color: #C98474; /* Social icons color */
+    color: #465c8b; /* Social icons color */
     text-decoration: none;
     margin: 0 10px;
 }
 
 .sidebar .social-icons a:hover {
-    color: #B56357; /* Social icons hover color */
+    color: #6b7a8f; /* Social icons hover color */
 }
 
 .sidebar .copyright {
@@ -591,11 +591,11 @@ body.dark-theme .post-title a:hover {
 }
 
 .sidebar a {
-    color: #C98474;
+    color: #c98474;
 }
 
 .sidebar a:hover {
-    color: #B56357;
+    color: #b56357;
 }
 
 .sidebar img {
@@ -615,7 +615,7 @@ body.dark-theme .post-title a:hover {
 
 .sidebar-nav .bullet a:hover {
     color: #FFF; /* Change text color on hover */
-    background-color: #B56357; /* Darken background on hover */
+    background-color: #6b7a8f; /* Darken background on hover */
 }
 
 .sidebar .heading, .sidebar .bullet a {
@@ -624,20 +624,20 @@ body.dark-theme .post-title a:hover {
 
 /* General background and text colors */
 body {
-    background-color: #DFDCE3; /* Light background color */
+    background-color: #F5EBE0; /* Light background color */
     color: #333; /* Default text color */
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #B56357; /* Heading color */
+    color: #6b7a8f; /* Heading color */
 }
 
 a {
-    color: #C98474; /* Link color */
+    color: #6b7a8f; /* Link color */
 }
 
 a:hover {
-    color: #B56357; /* Link hover color */
+    color: #6b7a8f; /* Link hover color */
 }
 
 /* Card and widget background colors */
@@ -648,7 +648,7 @@ a:hover {
 }
 
 .widget:hover {
-    border-color: #C98474; /* Border hover color */
+    border-color: #465c8b; /* Border hover color */
 }
 
 /* Footer and subtle line styles */
@@ -657,9 +657,9 @@ a:hover {
 }
 
 .footer-navigation a {
-    color: #B56357; /* Footer link color */
+    color: #6b7a8f; /* Footer link color */
 }
 
 .footer-navigation a:hover {
-    color: #C98474; /* Footer link hover color */
+    color: #465c8b; /* Footer link hover color */
 }
