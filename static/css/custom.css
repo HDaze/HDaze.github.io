@@ -11,25 +11,24 @@
 
 /* Featured image styles */
 .featured-image {
-    
     width: 100%;
     height: auto;
     max-height: 200px;
     object-fit: cover;
-   
 }
+
 .homepage-featured-image {
     width: 100%;
     height: auto;
     max-height: 200px; /* Adjust the height as needed */
     object-fit: cover; /* This ensures the image covers the area without distortion */
 }
+
 .full-width {
     width: 100%;
     display: flex;
     flex-direction: column;
 }
-
 
 /* Post card styles */
 .entries {
@@ -38,22 +37,21 @@
 }
 
 .post-card {
-    border: 1px solid transparent;
+    border: none; /* Remove the border */
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
     background-color: #fff;
-    transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
+    transition: box-shadow 0.3s, transform 0.3s;
 }
 
 .post-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    border-color: #eaeaea;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .post-image img {
@@ -182,45 +180,19 @@
     margin-bottom: 5px;
 }
 
-.tag {
-    display: block;
-    background-color: #f0f0f0;
-    border-radius: 3px;
-    padding: 5px 10px;
-    font-size: 0.9em;
-    color: #979797;
-    text-decoration: none;
+.tag, .series-item, .tagCloud-tag {
+    background-color: #DCC7AA; /* Tag background */
+    color: #333; /* Tag text color */
+    border: none; /* Remove the border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 5px 10px; /* Padding */
+    font-size: 0.9em; /* Font size */
+    text-decoration: none; /* No underline */
 }
 
-.tag:hover {
-    background-color: #007bff;
-    color: #fff;
-}
-
-/* Series styles */
-.series {
-    list-style-type: none;
-    padding: 0;
-}
-
-.series li {
-    margin-bottom: 5px;
-}
-
-.series-item {
-    display: inline-block;
-    background-color: #f0f0f0;
-    border-radius: 12px;
-    padding: 5px 10px;
-    font-size:  14px;
-    color: #333;
-    margin: 2px;
-    text-decoration: none;
-    }
-
-.series-item:hover {
-    background-color: #007bff;
-    color: #fff;
+.tag:hover, .series-item:hover, .tagCloud-tag:hover {
+    background-color: #C98474; /* Tag hover background */
+    color: #FFF; /* Tag hover text color */
 }
 
 /* Tag Cloud styles */
@@ -381,42 +353,32 @@
 
 .footer {
     margin-bottom: 40px;
-  }
-  
-  .previous-post, .next-post {
+}
+
+.previous-post, .next-post {
     display: block;
     margin: 10px 0;
     font-weight: bold;
-  }
+}
 
-  
-  /* Ensure navigation and comments are vertically stacked */
-  .footer-navigation {
+/* Ensure navigation and comments are vertically stacked */
+.footer-navigation {
     margin-bottom: 20px;
-  }
-  
-  .post-comments {
+}
+
+.post-comments {
     margin-top: 40px;
-  }
-  
-  .subtle-line {
+}
+
+.subtle-line {
     margin-top: 5px;
     margin-bottom: 5px;
     border: 0;
     height: 1px;
     background: #8b8a8a; /* Light gray color */
-  }
-  
-  .footer-navigation a {
-    font-weight: normal; /* Remove bold font */
-    color: #465c8b; /* Default link color */
-  }
-  
-  .footer-navigation a:hover {
-    text-decoration: underline; /* Add underline on hover */
-  }
-  
- /* Custom styles for dark theme */
+}
+
+/* Custom styles for dark theme */
 body.dark-theme .post-card {
     background-color: #333; /* Dark gray background for cards */
     color: #fff; /* Light text color for better contrast */
@@ -505,15 +467,16 @@ body.dark-theme .post-title a:hover {
     margin-bottom: 1em;
 }
 
+/* Timeline styles */
 .timeline-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 20px 0;
     position: relative;
-  }
-  
-  .timeline-item {
+}
+
+.timeline-item {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -521,9 +484,9 @@ body.dark-theme .post-title a:hover {
     text-align: center;
     margin: 15px;
     width: 120px; /* Adjusted width */
-  }
-  
-  .timeline-item::before {
+}
+
+.timeline-item::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -532,13 +495,13 @@ body.dark-theme .post-title a:hover {
     height: 2px;
     background-color: #ddd;
     z-index: -1;
-  }
-  
-  .timeline-item:first-child::before {
+}
+
+.timeline-item:first-child::before {
     display: none; /* Hide line for the first item */
-  }
-  
-  .timeline-item::after {
+}
+
+.timeline-item::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -547,12 +510,12 @@ body.dark-theme .post-title a:hover {
     height: 10px; /* Adjusted size */
     background-color: #fff;
     border: 2px solid #465c8b;
-        border-radius: 50%;
+    border-radius: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-  }
-  
-  .timeline-item-content {
+}
+
+.timeline-item-content {
     padding: 5px 5px; /* Reduced padding */
     background-color: #f9f9f9;
     border-radius: 4px;
@@ -561,28 +524,102 @@ body.dark-theme .post-title a:hover {
     top: -10px; /* Adjust to align the content properly */
     z-index: 2;
     font-size: 0.8em; /* Adjust text size */
-  }
-  
-  .timeline-date {
+}
+
+.timeline-date {
     font-size: 0.9em; /* Reduced date text size */
     color: #468bd3;
     margin-top: 8px; /* Space between content and date */
-  }
-  
-  @media (max-width: 600px) {
-    .timeline-item {
-      width: 100%;
-    }
-  
-    .timeline-item::before {
-      display: none;
-    }
-  }
-  
+}
 
-  /* Update menu background */
-.menu {
-    background-color: #DFDCE3;
+@media (max-width: 600px) {
+    .timeline-item {
+        width: 100%;
+    }
+
+    .timeline-item::before {
+        display: none;
+    }
+}
+
+/* Sidebar styles */
+.sidebar {
+    background-color: #DFDCE3; /* Sidebar background */
+    color: #333; /* Default text color */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.sidebar .title {
+    color: #B56357; /* Title color */
+}
+
+.sidebar .sidebar-nav {
+    background-color: #DFDCE3; /* Menu background */
+    color: #333; /* Default text color */
+}
+
+.sidebar .sidebar-nav .heading {
+    color: #B56357; /* Heading color */
+}
+
+.sidebar .sidebar-nav .bullet a {
+    color: #C98474; /* Link color */
+    text-decoration: none; /* Remove underline */
+    display: block;
+    padding: 10px 0;
+}
+
+.sidebar .sidebar-nav .bullet a:hover {
+    color: #B56357; /* Link hover color */
+}
+
+.sidebar .social-icons a {
+    color: #C98474; /* Social icons color */
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.sidebar .social-icons a:hover {
+    color: #B56357; /* Social icons hover color */
+}
+
+.sidebar .copyright {
+    color: #909090; /* Copyright text color */
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.sidebar a {
+    color: #C98474;
+}
+
+.sidebar a:hover {
+    color: #B56357;
+}
+
+.sidebar img {
+    border-color: #515151; /* Image border color */
+}
+
+.sidebar p {
+    color: #909090; /* Paragraph color */
+}
+
+.sidebar-nav .bullet a {
+    color: #333; /* Darker text color for better contrast */
+    background-color: #DCC7AA; /* Light background for better readability */
+    padding: 5px; /* Add padding for better click area */
+    border-radius: 4px; /* Rounded corners for links */
+}
+
+.sidebar-nav .bullet a:hover {
+    color: #FFF; /* Change text color on hover */
+    background-color: #B56357; /* Darken background on hover */
+}
+
+.sidebar .heading, .sidebar .bullet a {
+    font-weight: bold; /* Make text bold for better readability */
 }
 
 /* General background and text colors */
@@ -604,32 +641,19 @@ a:hover {
 }
 
 /* Card and widget background colors */
-.post-card,
 .widget {
     background-color: #FFFFFF; /* Card background */
     color: #333; /* Card text color */
     border: 1px solid #DCC7AA; /* Border color */
 }
 
-.post-card:hover,
 .widget:hover {
     border-color: #C98474; /* Border hover color */
 }
 
-/* Tag styles */
-.tag, .series-item, .tagCloud-tag {
-    background-color: #DCC7AA; /* Tag background */
-    color: #333; /* Tag text color */
-}
-
-.tag:hover, .series-item:hover, .tagCloud-tag:hover {
-    background-color: #C98474; /* Tag hover background */
-    color: #FFF; /* Tag hover text color */
-}
-
 /* Footer and subtle line styles */
 .footer, .subtle-line {
-    background-color: #DFDCE3; /* Footer background color */
+    background-color: #fff; /* Footer background color */
 }
 
 .footer-navigation a {
