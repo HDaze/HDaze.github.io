@@ -84,7 +84,7 @@
 }
 
 .post-title a:hover {
-    color: #007bff;
+    color: #465c8b;
 }
 
 .post-date {
@@ -101,7 +101,7 @@
 .summary a {
     display: block;
     margin-top: 10px;
-    color: #007bff;
+    color: #465c8b;
 }
 
 .summary a:hover {
@@ -328,7 +328,7 @@
     position: absolute; 
     top: 0; 
     right: 0; 
-    background: #f99b01; 
+    background: #C98474; 
     padding: 1px 8px; 
     font-size: small; 
     font-style: italic; 
@@ -351,7 +351,7 @@
 }
 .rating .allstardark { 
     position: relative; 
-    color: #f99b01; 
+    color: #C98474; 
     height: 16px; 
     width: 80px; 
     background-size: auto 100%; 
@@ -409,7 +409,7 @@
   
   .footer-navigation a {
     font-weight: normal; /* Remove bold font */
-    color: #366da8; /* Default link color */
+    color: #465c8b; /* Default link color */
   }
   
   .footer-navigation a:hover {
@@ -450,7 +450,7 @@ body.dark-theme .post-title a:hover {
 
 .footer-navigation a {
     font-weight: normal; /* Remove bold font */
-    color: #366da8; /* Default link color */
+    color: #465c8b; /* Default link color */
 }
 
 .footer-navigation a:hover {
@@ -546,7 +546,7 @@ body.dark-theme .post-title a:hover {
     width: 10px; /* Adjusted size */
     height: 10px; /* Adjusted size */
     background-color: #fff;
-    border: 2px solid #007bff;
+    border: 2px solid #465c8b;
         border-radius: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
@@ -558,14 +558,14 @@ body.dark-theme .post-title a:hover {
     border-radius: 4px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     position: relative;
-    top: -20px; /* Adjust to align the content properly */
+    top: -10px; /* Adjust to align the content properly */
     z-index: 2;
     font-size: 0.8em; /* Adjust text size */
   }
   
   .timeline-date {
     font-size: 0.9em; /* Reduced date text size */
-    color: #007bff;
+    color: #468bd3;
     margin-top: 8px; /* Space between content and date */
   }
   
@@ -579,3 +579,63 @@ body.dark-theme .post-title a:hover {
     }
   }
   
+
+  /* Update menu background */
+.menu {
+    background-color: #DFDCE3;
+}
+
+/* General background and text colors */
+body {
+    background-color: #DFDCE3; /* Light background color */
+    color: #333; /* Default text color */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #B56357; /* Heading color */
+}
+
+a {
+    color: #C98474; /* Link color */
+}
+
+a:hover {
+    color: #B56357; /* Link hover color */
+}
+
+/* Card and widget background colors */
+.post-card,
+.widget {
+    background-color: #FFFFFF; /* Card background */
+    color: #333; /* Card text color */
+    border: 1px solid #DCC7AA; /* Border color */
+}
+
+.post-card:hover,
+.widget:hover {
+    border-color: #C98474; /* Border hover color */
+}
+
+/* Tag styles */
+.tag, .series-item, .tagCloud-tag {
+    background-color: #DCC7AA; /* Tag background */
+    color: #333; /* Tag text color */
+}
+
+.tag:hover, .series-item:hover, .tagCloud-tag:hover {
+    background-color: #C98474; /* Tag hover background */
+    color: #FFF; /* Tag hover text color */
+}
+
+/* Footer and subtle line styles */
+.footer, .subtle-line {
+    background-color: #DFDCE3; /* Footer background color */
+}
+
+.footer-navigation a {
+    color: #B56357; /* Footer link color */
+}
+
+.footer-navigation a:hover {
+    color: #C98474; /* Footer link hover color */
+}
