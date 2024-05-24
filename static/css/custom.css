@@ -680,6 +680,7 @@ body {
     height: auto !important;
   text-rendering: optimizeLegibility;
 }
+
 * {
     font-size: inherit;
 }
@@ -818,7 +819,7 @@ a:hover {
 
 .btn-light-dark {
     padding: 0;
-    margin: 1em;
+    margin: auto;
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -858,7 +859,25 @@ a:hover {
  * Flexible banner for housing site name, intro, and "footer" content. Starts
  * out above content in mobile and later moves to the side with wider viewports.
  */
- .sidebar {
+.content {
+    margin-left: 150px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 85%; /* Adjust the width to 85% to account for the narrower sidebar */
+}
+
+.hamburger {
+    display: none;
+      font-size: 1.5rem;
+                   cursor: pointer;
+                   position: absolute;
+                   top: 1rem;
+                   left: 1rem;
+                   z-index: 10;
+}
+
+.sidebar {
+    position: fixed;
     text-align: center;
     padding: 2rem 1rem;
     color: rgba(255, 255, 255, .5);
@@ -867,40 +886,79 @@ a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    width: 15%; /* Adjust the width to 15% */
+    height: 100%;
+    width: 150px;
     min-width: 150px; /* Set a minimum width to ensure it doesn't get too small */
-  }
-  @media (min-width: 48em) {
-    .sidebar {
-      top: 0;
-      left: 0;
-      bottom: 0;
+    overflow-y: auto; 
+}
+
+@media (min-width: 48em) {
+    .sidebar {  
       text-align: center; /* Center text */
       overflow-y: auto;
-      scrollbar-width: thin;
-      scrollbar-color: rgb(70, 70, 70) auto;
+       width: 12%;
+       height: 100%;
+       align-items: center; /* Center align items in the sidebar */
+       box-sizing: border-box; 
     }
-  
-    ::-webkit-scrollbar {
-      width: 7px;
+    .content {
+        max-width: 40rem;
+        margin-left: 16%;               
+      }
+
+   
+}
+
+ @media (min-width: 64em) {
+    .sidebar {        
+        text-align: center; /* Center text */
+        overflow-y: auto;
+        width: 12%;
+        height: 100%;
+        align-items: center; /* Center align items in the sidebar */
+        box-sizing: border-box; 
+    }           
+    .content {                   
+        margin-left: 16%;
+        max-width: 60rem;              
     }
-  
-    ::-webkit-scrollbar-track {
-      background: transparent;
-      border-radius: 10px;
+    .sidebar-widgets {
+        width: 8rem;
+        margin-left: 1%;
+        margin-right: 2%;
     }
-  
-    ::-webkit-scrollbar-thumb {
-      background-color: rgb(70, 70, 70);
-      border-radius: 10px;
+}        
+
+@media (max-width: 48em) {
+    .wrapper {
+        flex-direction: column;
     }
-  
-    ::-webkit-scrollbar-thumb:hover {
-      background-color: rgb(150, 150, 150);
+
+    .hamburger {
+        display: block;
     }
-  }
-  
+    
+    .sidebar {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 250px;
+        background: #f5ebe0;
+        overflow-y: auto;
+        transition: transform 0.3s ease-in-out;
+        z-index: 20;
+        transform: translateX(-100%);
+    }
+    .sidebar.active {
+        display: block;
+        transform: translateX(0);
+    }
+    .content {
+        padding-top: 4rem;
+    }
+}
   /* Sidebar links */
   .sidebar a, li {
     color: #B56357;
@@ -957,39 +1015,15 @@ a:hover {
    * Add the `sidebar-sticky` class to the sidebar's container to affix it the
    * contents to the bottom of the sidebar in tablets and up.
    */
-  @media (min-width: 48em) {
-    .sidebar-sticky {
-      top: 1rem;
-      width: 100%; /* Adjust the width to 100% to fit the sidebar */
-    }
-  }
+ 
   
   /* Container
    *
    * Align the contents of the site above the proper threshold with some margin-fu
    * with a 25%-wide `.sidebar`.
    */
-  .content {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    width: 85%; /* Adjust the width to 85% to account for the narrower sidebar */
-  }
   
-  @media (min-width: 48em) {
-    .content {
-      max-width: 38rem;
-      margin-left: 1.75rem;
-      margin-right: 2rem;
-    }
-  }
   
-  @media (min-width: 64em) {
-    .content {
-      max-width: 44rem;
-      margin-left: 1.75rem;
-      margin-right: 2rem;
-    }
-  }
   
   /* Light/Dark toggle button styles */
   .btn-light-dark {
@@ -1021,3 +1055,8 @@ a:hover {
     margin: 0 auto; /* Center the widgets */
   }
   
+
+
+
+/* Styles for mobile screens */
+

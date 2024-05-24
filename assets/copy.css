@@ -1,0 +1,92 @@
+
+ /* poison.css */
+@media (max-width: 48em) {
+    body > .wrapper, body.layout-reverse .wrapper {
+       flex-direction: column;
+    }
+    body {
+       overflow: auto !important;
+       height: auto !important;
+    }
+    .heading {
+        font-weight: 400;
+    }
+    .entries {
+        padding-left: 0em;
+    }
+    .btn-light-dark svg {
+        margin: auto;
+        width: 20px;
+        height: 20px;
+        color: black;
+    }
+}
+@media (min-width: 48em) {
+    .sidebar {
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 18rem;
+      text-align: left;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: rgb(70, 70, 70) auto;
+    }
+    
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+  
+    ::-webkit-scrollbar-track {
+      background: transparent;
+      border-radius: 10px;
+    }
+  
+    ::-webkit-scrollbar-thumb {
+      background-color:rgb(70, 70, 70);
+      border-radius: 10px;
+    }
+  
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background-color:rgb(150, 150, 150);
+    }
+  }
+
+  @media (min-width: 48em) {
+    .sidebar-sticky {
+      top: 1rem;
+      width: 16rem;
+    }
+  }
+
+  @media (min-width: 48em) {
+    .content {
+      max-width: 38rem;
+      margin-left: 2rem;
+      margin-right: 1.75rem;
+    }
+  }
+  
+  @media (min-width: 64em) {
+    .content {
+      max-width: 44rem;
+      margin-left: 2rem;
+      margin-right: 1.75rem;
+    }
+  }
+  @media (min-width: 48em) {
+    .content {
+      max-width: 38rem;
+      margin-left: 1.75rem;
+      margin-right: 2rem;
+    }
+  }
+  
+  @media (min-width: 64em) {
+    .content {
+      max-width: 44rem;
+      margin-left: 1.75rem;
+      margin-right: 2rem;
+    }
+  }
