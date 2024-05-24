@@ -122,51 +122,9 @@
     text-decoration: underline;
 }
 
-/* Archives page styles */
-.archives {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-}
-
-.year {
-    font-size: 1.5em;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-.archive-item {
-    margin-bottom: 5px;
-}
-
-.archive-date {
-    font-size: 0.9em;
-    color: #666;
-    margin-right: 10px;
-}
-
-.archive-item a {
-    text-decoration: none;
-    color: #007bff;
-}
-
-.archive-item a:hover {
-    text-decoration: underline;
-}
-
 /* Recent updates section */
 .recent-updates {
     margin-top: 40px;
-}
-
-/* General styles for widgets */
-.widget {
-    margin-bottom: 20px;
-}
-
-.widget h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
 }
 
 /* Tag styles */
@@ -232,6 +190,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-left: 15px; /* Adjust the left margin to account for the narrower sidebar */
 }
 
 .posts {
@@ -246,6 +205,7 @@
 }
 .sidebar-widgets .widget {
     margin-bottom: 20px;
+    max-width: 200px; /* Adjust the max-width for the widgets */
 }
 
 #heatmap {
@@ -379,6 +339,10 @@
 }
 
 /* Custom styles for dark theme */
+body.dark-theme .sidebar .sidebar-nav {
+    background-color: #121212; /* Menu background */
+    color: #f8bbbb; /* Default text color */
+}
 body.dark-theme .post-card {
     background-color: #333; /* Dark gray background for cards */
     color: #fff; /* Light text color for better contrast */
@@ -399,6 +363,114 @@ body.dark-theme .post-title a {
 
 body.dark-theme .post-title a:hover {
     color: #bbb; /* Slightly darker color on hover for better visibility */
+}
+/* Dark theme adjustments */
+
+/* Sidebar in dark theme */
+body.dark-theme .sidebar {
+    background-color: #121212; /* Dark background for sidebar */
+    color: #EEE; /* Light text color for better contrast */
+}
+
+/* Sidebar links in dark theme */
+body.dark-theme .sidebar a {
+    color: #c98474; /* Link color */
+}
+
+body.dark-theme .sidebar a:hover {
+    color: #FFF; /* Link hover color */
+}
+
+/* Sidebar headers in dark theme */
+body.dark-theme .sidebar h1, 
+body.dark-theme .sidebar h2, 
+body.dark-theme .sidebar h3, 
+body.dark-theme .sidebar h4, 
+body.dark-theme .sidebar h5, 
+body.dark-theme .sidebar h6 {
+    color: #DBE2E9; /* Heading color */
+    font-size: 1.2em;
+}
+
+/* Sidebar social icons in dark theme */
+body.dark-theme .sidebar .social-icons a {
+    color: #FFF; /* Social icons color */
+}
+
+body.dark-theme .sidebar p {
+    color: #9A9A9A; /* Paragraph color */
+}
+
+/* Sidebar image borders in dark theme */
+body.dark-theme .sidebar img {
+    border-color: #515151; /* Image border color */
+}
+
+/* Tag and series container in dark theme */
+body.dark-theme .widget {
+    background-color: #2d2c2c; /* Dark background for widgets */
+    color: #EEE; /* Text color for widgets */
+    border: none; /* Remove border */
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: none; /* Remove any shadow */
+    max-width: 150px; /* Adjust the width to fit within the sidebar */
+    margin: 0 auto; /* Center widgets */
+}
+
+/* Tag styles in dark theme */
+body.dark-theme .tag, 
+body.dark-theme .series-item, 
+body.dark-theme .tagCloud-tag {
+    background-color: #515151; /* Dark background for tags */
+    color: #EEE; /* Light text color for better contrast */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 4px 8px; /* Padding for better spacing */
+    font-size: 0.8em; /* Font size */
+    text-decoration: none; /* No underline */
+}
+
+body.dark-theme .tag:hover, 
+body.dark-theme .series-item:hover, 
+body.dark-theme .tagCloud-tag:hover {
+    background-color: #515151; /* Hover background color */
+    color: #FFF; /* Hover text color */
+}
+
+/* Widget headers in dark theme */
+body.dark-theme .widget h3 {
+    font-size: 1.2em; /* Font size for headers */
+    margin-bottom: 10px; /* Space below the header */
+    color: #DBE2E9; /* Header color */
+}
+
+/* Links in widget lists in dark theme */
+body.dark-theme .widget ul li a {
+    color: #268BD2; /* Link color */
+    text-decoration: none;
+}
+
+body.dark-theme .widget ul li a:hover {
+    color: #FFF; /* Hover link color */
+    text-decoration: underline;
+}
+
+/* Ensure proper spacing and alignment */
+body.dark-theme .tags, 
+body.dark-theme .series {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Space between tags and series items */
+}
+
+body.dark-theme .tags li, 
+body.dark-theme .series li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+body.dark-theme .tagged-posts-column ul li a {
+    color: #ece7e7; /* Muted blue color */
+    text-decoration: underline;
 }
 
 /* Make the lines less visible and subtle */
@@ -426,8 +498,8 @@ body.dark-theme .post-title a:hover {
 
 .tagged-posts-column h3 {
     margin-top: 0;
-    font-size: 1.5em;
-    color: var(--header-color); /* Assuming you have a variable for header color */
+    font-size: 1.3em;
+    color: #c98474; /* Assuming you have a variable for header color */
 }
 
 /* Styling for the post list to be muted blue */
@@ -441,8 +513,8 @@ body.dark-theme .post-title a:hover {
 }
 
 .tagged-posts-column ul li a {
-    color: #5B8AB6; /* Muted blue color */
-    text-decoration: none;
+    color: #3e3d3d; /* Muted blue color */
+    text-decoration: underline;
 }
 
 .tagged-posts-column ul li a:hover,
@@ -463,8 +535,6 @@ body.dark-theme .post-title a:hover {
 
 .tagged-posts-column h3 {
     border-bottom: 2px solid var(--header-color); /* Add a border to distinguish sections */
-    padding-bottom: 0.5em;
-    margin-bottom: 1em;
 }
 
 /* Timeline styles */
@@ -547,27 +617,41 @@ body.dark-theme .post-title a:hover {
     background-color: #F5EBE0; /* Sidebar background */
     color: #333; /* Default text color */
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 3px;
+    width: 170px; /* Adjust the width as needed */
+    padding: 10px; /* Adjust the padding for better spacing */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align items in the sidebar */
+}
+
+.sidebar .container {
+    max-width: 140px; /* Adjust the max-width to fit within the new sidebar width */
 }
 
 .sidebar .title {
     color: #6b7a8f; /* Title color */
+    font-size: 1.2em; 
 }
 
 .sidebar .sidebar-nav {
     background-color: #F5EBE0; /* Menu background */
+    padding-left: 0;
     color: #333; /* Default text color */
 }
 
 .sidebar .sidebar-nav .heading {
     color: #c98474; /* Heading color */
+    padding: 8px 0; /* Adjust the padding for better spacing */
+    font-size: 0.9em; /* Reduce font size */
 }
 
 .sidebar .sidebar-nav .bullet a {
     color: #c98474; /* Link color */
     text-decoration: none; /* Remove underline */
     display: block;
-    padding: 10px 0;
+    padding: 8px 0;
+    font-size: 0.9em;
 }
 
 .sidebar .sidebar-nav .bullet a:hover {
@@ -577,7 +661,7 @@ body.dark-theme .post-title a:hover {
 .sidebar .social-icons a {
     color: #465c8b; /* Social icons color */
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 5px;
 }
 
 .sidebar .social-icons a:hover {
@@ -600,6 +684,9 @@ body.dark-theme .post-title a:hover {
 
 .sidebar img {
     border-color: #515151; /* Image border color */
+    max-width: 50%; /* Adjust the logo size */
+    max-height: 50%;
+    margin: 0 auto; /* Center the logo */
 }
 
 .sidebar p {
@@ -642,9 +729,14 @@ a:hover {
 
 /* Card and widget background colors */
 .widget {
-    background-color: #FFFFFF; /* Card background */
-    color: #333; /* Card text color */
-    border: 1px solid #DCC7AA; /* Border color */
+    background-color: #F5EBE0; /* Same as the surrounding background color */
+    color: #333; /* Text color */
+    padding: 10px;
+    border: none; /* Remove the border */
+    border-radius: 8px; /* Optional: keep border radius for rounded corners */
+    box-shadow: none; /* Remove any shadow if present */
+    width: 120px;
+    max-width: 150;
 }
 
 .widget:hover {
@@ -662,4 +754,87 @@ a:hover {
 
 .footer-navigation a:hover {
     color: #465c8b; /* Footer link hover color */
+}
+
+/* Adjust the width of the tags and series containers */
+.widget {
+    margin-bottom: 20px;
+    width: 100%; /* Set width to 100% of the parent container */
+    max-width: 200px; /* Add a max-width for better control */
+    background-color: #faf9f6;
+}
+
+/* Adjust the font size of the tags and series */
+.tag, .series-item, .tagCloud-tag {
+    background-color: #f4f5f9; /* Tag background */
+    border-color: #B56357;
+    color: #333; /* Tag text color */
+    border: none; /* Remove the border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 3px 4px; /* Adjusted padding for better spacing */
+    font-size: 0.8em; /* Adjusted font size */
+    text-decoration: none; /* No underline */
+}
+
+.tag:hover, .series-item:hover, .tagCloud-tag:hover {
+    background-color: #C98474; /* Tag hover background */
+    color: #FFF; /* Tag hover text color */
+}
+
+/* Ensure tags and series are displayed as block elements */
+.tags, .series {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Add space between tags and series items */
+}
+
+/* Ensure tags and series have enough padding and margin */
+.tags li, .series li {
+    margin-bottom: 10px;
+}
+
+/* Additional styling for better readability */
+.widget h3 {
+    font-size: 1.2em; /* Adjusted font size for headers */
+    margin-bottom: 10px; /* Space below the header */
+    color: #465c8b; /* Header color */
+}
+
+.widget ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.widget ul li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+.widget ul li a {
+    color: #465c8b; /* Link color */
+    text-decoration: none;
+}
+
+.widget ul li a:hover {
+    color: #333; /* Link hover color */
+    text-decoration: underline;
+}
+
+.sidebar-about h1 {
+    color: #B56357; /* Change this to your desired color */
+    margin-top: 15;
+    font-weight: 300;
+    font-size: 1.3em;
+    font-family: "Abril Fatface", serif;
+}
+
+
+.sidebar-about img {
+    border-color: #515151; /* Image border color */
+    width: 120%; /* Adjust the logo size */
+    max-height: 300px; /* Set a maximum height */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure the image is a block element */
+    margin: 0 auto; /* Center the logo */
+    margin-block-end: 15px;
 }
