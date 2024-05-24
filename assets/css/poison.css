@@ -11,7 +11,7 @@ body.layout-reverse .wrapper {
     color: var(--sidebar-p-color);
 }
 
-@media (min-width: 48em) {
+@media (min-width: 24em) {
     .bullet {
         margin-left: 1em;
         text-decoration-line: underline;
@@ -23,8 +23,8 @@ body.layout-reverse .wrapper {
     }
     .btn-light-dark svg {
         margin: auto;
-        width: 20px;
-        height: 20px;
+        width: 10px;
+        height: 10px;
         color: black;
     }
     .container.content {
