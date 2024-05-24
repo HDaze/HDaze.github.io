@@ -856,6 +856,29 @@ a:hover {
         flex-grow: 1;
     }
 }
+@media (min-width: 48em) {
+    .bullet {
+        margin-left: 1em;
+        text-decoration-line: underline;
+       /* text-decoration-style: dotted;*/
+        text-decoration-thickness: 1%;
+    }
+    .sub-heading {
+        margin-left: 1em;
+    }
+    .btn-light-dark svg {
+        margin: auto;
+        width: 20px;
+        height: 20px;
+        color: black;
+    }
+    .container.content {
+        overflow-y: auto;
+        padding-right: 2rem;
+        flex-grow: 1;
+    }
+}
+
 /*
  * Sidebar
  *
