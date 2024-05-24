@@ -4,39 +4,55 @@
     {{ partial "head/head.html" . }}
     <!-- Google Analytics -->
     {{ if eq (getenv "HUGO_ENV") "production" }}
-      {{ partial "google_analytics.html" . }}
+        {{ partial "google_analytics.html" . }}
     {{ end }}
     <!-- ECharts library -->
     <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
     <!-- Custom CSS for mobile menu -->
-   
+    <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
+    <!-- Mobile menu script -->
+    <script src="{{ "js/mobile-menu.js" | relURL }}"></script>
 </head>
 <body class="{{ if .Site.Params.layoutReverse }}layout-reverse {{ end }}{{ if .Site.Params.dark_mode }}dark-theme{{ end }}">
     <div class="wrapper">
-        <header class="header">
-            <div class="hamburger">☰</div>
-        </header>
-        <aside class="sidebar">
-            {{ partial "sidebar/sidebar.html" . }}
-        </aside>
+        <div class="hamburger">☰</div>
+        {{ partial "sidebar/sidebar.html" . }}
         <main class="content container{{ if .IsHome }} full-width{{ end }}">
             {{ block "main" . }}
             {{ end }}
         </main>
-        <aside class="sidebar-widgets">
-            {{ block "sidebar" . }}
-                {{ if .IsHome }}
+        {{ block "sidebar" . }}
+            {{ if .IsHome }}
+                <div class="sidebar-widgets">
                     {{ partial "sidebar/tagcloud.html" . }}
                     {{ partial "sidebar/seriescloud.html" . }}
-                {{ else if eq .Kind "page" }}
-                    {{ if and (not .Params.hideToc) (not .Site.Params.hideToc) }}
-                        {{ partial "table_of_contents.html" . }}
-                    {{ end }}
+                </div>
+            {{ else if eq .Kind "page" }}
+                {{ if and (not .Params.hideToc) (not .Site.Params.hideToc) }}
+                    {{ partial "table_of_contents.html" . }}
                 {{ end }}
             {{ end }}
-        </aside>
+        {{ end }}
     </div>
-    <!-- Mobile menu script -->
-    <script src="{{ "js/mobile-menu.js" | relURL }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.createElement('div');
+            overlay.classList.add('overlay');
+            document.body.appendChild(overlay);
+
+            hamburger.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('active');
+            });
+
+            overlay.addEventListener('click', function() {
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+        });
+    </script>
+
 </body>
 </html>
