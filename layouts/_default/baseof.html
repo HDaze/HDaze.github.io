@@ -8,26 +8,36 @@
     {{ end }}
     <!-- ECharts library -->
     <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <!-- Custom CSS for mobile menu -->
+    <link rel="stylesheet" href="{{ "css/mobile-menu.css" | relURL }}">
 </head>
 <body class="{{ if .Site.Params.layoutReverse }}layout-reverse {{ end }}{{ if .Site.Params.dark_mode }}dark-theme{{ end }}">
     <div class="wrapper">
-        {{ partial "sidebar/sidebar.html" . }}
+        <header class="header">
+            <div class="hamburger">☰</div>
+            
+            </header>
+        <aside class="sidebar">
+            {{ partial "sidebar/sidebar.html" . }}
+        </aside>
         <main class="content container{{ if .IsHome }} full-width{{ end }}">
             {{ block "main" . }}
             {{ end }}
         </main>
-        {{ block "sidebar" . }}
-            {{ if .IsHome }}
-                <div class="sidebar-widgets">
+        <aside class="sidebar-widgets">
+            {{ block "sidebar" . }}
+                {{ if .IsHome }}
                     {{ partial "sidebar/tagcloud.html" . }}
                     {{ partial "sidebar/seriescloud.html" . }}
-                </div>
-            {{ else if eq .Kind "page" }}
-                {{ if and (not .Params.hideToc) (not .Site.Params.hideToc) }}
-                    {{ partial "table_of_contents.html" . }}
+                {{ else if eq .Kind "page" }}
+                    {{ if and (not .Params.hideToc) (not .Site.Params.hideToc) }}
+                        {{ partial "table_of_contents.html" . }}
+                    {{ end }}
                 {{ end }}
             {{ end }}
-        {{ end }}
+        </aside>
     </div>
+    <!-- Mobile menu script -->
+    <script src="{{ "js/mobile-menu.js" | relURL }}"></script>
 </body>
 </html>

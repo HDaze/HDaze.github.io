@@ -1,0 +1,38 @@
+/* General styles */
+
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 10;
+}
+
+
+/* Styles for mobile screens */
+@media (max-width: 48em) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .sidebar {
+        display: none;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .sidebar.active {
+        display: block;
+        transform: translateX(0);
+    }
+
+    .content {
+        padding-top: 4rem;
+    }
+}

@@ -106,21 +106,6 @@
     text-decoration: underline;
 }
 
-/* Archive link styles */
-.archive-link {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.archive-link a {
-    font-size: 1.2em;
-    color: #007bff;
-    text-decoration: none;
-}
-
-.archive-link a:hover {
-    text-decoration: underline;
-}
 
 /* Recent updates section */
 .recent-updates {
@@ -128,15 +113,6 @@
 }
 
 /* Tag styles */
-.tags {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.tags li {
-    margin-bottom: 5px;
-}
 
 .tag, .series-item, .tagCloud-tag {
     background-color: #DCC7AA; /* Tag background */
@@ -148,10 +124,7 @@
     text-decoration: none; /* No underline */
 }
 
-.tag:hover, .series-item:hover, .tagCloud-tag:hover {
-    background-color: #465c8b; /* Tag hover background */
-    color: #FFF; /* Tag hover text color */
-}
+
 
 /* Tag Cloud styles */
 .tagCloud {
@@ -208,13 +181,6 @@
     max-width: 200px; /* Adjust the max-width for the widgets */
 }
 
-#heatmap {
-    max-width: 600px;
-    height: 200px;
-    padding: 2px;
-    text-align: center;
-    margin: 0 auto 20px; /* Center the heatmap and add bottom margin */
-}
 
 /* db-card -------- start */
 .db-card { 
@@ -473,14 +439,6 @@ body.dark-theme .tagged-posts-column ul li a {
     text-decoration: underline;
 }
 
-/* Make the lines less visible and subtle */
-.subtle-line {
-    margin-top: 5px;
-    margin-bottom: 10px;
-    border: 0;
-    height: 1px;
-    background: #7b7b7b; /* Light gray color */
-}
 
 .footer-navigation a {
     font-weight: normal; /* Remove bold font */
@@ -497,6 +455,7 @@ body.dark-theme .tagged-posts-column ul li a {
 }
 
 .tagged-posts-column h3 {
+    border-bottom: 2px solid var(--header-color); /* Add a border to distinguish sections */
     margin-top: 0;
     font-size: 1.3em;
     color: #c98474; /* Assuming you have a variable for header color */
@@ -504,17 +463,19 @@ body.dark-theme .tagged-posts-column ul li a {
 
 /* Styling for the post list to be muted blue */
 .tagged-posts-column ul {
-    list-style: none;
-    padding: 0;
+    list-style-type: disc; 
+    padding-left: 20px;
 }
 
 .tagged-posts-column ul li {
     margin-bottom: 0.5em;
+    list-style-type: disc; 
 }
 
 .tagged-posts-column ul li a {
     color: #3e3d3d; /* Muted blue color */
     text-decoration: underline;
+    list-style-type: disc; 
 }
 
 .tagged-posts-column ul li a:hover,
@@ -533,9 +494,7 @@ body.dark-theme .tagged-posts-column ul li a {
     margin-bottom: 2em;
 }
 
-.tagged-posts-column h3 {
-    border-bottom: 2px solid var(--header-color); /* Add a border to distinguish sections */
-}
+
 
 /* Timeline styles */
 .timeline-container {
@@ -717,7 +676,8 @@ body {
     line-height: 1.6;
     font-family: roboto,sans-serif;
     letter-spacing: .33px;
-  
+    overflow: auto !important;
+    height: auto !important;
   text-rendering: optimizeLegibility;
 }
 * {
@@ -725,7 +685,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #6b7a8f; /* Heading color */
+    color: #C98474; /* Heading color */
 }
 
 a {
@@ -733,7 +693,7 @@ a {
 }
 
 a:hover {
-    color: #6b7a8f; /* Link hover color */
+    color: #C98474;  /* Link hover color */
 }
 .post li {
     font-size: inherit; /* Inherit the font size from the parent */
@@ -1018,16 +978,16 @@ a:hover {
   @media (min-width: 48em) {
     .content {
       max-width: 38rem;
-      margin-left: 2rem;
-      margin-right: 1.75rem;
+      margin-left: 1.75rem;
+      margin-right: 2rem;
     }
   }
   
   @media (min-width: 64em) {
     .content {
       max-width: 44rem;
-      margin-left: 2rem;
-      margin-right: 1.75rem;
+      margin-left: 1.75rem;
+      margin-right: 2rem;
     }
   }
   
