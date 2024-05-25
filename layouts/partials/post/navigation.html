@@ -1,14 +1,12 @@
-<div class="footer" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+<div class="footer-navigation" style="display: flex; justify-content: space-between; padding-top: 2rem; border-top: 1px solid #eee;">
   {{ if .PrevInSection }}
-    <a class="previous-post" href="{{ .PrevInSection.Permalink }}?ref=footer">
+    <a class="previous-post" href="{{ .PrevInSection.Permalink }}?ref=footer" style="width: 45%; text-align: left;">
       <span>« Previous</span><br>{{ .PrevInSection.Title | truncate 50 "..." }}
     </a>
   {{ end }}
   {{ if .NextInSection }}
-    <div class="next-post">
-      <a href="{{ .NextInSection.Permalink }}?ref=footer">
-        <span>Next »</span><br>{{ .NextInSection.Title | truncate 50 "..." }}
-      </a>
-    </div>
+    <a class="next-post" href="{{ .NextInSection.Permalink }}?ref=footer" style="width: 45%; text-align: right;">
+      <span>Next »</span><br>{{ .NextInSection.Title | truncate 50 "..." }}
+    </a>
   {{ end }}
 </div>

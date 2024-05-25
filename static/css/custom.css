@@ -277,32 +277,77 @@
 }
 /* db-card -------- end */
 
-.footer {
-    margin-bottom: 40px;
-}
 
-.previous-post, .next-post {
-    display: block;
-    margin: 10px 0;
-    font-weight: bold;
-}
-
-/* Ensure navigation and comments are vertically stacked */
-.footer-navigation {
-    margin-bottom: 20px;
-}
-
+/* Ensure proper spacing and alignment for related posts and navigation links */
+.related {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid #eee;
+  }
+  
+  .related-posts {
+    padding-left: 0;
+    list-style: none;
+    
+  }
+  
+  .related-posts h3 {
+    margin-top: 0;
+  }
+  
+  .related-posts li small {
+    font-size: 75%;
+    color: #999;
+  }
+  
+  .related-posts li a:hover {
+    color: #268bd2;
+    text-decoration: none;
+  }
+  
+  .related-posts li a:hover small {
+    color: inherit;
+  }
+  
+  .footer-navigation {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid #eee;
+    
+  }
+  
+  .footer-navigation .previous-post,
+  .footer-navigation .next-post {
+    width: 45%;
+  }
+  
+  .footer-navigation .previous-post {
+    text-align: left;
+  }
+  
+  .footer-navigation .next-post {
+    text-align: right;
+  }
+  
+  
+/* Post comments section */
 .post-comments {
-    margin-top: 40px;
+    margin-top: 2em;
+    padding-top: 1.5rem;
+    clear: both;
 }
+
 
 .subtle-line {
     margin-top: 5px;
     margin-bottom: 5px;
-    border: 0;
-    height: 1px;
+    border: 0.5;
+    height: 0.5px;
     background: #8b8a8a; /* Light gray color */
 }
+
 body.dark-theme {
     background-color: #1e1e1e; /* Dark background color */
     color: #e0e0e0; /* Light text color */
@@ -497,14 +542,7 @@ body.dark-theme .content {
     color: #e0e0e0; /* Light text color */
 }
 
-.footer-navigation a {
-    font-weight: normal; /* Remove bold font */
-    color: #465c8b; /* Default link color */
-}
 
-.footer-navigation a:hover {
-    text-decoration: underline; /* Add underline on hover */
-}
 
 /* General styles for tagged posts */
 .tagged-posts {
@@ -582,7 +620,6 @@ body.dark-theme .content {
     background-color: #ddd;
     z-index: -1;
 }
-
 
 .timeline-item::after {
     content: '';
@@ -783,32 +820,16 @@ a:hover {
     width: 120px;
     max-width: 150;
     margin: 0 auto; /* Center the widgets */
+    margin-bottom: 20px;
+    width: 100%; /* Set width to 100% of the parent container */
+    max-width: 200px; /* Add a max-width for better control */
+    background-color: #faf9f6;
 }
 
 .widget:hover {
     border-color: #465c8b; /* Border hover color */
 }
 
-/* Footer and subtle line styles */
-.footer, .subtle-line {
-    background-color: #fff; /* Footer background color */
-}
-
-.footer-navigation a {
-    color: #6b7a8f; /* Footer link color */
-}
-
-.footer-navigation a:hover {
-    color: #465c8b; /* Footer link hover color */
-}
-
-/* Adjust the width of the tags and series containers */
-.widget {
-    margin-bottom: 20px;
-    width: 100%; /* Set width to 100% of the parent container */
-    max-width: 200px; /* Add a max-width for better control */
-    background-color: #faf9f6;
-}
 
 /* Adjust the font size of the tags and series */
 .tag, .series-item, .tagCloud-tag {
@@ -910,32 +931,11 @@ a:hover {
         flex-grow: 1;
     }
 }
-@media (min-width: 48em) {
-    .bullet {
-        margin-left: 1em;
-        text-decoration-line: underline;
-       /* text-decoration-style: dotted;*/
-        text-decoration-thickness: 1%;
-    }
-    .sub-heading {
-        margin-left: 1em;
-    }
-    .btn-light-dark svg {
-        margin: auto;
-        width: 20px;
-        height: 20px;
-        color: black;
-    }
-    .container.content {
-        overflow-y: auto;
-        padding-right: 2rem;
-        flex-grow: 1;
-    }
-}
+
 
 
 .content {
-    margin-left: 150px;
+   
     padding-top: 2rem;
     padding-bottom: 2rem;
    /* width: 85%; /* Adjust the width to 85% to account for the narrower sidebar */
@@ -959,23 +959,46 @@ a:hover {
     font-weight: bold;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 48em) {  
+    .bullet {
+            margin-left: 1em;
+            text-decoration-line: underline;
+           /* text-decoration-style: dotted;*/
+            text-decoration-thickness: 1%;
+    }
+    .sub-heading {
+            margin-left: 1em;
+     }
+    .btn-light-dark svg {
+            margin: auto;
+            width: 20px;
+            height: 20px;
+            color: black;
+    }
+     .container.content {
+            overflow-y: auto;
+            padding-right: 2rem;
+            flex-grow: 1;  
+            margin-left: 20%;    
+    }    
     .sidebar {  
       text-align: center; /* Center text */
       overflow-y: auto;
-       width: 15%;
+       width: 13%;
        min-width: fit-content;
        height: 100%;
        align-items: center; /* Center align items in the sidebar */
-       box-sizing: border-box; 
-       
+       box-sizing: border-box;        
     }
     .content {
         max-width: 40rem;
-        margin-left: 19%;               
+        margin-left: 18%;               
       }
-  
+    .post { 
+        margin-left: 4%;     
+    }
 }
+
 .overlay {
     position: fixed;
     top: 0;
@@ -1001,8 +1024,8 @@ a:hover {
         box-sizing: border-box; 
     }           
     .content {                   
-        margin-left: 18%;
-        max-width: 50rem;              
+        margin-left: 12%;
+        max-width: 60rem;              
     }
     .sidebar-widgets {
         width: 20rem;
@@ -1234,3 +1257,4 @@ body {
     margin: 10px; /* Ensure margin value is valid */
     max-width: 100%; /* Ensure max-width value is valid */
 }
+

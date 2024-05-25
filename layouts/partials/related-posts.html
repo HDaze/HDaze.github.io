@@ -1,0 +1,12 @@
+<div class="related" style="padding-top: 2rem; padding-bottom: 2rem; border-top: 1px solid #eee;">
+  <h3>Related Posts</h3>
+  <ul class="related-posts" style="padding-left: 0; list-style: none;">
+    {{ $related := .Site.RegularPages | intersect (.Site.RegularPages.ByDate.Reverse) }}
+    {{ range first 5 $related }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <small style="font-size: 75%; color: #999;">{{ .Date.Format "Jan 2, 2006" }}</small>
+      </li>
+    {{ end }}
+  </ul>
+</div>
