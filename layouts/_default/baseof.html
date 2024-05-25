@@ -8,14 +8,23 @@
     {{ end }}
     <!-- ECharts library -->
     <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
-    <!-- Custom CSS for mobile menu -->
-    <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
-    <!-- Mobile menu script -->
+    <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}"> 
     <script src="{{ "js/mobile-menu.js" | relURL }}"></script>
 </head>
 <body class="{{ if .Site.Params.layoutReverse }}layout-reverse {{ end }}{{ if .Site.Params.dark_mode }}dark-theme{{ end }}">
     <div class="wrapper">
-        <div class="hamburger">☰</div>
+        <!-- Fixed Top Menu -->
+        <div class="fixed-top-menu">
+            <div class="hamburger">☰</div>
+            <a href="/" class="title">{{ .Site.Title }}</a> <!-- Add other items as needed -->
+            {{ partial "light_dark.html" . }}
+        </div>
+        <!-- Floating Top Menu -->
+        <div class="top-menu">
+            <div class="hamburger">☰</div>
+            <a href="/" class="title">{{ .Site.Title }}</a> <!-- Add other items as needed -->
+            {{ partial "light_dark.html" . }}
+        </div>
         {{ partial "sidebar/sidebar.html" . }}
         <main class="content container{{ if .IsHome }} full-width{{ end }}">
             {{ block "main" . }}
@@ -35,24 +44,109 @@
         {{ end }}
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.querySelector('.hamburger');
-            const sidebar = document.querySelector('.sidebar');
-            const overlay = document.createElement('div');
-            overlay.classList.add('overlay');
-            document.body.appendChild(overlay);
+   document.addEventListener('DOMContentLoaded', function() {
+    // Hamburger menu toggle
+    const hamburger = document.querySelectorAll('.hamburger');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.createElement('div');
+    overlay.classList.add('overlay');
+    document.body.appendChild(overlay);
 
-            hamburger.addEventListener('click', function() {
-                sidebar.classList.toggle('active');
-                overlay.classList.toggle('active');
-            });
-
-            overlay.addEventListener('click', function() {
-                sidebar.classList.remove('active');
-                overlay.classList.remove('active');
-            });
+    hamburger.forEach(btn => {
+        btn.addEventListener('click', function() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
         });
-    </script>
+    });
 
+    overlay.addEventListener('click', function() {
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+    });
+
+    // Floating menu show/hide on scroll
+    const topMenu = document.querySelector('.top-menu');
+    let lastScrollTop = 0;
+
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+            topMenu.classList.add('show');
+        } else {
+            topMenu.classList.remove('show');
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+
+    // Dark/Light mode toggle
+    const buttons = document.querySelectorAll(".btn-light-dark");
+    const moons = document.querySelectorAll(".moon");
+    const suns = document.querySelectorAll(".sun");
+
+    const themeFromLS = localStorage.getItem("theme");
+    const themeFromHugo = document.body.classList.contains("dark-theme") ? "dark" : null;
+    const currentTheme = themeFromLS ? themeFromHugo : themeFromHugo;
+
+    function updateIcons() {
+        if (currentTheme === "dark") {
+            document.body.classList.add("dark-theme");
+            moons.forEach(moon => moon.style.display = 'none');
+            suns.forEach(sun => sun.style.display = 'block');
+        } else {
+            document.body.classList.remove("dark-theme");
+            moons.forEach(moon => moon.style.display = 'block');
+            suns.forEach(sun => sun.style.display = 'none');
+        }
+    }
+
+    updateIcons();
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", function () {
+            document.body.classList.toggle("dark-theme");
+            let hasComments = document.getElementById("remark42");
+            let theme = "light";
+
+            if (document.body.classList.contains("dark-theme")) {
+                theme = "dark";
+                moons.forEach(moon => moon.style.display = 'none');
+                suns.forEach(sun => sun.style.display = 'block');
+                if (hasComments) {
+                    window.REMARK42.changeTheme("dark");
+                }
+            } else {
+                moons.forEach(moon => moon.style.display = 'block');
+                suns.forEach(sun => sun.style.display = 'none');
+                if (hasComments) {
+                    window.REMARK42.changeTheme("light");
+                }
+            }
+            localStorage.setItem("theme", theme);
+        });
+    });
+
+    // Dropdown menu toggle
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            const dropdownMenu = this.nextElementSibling;
+            dropdownMenu.classList.toggle('show');
+        });
+    });
+
+    // Close dropdown menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const isClickInside = dropdownToggles[0].contains(event.target) || 
+                              dropdownToggles[0].nextElementSibling.contains(event.target);
+        if (!isClickInside) {
+            const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+            dropdownMenus.forEach(menu => {
+                menu.classList.remove('show');
+            });
+        }
+    });
+});
+
+    </script>
 </body>
 </html>

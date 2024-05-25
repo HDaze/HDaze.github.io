@@ -1,37 +1,30 @@
-<script>
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const sidebar = document.querySelector('.sidebar');
     const overlay = document.createElement('div');
-
-    overlay.className = 'overlay';
+    overlay.classList.add('overlay');
     document.body.appendChild(overlay);
 
-    if (hamburger && sidebar) {
-        hamburger.addEventListener('click', function() {
-            sidebar.classList.toggle('active');
-            overlay.classList.toggle('active');
-        });
+    hamburger.addEventListener('click', function() {
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+    });
 
-        overlay.addEventListener('click', function() {
-            sidebar.classList.remove('active');
-            overlay.classList.remove('active');
-        });
-    }
+    overlay.addEventListener('click', function() {
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+    });
+
+    const topMenu = document.querySelector('.top-menu');
+    let lastScrollTop = 0;
+
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+            topMenu.classList.add('show');
+        } else {
+            topMenu.classList.remove('show');
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
 });
-</script>
-<style>
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: none;
-    z-index: 10;
-}
-.overlay.active {
-    display: block;
-}
-</style>

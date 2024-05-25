@@ -303,19 +303,24 @@
     height: 1px;
     background: #8b8a8a; /* Light gray color */
 }
+body.dark-theme {
+    background-color: #1e1e1e; /* Dark background color */
+    color: #e0e0e0; /* Light text color */
+}
 
 /* Custom styles for dark theme */
 body.dark-theme .sidebar .sidebar-nav {
-    background-color: #121212; /* Menu background */
-    color: #f8bbbb; /* Default text color */
+    background-color: #333; /* Menu background */
+    color: #e0e0e0; /* Default text color */
 }
+
 body.dark-theme .post-card {
     background-color: #333; /* Dark gray background for cards */
-    color: #fff; /* Light text color for better contrast */
+    color: #e0e0e0; /* Light text color for better contrast */
 }
 
 body.dark-theme .post-card a {
-    color: #fff; /* Light color for links and titles */
+    color: #e0e0e0; /* Light color for links and titles */
 }
 
 body.dark-theme .heatmap {
@@ -330,17 +335,29 @@ body.dark-theme .post-title a {
 body.dark-theme .post-title a:hover {
     color: #bbb; /* Slightly darker color on hover for better visibility */
 }
-/* Dark theme adjustments */
+
+body.dark-theme .footer,
+body.dark-theme .subtle-line {
+    background-color: #1e1e1e; /* Dark footer background color */
+    color: #e0e0e0; /* Light text color */
+}
+body.dark-theme .footer-navigation a {
+    color: #c0c0c0; /* Footer link color */
+}
+
+body.dark-theme .footer-navigation a:hover {
+    color: #fff; /* Footer link hover color */
+}
 
 /* Sidebar in dark theme */
 body.dark-theme .sidebar {
-    background-color: #121212; /* Dark background for sidebar */
-    color: #EEE; /* Light text color for better contrast */
+    background-color: #333; /* Dark background for sidebar */
+    color: #e0e0e0; /* Light text color for better contrast */
 }
 
 /* Sidebar links in dark theme */
 body.dark-theme .sidebar a {
-    color: #c98474; /* Link color */
+    color: #c0c0c0; /* Link color */
 }
 
 body.dark-theme .sidebar a:hover {
@@ -354,7 +371,7 @@ body.dark-theme .sidebar h3,
 body.dark-theme .sidebar h4, 
 body.dark-theme .sidebar h5, 
 body.dark-theme .sidebar h6 {
-    color: #DBE2E9; /* Heading color */
+    color: #d0d0d0; /* Heading color */
     font-size: 1.2em;
 }
 
@@ -367,14 +384,28 @@ body.dark-theme .sidebar p {
     color: #9A9A9A; /* Paragraph color */
 }
 
+body.dark-theme .sidebar-about h1 {
+    color: #B56357;
+  
+    font-weight: 300;
+    font-size: 1.4em;
+    font-family: "Abril Fatface", serif;
+  }
+
+
 /* Sidebar image borders in dark theme */
 body.dark-theme .sidebar img {
     border-color: #515151; /* Image border color */
+    width: 200%; /* Adjust the logo size */
+    max-height: 300px; /* Set a maximum height */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure the image is a block element */
+    margin: 0 10; /* Center the logo */
 }
 
 /* Tag and series container in dark theme */
 body.dark-theme .widget {
-    background-color: #2d2c2c; /* Dark background for widgets */
+    background-color: #1e1e1e; /* Dark background for widgets */
     color: #EEE; /* Text color for widgets */
     border: none; /* Remove border */
     border-radius: 8px; /* Optional: rounded corners */
@@ -382,12 +413,34 @@ body.dark-theme .widget {
     max-width: 150px; /* Adjust the width to fit within the sidebar */
     margin: 0 auto; /* Center widgets */
 }
+body.dark-theme .fixed-top-menu,
+body.dark-theme .top-menu {
+    background-color: #333; /* Dark background color */
+    color: #e0e0e0; /* Light text color */
+}
+
+/* Ensure the title and other elements are properly styled */
+body.dark-theme .fixed-top-menu .title,
+body.dark-theme .top-menu .title {
+    color: #C98474; /* Light text color */
+}
+
+/* Style the light/dark toggle button in dark mode */
+body.dark-theme .btn-light-dark {
+    background-color: #444; /* Dark background for the button */
+    color: #e0e0e0; /* Light icon color */
+}
+
+/* Ensure the icons are properly visible */
+body.dark-theme .btn-light-dark svg {
+    fill: currentColor;
+}
 
 /* Tag styles in dark theme */
 body.dark-theme .tag, 
 body.dark-theme .series-item, 
 body.dark-theme .tagCloud-tag {
-    background-color: #515151; /* Dark background for tags */
+    background-color: #555; /* Dark background for tags */
     color: #EEE; /* Light text color for better contrast */
     border: none; /* Remove border */
     border-radius: 4px; /* Rounded corners */
@@ -399,7 +452,7 @@ body.dark-theme .tagCloud-tag {
 body.dark-theme .tag:hover, 
 body.dark-theme .series-item:hover, 
 body.dark-theme .tagCloud-tag:hover {
-    background-color: #515151; /* Hover background color */
+    background-color: #666; /* Hover background color */
     color: #FFF; /* Hover text color */
 }
 
@@ -407,7 +460,7 @@ body.dark-theme .tagCloud-tag:hover {
 body.dark-theme .widget h3 {
     font-size: 1.2em; /* Font size for headers */
     margin-bottom: 10px; /* Space below the header */
-    color: #DBE2E9; /* Header color */
+    color: #d0d0d0; /* Header color */
 }
 
 /* Links in widget lists in dark theme */
@@ -439,6 +492,10 @@ body.dark-theme .tagged-posts-column ul li a {
     text-decoration: underline;
 }
 
+body.dark-theme .content {
+    background-color: #1e1e1e; /* Dark background for main content */
+    color: #e0e0e0; /* Light text color */
+}
 
 .footer-navigation a {
     font-weight: normal; /* Remove bold font */
@@ -511,24 +568,21 @@ body.dark-theme .tagged-posts-column ul li a {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: 15px;
-    width: 120px; /* Adjusted width */
+    margin: 12px;
+    width: 130px; /* Adjusted width */
 }
 
 .timeline-item::before {
     content: '';
     position: absolute;
     top: 50%;
-    left: -30px; /* Adjust to connect lines between items */
+    left: -18px; /* Adjust to connect lines between items */
     width: calc(100% + 40px); /* Extend the line across the item */
     height: 2px;
     background-color: #ddd;
     z-index: -1;
 }
 
-.timeline-item:first-child::before {
-    display: none; /* Hide line for the first item */
-}
 
 .timeline-item::after {
     content: '';
@@ -545,7 +599,8 @@ body.dark-theme .tagged-posts-column ul li a {
 }
 
 .timeline-item-content {
-    padding: 5px 5px; /* Reduced padding */
+    padding: 4px 4px; /* Adjust padding as needed */
+    margin: 0; /* Remove margin */
     background-color: #f9f9f9;
     border-radius: 4px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -553,6 +608,12 @@ body.dark-theme .tagged-posts-column ul li a {
     top: -10px; /* Adjust to align the content properly */
     z-index: 2;
     font-size: 0.8em; /* Adjust text size */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    line-height: 1; /* Adjust line height if needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 30px; /* Ensure minimum height for content */
 }
 
 .timeline-date {
@@ -572,24 +633,30 @@ body.dark-theme .tagged-posts-column ul li a {
 }
 
 /* Sidebar styles */
-.sidebar {
-    background-color: #F5EBE0; /* Sidebar background */
-    color: #333; /* Default text color */
-    padding: 20px;
-    border-radius: 3px;
-    width: 170px; /* Adjust the width as needed */
-    padding: 10px; /* Adjust the padding for better spacing */
+.sidebar {   
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Center align items in the sidebar */
-    text-align: center;
-    height: 100vh; /* Make sidebar full height */
-    box-sizing: border-box; /* Include padding and border in height */
-    text-align: center; /* Center align text in the sidebar */
+    flex-direction: column;   
+    background-color: #F5EBE0;   
+    padding: 2rem 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    flex-shrink: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 15%;
+    text-align: right;
+    overflow-y: auto;
+    /*background-color: #f5ebe0;*/
+    z-index: 1000;
+    /**transform: translateX(0%); /* Hide by default */
+    transition: transform 0.3s ease-in-out;
+ 
 }
 
 .sidebar .container {
     max-width: 140px; /* Adjust the max-width to fit within the new sidebar width */
+    
 }
 
 .sidebar .title {
@@ -799,16 +866,6 @@ a:hover {
     text-decoration: underline;
 }
 
-.sidebar-about h1 {
-    color: #B56357; /* Change this to your desired color */
-    margin-top: 15;
-    font-weight: 300;
-    font-size: 1.3em;
-    font-family: "Abril Fatface", serif;
-       
-}
-
-
 .sidebar-about img {
     border-color: #515151; /* Image border color */
     width:300px; /* Adjust the logo size */
@@ -816,8 +873,7 @@ a:hover {
     height: auto; /* Maintain aspect ratio */
     display: block; /* Ensure the image is a block element */
     margin: 0 auto; /* Center the logo */
-    margin-block-end: 15px;
-   
+    margin-block-end: 15px;   
 }
 
 .btn-light-dark {
@@ -830,15 +886,13 @@ a:hover {
     width: 20px; /* Reduced width */
     height: 20px; /* Reduced height */
     background-color: var(--moon-sun-background-color);
-    
 }
-
 
 @media (min-width: 10em) {
     .bullet {
         margin-left: 1em;
         text-decoration-line: underline;
-        text-decoration-style: dotted;
+       /* text-decoration-style: dotted;*/
         text-decoration-thickness: 1%;
     }
     .sub-heading {
@@ -879,12 +933,7 @@ a:hover {
     }
 }
 
-/*
- * Sidebar
- *
- * Flexible banner for housing site name, intro, and "footer" content. Starts
- * out above content in mobile and later moves to the side with wider viewports.
- */
+
 .content {
     margin-left: 150px;
     padding-top: 2rem;
@@ -899,27 +948,10 @@ a:hover {
      position: absolute;
      top: 1rem;
      left: 1rem;
-     z-index: 10;
+     z-index: 31;
 }
 
-.sidebar {
-    text-align: center;
-    padding: 2rem 1rem;
-    color: rgba(255, 255, 255, 0.5);
-    flex-shrink: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 15%;
-    text-align: left;
-    overflow-y: auto;
-    /*background-color: #f5ebe0;*/
-    z-index: 20;
-    /**transform: translateX(0%); /* Hide by default */
-    transition: transform 0.3s ease-in-out;
- 
-}
+
 .sidebar.active {
     transform: translateX(0);
 }
@@ -931,7 +963,8 @@ a:hover {
     .sidebar {  
       text-align: center; /* Center text */
       overflow-y: auto;
-       width: 20%;
+       width: 15%;
+       min-width: fit-content;
        height: 100%;
        align-items: center; /* Center align items in the sidebar */
        box-sizing: border-box; 
@@ -939,7 +972,7 @@ a:hover {
     }
     .content {
         max-width: 40rem;
-        margin-left: 22%;               
+        margin-left: 19%;               
       }
   
 }
@@ -950,8 +983,8 @@ a:hover {
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
-    display: none;
-    z-index: 10;
+    z-index: 999; /* Ensure this is higher than the z-index of your top menus */
+    display: none; /* Hide by default */
 }
 .overlay.active {
     display: block;
@@ -961,7 +994,8 @@ a:hover {
     .sidebar {        
         text-align: center; /* Center text */
         overflow-y: auto;
-        width: 12%;
+        min-width: fit-content;
+        width: 10%;
         height: 100%;
         align-items: center; /* Center align items in the sidebar */
         box-sizing: border-box; 
@@ -977,29 +1011,6 @@ a:hover {
     }
 }        
 
-@media (max-width: 48em) {
-    .wrapper {
-        flex-direction: column;
-    }
-    .hamburger {
-        display: block;
-    }  
-    .sidebar {
-        
-        
-        width: 250px;
-       
-        transform: translateX(-100%);
-    }
-    .sidebar.active {
-       
-        transform: translateX(0);
-    }
-    .content {
-        margin-left: 0;
-        padding-top: 4rem;
-    }
-}
 .wrapper {
     display: flex;
     height: 100vh;
@@ -1017,18 +1028,20 @@ a:hover {
   }
   .sidebar-about h1 {
     color: #B56357;
-    margin-top: 0;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
     font-weight: 300;
     font-size: 1.4em;
     font-family: "Abril Fatface", serif;
   }
+
   .sidebar-about img {
     border-color: #515151; /* Image border color */
     width: 200%; /* Adjust the logo size */
     max-height: 300px; /* Set a maximum height */
     height: auto; /* Maintain aspect ratio */
     display: block; /* Ensure the image is a block element */
-    margin: 0 10; /* Center the logo */
+    margin: 2em auto 10px; /* Center the logo */
   }
   
   /* Sidebar nav */
@@ -1037,6 +1050,7 @@ a:hover {
     margin-bottom: 2rem;
     padding-left: 0;
     list-style: none;
+    text-align: right;
   }
   
   .subnav {
@@ -1059,7 +1073,7 @@ a:hover {
   /* Light/Dark toggle button styles */
   .btn-light-dark {
     padding: 0;
-    margin: 1em;
+    margin: auto;
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -1080,18 +1094,17 @@ a:hover {
     color: var(--widget-text-color); /* Use existing text color */
     padding: 10px;
     border: none; /* Remove the border */
-    border-radius: 8px; /* Optional: keep border radius for rounded corners */
+    border-radius: 10px; /* Optional: keep border radius for rounded corners */
     box-shadow: none; /* Remove any shadow if present */
     width: 180px; /* Adjust the width to reduce the widget size */
     margin: 0 auto; /* Center the widgets */
+  
   }
   
-
-
-
 /* Dropdown menu styles */
 .dropdown {
     position: relative;
+    z-index: 50;
 }
 
 .dropdown-toggle {
@@ -1103,7 +1116,7 @@ a:hover {
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 1000;
+    z-index: 50;
     display: none;
     min-width: 10rem;
     padding: 0.5rem 0;
@@ -1149,3 +1162,75 @@ a:hover {
     background-color: #f8f9fa;
 }
 
+/* Floating top menu/bar styles */
+.fixed-top-menu, .top-menu {
+    position: fixed;
+    display: none; /* Hide by default */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f5ebe0; /* Adjust background color as needed */
+    color: #333;    
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 90;
+}
+
+.title {
+    font-size: 1.2rem;
+    flex: 1; /* Ensure the title takes up available space */
+    text-align: center; /* Center the title text */
+    color: #C98474;       
+    font-weight: 300;  
+    font-family: "Abril Fatface", serif;       
+}
+
+
+.btn-light-dark svg {
+    fill: currentColor;
+}
+
+@media (max-width: 48em) {
+    .wrapper {
+        flex-direction: column;
+    }
+    .hamburger {
+        display: block;
+    }
+    .sidebar {
+        width: 250px;
+        transform: translateX(-100%);
+    }
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .fixed-top-menu, .top-menu {
+        display: flex; /* Show on small screens */
+    }
+
+    .top-menu.show {
+        transform: translateY(0);
+    }
+    
+    .fixed-top-menu.hide {
+        transform: translateY(-100%);
+    }
+    
+    .content {
+        margin-left: 0;
+        padding-top: 4rem;
+    }
+}
+
+/* Ensure valid CSS syntax */
+body {
+    -webkit-text-size-adjust: 100%; /* Example correction */
+}
+
+.custom-class {
+    margin: 10px; /* Ensure margin value is valid */
+    max-width: 100%; /* Ensure max-width value is valid */
+}
