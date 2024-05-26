@@ -82,7 +82,7 @@
 }
 
 .post-title a:hover {
-    color: #465c8b;
+    color: #F7A38F;
 }
 
 .post-date {
@@ -99,7 +99,7 @@
 .summary a {
     display: block;
     margin-top: 10px;
-    color: #465c8b;
+    color: #746A67;
 }
 
 .summary a:hover {
@@ -226,7 +226,7 @@
     position: absolute; 
     top: 0; 
     right: 0; 
-    background: #465c8b; 
+    background: #598DA0; 
     padding: 1px 8px; 
     font-size: small; 
     font-style: italic; 
@@ -249,7 +249,7 @@
 }
 .rating .allstardark { 
     position: relative; 
-    color: #465c8b; 
+    color: #598DA0; 
     height: 16px; 
     width: 80px; 
     background-size: auto 100%; 
@@ -401,11 +401,13 @@ body.dark-theme .sidebar {
 }
 
 /* Sidebar links in dark theme */
-body.dark-theme .sidebar a {
+body.dark-theme .sidebar a,
+body.dark-theme .sidebar-about h1 {
     color: #c0c0c0; /* Link color */
 }
 
-body.dark-theme .sidebar a:hover {
+body.dark-theme .sidebar a:hover,
+body.dark-theme .sidebar-about h1:hover  {
     color: #FFF; /* Link hover color */
 }
 
@@ -430,7 +432,7 @@ body.dark-theme .sidebar p {
 }
 
 body.dark-theme .sidebar-about h1 {
-    color: #B56357;
+    color: #333;
   
     font-weight: 300;
     font-size: 1.4em;
@@ -467,7 +469,7 @@ body.dark-theme .top-menu {
 /* Ensure the title and other elements are properly styled */
 body.dark-theme .fixed-top-menu .title,
 body.dark-theme .top-menu .title {
-    color: #C98474; /* Light text color */
+    color: #C97675; /* Light text color */
 }
 
 /* Style the light/dark toggle button in dark mode */
@@ -534,6 +536,10 @@ body.dark-theme .series li {
 
 body.dark-theme .tagged-posts-column ul li a {
     color: #ece7e7; /* Muted blue color */
+    text-decoration: none;
+}
+body.dark-theme .tagged-posts-column ul li a:hover {
+    color: #F7A38F; /* Muted blue color */
     text-decoration: underline;
 }
 
@@ -569,13 +575,13 @@ body.dark-theme .content {
 
 .tagged-posts-column ul li a {
     color: #3e3d3d; /* Muted blue color */
-    text-decoration: underline;
+    text-decoration: none;
     list-style-type: disc; 
 }
 
 .tagged-posts-column ul li a:hover,
 .tagged-posts-column ul li a:focus {
-    color: #41729F; /* Slightly darker muted blue for hover/focus */
+    color: #F7A38F; /* Slightly darker muted blue for hover/focus */
     text-decoration: underline;
 }
 
@@ -629,7 +635,7 @@ body.dark-theme .content {
     width: 10px; /* Adjusted size */
     height: 10px; /* Adjusted size */
     background-color: #fff;
-    border: 2px solid #465c8b;
+    border: 2px solid #598DA0;
     border-radius: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
@@ -688,30 +694,34 @@ body.dark-theme .content {
     z-index: 1000;
     /**transform: translateX(0%); /* Hide by default */
     transition: transform 0.3s ease-in-out;
- 
+    align-items: right;
 }
 
 .sidebar .container {
     max-width: 140px; /* Adjust the max-width to fit within the new sidebar width */
-    
+    align-items: right;
+    text-align: right;
 }
 
 .sidebar .title {
-    color: #6b7a8f; /* Title color */
+    color: #598DA0; /* Title color */
     font-size: 1.2em; 
+    text-align: right;
 }
 
 .sidebar .sidebar-nav {
     background-color: #F5EBE0; /* Menu background */
     padding-left: 0;
     color: #333; /* Default text color */
-    
+    align-items: right;
+    text-align: right;
 }
 
 .sidebar .sidebar-nav .heading {
     color: #c98474; /* Heading color */
     padding: 8px 0; /* Adjust the padding for better spacing */
     font-size: 0.9em; /* Reduce font size */
+    text-align: right;
 }
 
 .sidebar .sidebar-nav .bullet a {
@@ -727,28 +737,29 @@ body.dark-theme .content {
 }
 
 .sidebar .social-icons a {
-    color: #465c8b; /* Social icons color */
+    color: #598DA0; /* Social icons color */
     text-decoration: none;
     margin: 0 5px;
 }
 
 .sidebar .social-icons a:hover {
-    color: #6b7a8f; /* Social icons hover color */
+    color: #F7A38F; /* Social icons hover color */
 }
 
 .sidebar .copyright {
     color: #909090; /* Copyright text color */
-    margin-top: 20px;
-    font-size: 0.9em;
+    margin-top: 25px;
+    font-size: 0.7em;
 }
 
 .sidebar a {
     color: #c98474;
-    text-align: center;
+    text-align: right;
 }
 
 .sidebar a:hover {
-    color: #b56357;
+    color: #F7A38F;
+   
 }
 
 
@@ -761,6 +772,7 @@ body.dark-theme .content {
     background-color: #DCC7AA; /* Light background for better readability */
     padding: 5px; /* Add padding for better click area */
     border-radius: 4px; /* Rounded corners for links */
+    
 }
 
 .sidebar-nav .bullet a:hover {
@@ -792,7 +804,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #C98474; /* Heading color */
+    color: #C97675; /* Heading color */
 }
 h1 {font-size: 1.4em;}
 h2 {font-size: 1.3em;}
@@ -801,7 +813,7 @@ a {
 }
 
 a:hover {
-    color: #C98474;  /* Link hover color */
+    color: #F7A38F;  /* Link hover color */
 }
 .post li {
     font-size: inherit; /* Inherit the font size from the parent */
@@ -827,14 +839,14 @@ a:hover {
 }
 
 .widget:hover {
-    border-color: #465c8b; /* Border hover color */
+    border-color: #598DA0; /* Border hover color */
 }
 
 
 /* Adjust the font size of the tags and series */
 .tag, .series-item, .tagCloud-tag {
-    background-color: #f4f5f9; /* Tag background */
-    border-color: #B56357;
+    background-color: #F5E6DF; /* Tag background */
+    border-color: #333;
     color: #333; /* Tag text color */
     border: none; /* Remove the border */
     border-radius: 4px; /* Rounded corners */
@@ -844,7 +856,7 @@ a:hover {
 }
 
 .tag:hover, .series-item:hover, .tagCloud-tag:hover {
-    background-color: #C98474; /* Tag hover background */
+    background-color: #C97675; /* Tag hover background */
     color: #FFF; /* Tag hover text color */
 }
 
@@ -864,7 +876,7 @@ a:hover {
 .widget h3 {
     font-size: 1.2em; /* Adjusted font size for headers */
     margin-bottom: 10px; /* Space below the header */
-    color: #465c8b; /* Header color */
+    color: #C97675; /* Header color */
 }
 
 .widget ul {
@@ -878,7 +890,7 @@ a:hover {
 }
 
 .widget ul li a {
-    color: #465c8b; /* Link color */
+    color: #598DA0; /* Link color */
     text-decoration: none;
 }
 
@@ -887,15 +899,7 @@ a:hover {
     text-decoration: underline;
 }
 
-.sidebar-about img {
-    border-color: #515151; /* Image border color */
-    width:300px; /* Adjust the logo size */
-    max-height: 300px; /* Set a maximum height */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Ensure the image is a block element */
-    margin: 0 auto; /* Center the logo */
-    margin-block-end: 15px;   
-}
+
 
 .btn-light-dark {
     padding: 0;
@@ -904,8 +908,8 @@ a:hover {
     border: none;
     cursor: pointer;
     text-align: center;
-    width: 20px; /* Reduced width */
-    height: 20px; /* Reduced height */
+    width: 15px; /* Reduced width */
+    height: 15px; /* Reduced height */
     background-color: var(--moon-sun-background-color);
 }
 
@@ -984,7 +988,7 @@ a:hover {
     .sidebar {  
       text-align: center; /* Center text */
       overflow-y: auto;
-       width: 13%;
+       width: 15%;
        min-width: fit-content;
        height: 100%;
        align-items: center; /* Center align items in the sidebar */
@@ -1018,14 +1022,14 @@ a:hover {
         text-align: center; /* Center text */
         overflow-y: auto;
         min-width: fit-content;
-        width: 10%;
+        width: 15%;
         height: 100%;
         align-items: center; /* Center align items in the sidebar */
         box-sizing: border-box; 
     }           
     .content {                   
         margin-left: 12%;
-        max-width: 60rem;              
+        max-width: 50rem;              
     }
     .sidebar-widgets {
         width: 20rem;
@@ -1040,33 +1044,41 @@ a:hover {
 }
   /* Sidebar links */
   .sidebar a, li {
-    color: #B56357;
+    color: #444;
     font-size: 1.1em;
   }
   
   /* About section */
   .sidebar-about {
-    text-align: center;
+    text-align: right;
     color: #b56357;
   }
   .sidebar-about h1 {
-    color: #B56357;
+    color: #444;
     margin-top: 2rem;
     margin-bottom: 1rem;
     font-weight: 300;
     font-size: 1.4em;
     font-family: "Abril Fatface", serif;
   }
+  .sidebar-about h1:hover {
+    color: #F7A38F;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+    font-size: 1.5em;
+    font-family: "Abril Fatface", serif;
+  }
 
   .sidebar-about img {
     border-color: #515151; /* Image border color */
-    width: 200%; /* Adjust the logo size */
+    width: 100px; /* Adjust the logo size */
     max-height: 300px; /* Set a maximum height */
     height: auto; /* Maintain aspect ratio */
     display: block; /* Ensure the image is a block element */
     margin: 2em auto 10px; /* Center the logo */
-  }
-  
+    margin-block-end: 15px; 
+}
   /* Sidebar nav */
   .sidebar-nav {
     margin-top: 2rem;
@@ -1074,8 +1086,13 @@ a:hover {
     padding-left: 0;
     list-style: none;
     text-align: right;
+    
   }
   
+  .sidebar-nav .heading:hover {
+     font-size: 1em;
+    }
+
   .subnav {
     list-style: none;
     padding-left: 0;
@@ -1087,6 +1104,7 @@ a:hover {
   a.sidebar-nav-item:hover,
   a.sidebar-nav-item:focus {
     text-decoration: underline;
+    
   }
   .sidebar-nav-item.active {
     font-weight: bold;
@@ -1205,7 +1223,7 @@ a:hover {
     font-size: 1.2rem;
     flex: 1; /* Ensure the title takes up available space */
     text-align: center; /* Center the title text */
-    color: #C98474;       
+    color: #C97675;       
     font-weight: 300;  
     font-family: "Abril Fatface", serif;       
 }
