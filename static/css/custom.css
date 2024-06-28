@@ -938,8 +938,7 @@ a:hover {
 
 
 
-.content {
-   
+.content {   
     padding-top: 2rem;
     padding-bottom: 2rem;
    /* width: 85%; /* Adjust the width to 85% to account for the narrower sidebar */
@@ -1028,12 +1027,12 @@ a:hover {
         box-sizing: border-box; 
     }           
     .content {                   
-        margin-left: 12%;
+        margin-left: 25%;
         max-width: 50rem;              
     }
     .sidebar-widgets {
-        width: 20rem;
-        margin-left: 3%;
+        width: 10%;
+        margin-left: 2%;
         margin-right: 3%;
     }
 }        
