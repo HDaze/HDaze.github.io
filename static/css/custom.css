@@ -2,13 +2,20 @@
 
 /* Full-width image styles */
 .full-width-image {
-    width: 100%;
+    width: 90%;
     height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-
+.center-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 /* Featured image styles */
 .featured-image {
     width: 100%;
@@ -29,7 +36,30 @@
     display: flex;
     flex-direction: column;
 }
-
+.side-by-side {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .side-by-side .image-wrapper {
+    flex: 1 1 calc(50% - 10px);
+    box-sizing: border-box;
+  }
+  
+  .side-by-side img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  @media (max-width: 768px) {
+    .side-by-side .image-wrapper {
+      flex: 1 1 100%;
+    }
+  }
+  
 /* Post card styles */
 .entries {
     list-style: none;

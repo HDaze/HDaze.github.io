@@ -1,7 +1,7 @@
 +++
 title = '六月总结'
 date = 2024-06-13T16:17:40-07:00
-tags = ['月度总结']
+tags = ['月度/年度总结']
 featuredImage = "/Junesummary.jpg"
 +++
 
