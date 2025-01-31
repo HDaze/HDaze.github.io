@@ -14,13 +14,15 @@ pluralizelisttitles = false
     favicon = "/favicon2.png"         # path to favicon (defaults to favicon.png)
 
     front_page_content = ["blog", "诗"] # Equivalent to the default value, add page bundle names to include them on the front page.
-
-    
+    imageBaseURL = "https://cdn.thehdaze.com/theHDaze/static/images/"
+  
 menu = [
     {Name = "博客 | Blog", URL = "/blog/", HasChildren = false},
     {Name = "黑雨 | Poems", URL = "/诗/", HasChildren = false},
     {Name = "关于 | About", URL = "/about/", HasChildren = false},
 ]
+[outputs]
+section = ["HTML"]
 
 
     

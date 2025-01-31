@@ -1,0 +1,6 @@
+<div class="image-container">
+  <img src="{{ .Site.Params.imageBaseURL }}{{ .Get 0 }}" alt="{{ .Get 1 }}" {{ with .Get 2 }}class="{{ . }}"{{ end }}>
+  {{ if .Get 3 }}
+  <p class="image-note">{{ .Get 3 }}</p>
+  {{ end }}
+</div>

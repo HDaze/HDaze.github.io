@@ -7,15 +7,27 @@
             (dict "name" "书影音" "tags" (slice "书" "影视" "音乐"))
             (dict "name" "随笔总结" "tags" (slice "随笔" "总结"))
         }}
+        
         {{ range $tagGroups }}
             {{ $posts := where (site.RegularPages) "Params.tags" "intersect" .tags }}
             {{ if gt (len $posts) 0 }}
             <div class="tagged-posts-column">
-                <h3>{{ .name }}</h3>
-                <ul>
-                    {{ range $posts }}
+                <!-- Clickable Title with Expand/Collapse Icon -->
+                <h3 class="tag-title" data-tag="{{ .name | urlize }}">
+                    <span class="toggle-icon">▶</span> {{ .name }} ({{ len $posts }})
+                </h3>
+                
+                <!-- Hidden Post List (Default: Hidden) -->
+                <ul id="tag-list-{{ .name | urlize }}" class="tag-list hidden">
+                    {{ range first 5 $posts }} <!-- Show only the latest 5 posts -->
                         <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
                     {{ end }}
+                    
+                    {{ if gt (len $posts) 5 }} <!-- If more than 5 posts exist -->
+                    <li class="see-more">
+                        <a href="{{ "/tags/" | absLangURL }}{{ .name | urlize }}">See More...</a>
+                    </li>
+                {{ end }}
                 </ul>
             </div>
             {{ end }}

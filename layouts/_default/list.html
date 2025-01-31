@@ -2,37 +2,40 @@
 <h1 class="title">{{ .Title }}</h1>
 <ul class="entries">
     {{ range .Pages.GroupByDate "2006" }}
+    {{ if eq (len .Pages) 0 }}
+    <p>No posts available yet.</p>
+{{ end }}
+
         <h3 class="year-header">{{ .Key }}</h3>
+        <ul> <!-- Nested list to properly group posts under year headers -->
         {{ range .Pages }}
             <li class="post-card">
-                {{ if .Params.featuredImage }}
                 <div class="post-image">
-                    <img src="{{ .Params.featuredImage | absURL }}" alt="{{ .Title }}">
+                    {{ if .Params.featuredImage }}
+                        <img src="{{ .Site.Params.imageBaseURL }}{{ .Params.featuredImage }}" alt="{{ .Title }}" class="featured-image">
+                              {{ end }}
                 </div>
-                {{ end }}
+                
                 <div class="post-content">
                     <div class="post-header">
                         <h2 class="post-title">
                             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                         </h2>
-                        <span class="post-date">{{ .Date | time.Format ":date_long" }}</span>
+                        <span class="post-date">{{ .Date | dateFormat "January 2, 2006" }}</span>
                     </div>
                     <div class="summary">
-                        {{ if .Params.description }}
-                            {{ .Params.description | truncate 50 }}
-                            {{ if gt (len .Params.description) 50 }}
+                        {{ .Summary | truncate 150 }}
+                        {{ if gt (len .Summary) 150 }}
+                            <div class="read-more-link">
                                 <a href="{{ .RelPermalink }}">Read More…</a>
-                            {{ end }}
-                        {{ else }}
-                            {{ .Summary | truncate 50 }}
-                            {{ if gt (len .Summary) 50 }}
-                                <a href="{{ .RelPermalink }}">Read More…</a>
-                            {{ end }}
+                            </div>
                         {{ end }}
                     </div>
+                    
                 </div>
             </li>
         {{ end }}
+        </ul>
     {{ end }}
 </ul>
 {{ end }}

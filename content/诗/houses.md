@@ -2,6 +2,7 @@
 title = '房子是安息地'
 date = 2024-05-14T21:26:18-07:00
 tags = ['诗']
+featuredImage = "houses.webp"
 +++
 
 房子整齐地沉在黑暗里  

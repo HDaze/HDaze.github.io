@@ -2,6 +2,7 @@
 title = '荒山'
 date = 2024-05-14T21:29:49-07:00
 tags = ['诗']
+featuredImage = "cloud.webp"
 +++
 
 蛛网是树上燃起的火焰  

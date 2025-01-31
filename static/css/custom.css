@@ -2,7 +2,7 @@
 
 /* Full-width image styles */
 .full-width-image {
-    width: 90%;
+    width:100%;
     height: auto;
     display: block;
     margin-left: auto;
@@ -53,88 +53,11 @@
     height: auto;
     border-radius: 8px;
   }
-  
-  @media (max-width: 768px) {
-    .side-by-side .image-wrapper {
-      flex: 1 1 100%;
-    }
-  }
-  
-/* Post card styles */
-.entries {
-    list-style: none;
-    padding: 0;
-}
+ 
 
-.post-card {
-    border: none; /* Remove the border */
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
-    background-color: #fff;
-    transition: box-shadow 0.3s, transform 0.3s;
-}
 
-.post-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
+ 
 
-.post-image img {
-    width: 100%;
-    height: auto;
-    max-height: 200px;
-    object-fit: cover;
-}
-
-.post-content {
-    padding: 15px;
-    flex: 1;
-}
-
-.post-header {
-    margin-bottom: 10px;
-}
-
-.post-title {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin: 0;
-}
-
-.post-title a {
-    text-decoration: none;
-    color: #333;
-}
-
-.post-title a:hover {
-    color: #F7A38F;
-}
-
-.post-date {
-    font-size: 0.9em;
-    color: #666;
-}
-
-.summary {
-    font-size: 1em;
-    color: #333;
-    margin-top: 10px;
-}
-
-.summary a {
-    display: block;
-    margin-top: 10px;
-    color: #746A67;
-}
-
-.summary a:hover {
-    text-decoration: underline;
-}
 
 
 /* Recent updates section */
@@ -159,6 +82,7 @@
 /* Tag Cloud styles */
 .tagCloud {
     margin-bottom: 20px;
+    
 }
 
 .tagCloud-tags {
@@ -192,9 +116,10 @@
 .main-content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+   
+    gap: 20px; /* Space between list and sidebar */
     margin-left: 15px; /* Adjust the left margin to account for the narrower sidebar */
-}
+    align-items: flex-start;}
 
 .posts {
     flex: 0 1 70%;
@@ -216,8 +141,11 @@
 .db-card { 
     margin: 2.5rem 3rem; 
     background: var(--card-background); 
-    border-radius: 7px; 
+    border-radius: 5px; 
     box-shadow: 0 6px 10px 0 #00000053; 
+    max-height: 180px;
+    max-width: 80%;
+    
 }
 .db-card-subject { 
     display: flex; 
@@ -247,16 +175,16 @@
     text-decoration: none !important; 
 }
 .db-card-abstract, .db-card-comment { 
-    font-size: 13px; 
+    font-size: 12px; 
     overflow: auto; 
-    max-height: 10rem; 
+    max-height: 5rem; 
     color: var(--card-text-color-main); 
 }
 .db-card-cate { 
     position: absolute; 
     top: 0; 
     right: 0; 
-    background: #598DA0; 
+    background: #c98474; 
     padding: 1px 8px; 
     font-size: small; 
     font-style: italic; 
@@ -264,8 +192,8 @@
     text-transform: capitalize; 
 }
 .db-card-post img { 
-    width: 100px !important; 
-    height: 150px !important; 
+    width: 90px !important; 
+    height: 120px !important; 
     border-radius: 4px; 
     -o-object-fit: cover; 
     object-fit: cover; 
@@ -279,7 +207,7 @@
 }
 .rating .allstardark { 
     position: relative; 
-    color: #598DA0; 
+    color: #c98474; 
     height: 16px; 
     width: 80px; 
     background-size: auto 100%; 
@@ -290,21 +218,14 @@
 .rating .allstarlight { 
     position: absolute; 
     left: 0; 
-    color: #f99b01; 
+    color: #b56357; 
     height: 16px; 
     overflow: hidden; 
     background-size: auto 100%; 
     background-repeat: repeat; 
     background-image: url(data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiPjxwYXRoIGQ9Ik05MDguMSAzNTMuMWwtMjUzLjktMzYuOUw1NDAuNyA4Ni4xYy0zLjEtNi4zLTguMi0xMS40LTE0LjUtMTQuNS0xNS44LTcuOC0zNS0xLjMtNDIuOSAxNC41TDM2OS44IDMxNi4ybC0yNTMuOSAzNi45Yy03IDEtMTMuNCA0LjMtMTguMyA5LjMtMTIuMyAxMi43LTEyLjEgMzIuOS42IDQ1LjNsMTgzLjcgMTc5LjEtNDMuNCAyNTIuOWMtMS4yIDYuOS0uMSAxNC4xIDMuMiAyMC4zIDguMiAxNS42IDI3LjYgMjEuNyA0My4yIDEzLjRMNTEyIDc1NGwyMjcuMSAxMTkuNGM2LjIgMy4zIDEzLjQgNC40IDIwLjMgMy4yIDE3LjQtMyAyOS4xLTE5LjUgMjYuMS0zNi45bC00My40LTI1Mi45IDE4My43LTE3OS4xYzUtNC45IDguMy0xMS4zIDkuMy0xOC4zIDIuNy0xNy41LTkuNS0zMy43LTI3LTM2LjN6IiBmaWxsPSIjZjk5YjAxIi8+PC9zdmc+); 
 }
-@media (max-width:550px) {
-    .db-card { 
-        margin: 0.8rem 1rem; 
-    }
-    .db-card-comment { 
-        display: none; 
-    }
-}
+
 /* db-card -------- end */
 
 
@@ -462,8 +383,7 @@ body.dark-theme .sidebar p {
 }
 
 body.dark-theme .sidebar-about h1 {
-    color: #333;
-  
+    color: #d1d1d1;  
     font-weight: 300;
     font-size: 1.4em;
     font-family: "Abril Fatface", serif;
@@ -580,51 +500,6 @@ body.dark-theme .content {
 
 
 
-/* General styles for tagged posts */
-.tagged-posts {
-    padding: 1em;
-}
-
-.tagged-posts-column h3 {
-    border-bottom: 2px solid var(--header-color); /* Add a border to distinguish sections */
-    margin-top: 0;
-    font-size: 1.2em;
-    color: #c98474; /* Assuming you have a variable for header color */
-}
-
-/* Styling for the post list to be muted blue */
-.tagged-posts-column ul {
-    list-style-type: disc; 
-    padding-left: 20px;
-}
-
-.tagged-posts-column ul li {
-    margin-bottom: 0.5em;
-    list-style-type: disc; 
-}
-
-.tagged-posts-column ul li a {
-    color: #3e3d3d; /* Muted blue color */
-    text-decoration: none;
-    list-style-type: disc; 
-}
-
-.tagged-posts-column ul li a:hover,
-.tagged-posts-column ul li a:focus {
-    color: #F7A38F; /* Slightly darker muted blue for hover/focus */
-    text-decoration: underline;
-}
-
-/* Ensure tags remain the same color */
-.tagged-posts .tag {
-    color: var(--tag-color); /* Assuming you have a variable for tag color */
-}
-
-/* Additional styles for better appearance */
-.tagged-posts-column {
-    margin-bottom: 2em;
-}
-
 
 
 /* Timeline styles */
@@ -695,19 +570,10 @@ body.dark-theme .content {
     margin-top: 8px; /* Space between content and date */
 }
 
-@media (max-width: 600px) {
-    .timeline-item {
-        width: 100%;
-    }
-
-    .timeline-item::before {
-        display: none;
-    }
-}
-
 /* Sidebar styles */
 .sidebar {   
     display: flex;
+    flex:1;
     flex-direction: column;   
     background-color: #F5EBE0;   
     padding: 2rem 1rem;
@@ -725,6 +591,10 @@ body.dark-theme .content {
     /**transform: translateX(0%); /* Hide by default */
     transition: transform 0.3s ease-in-out;
     align-items: right;
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    height: auto;
 }
 
 .sidebar .container {
@@ -943,36 +813,18 @@ a:hover {
     background-color: var(--moon-sun-background-color);
 }
 
-@media (min-width: 10em) {
-    .bullet {
-        margin-left: 1em;
-        text-decoration-line: underline;
-       /* text-decoration-style: dotted;*/
-        text-decoration-thickness: 1%;
-    }
-    .sub-heading {
-        margin-left: 1em;
-    }
-    .btn-light-dark svg {
-        margin: auto;
-        width: 10px;
-        height: 10px;
-        color: black;
-    }
-    .container.content {
-        overflow-y: auto;
-        padding-right: 2rem;
-        flex-grow: 1;
-    }
-}
 
 
 
 .content {   
     padding-top: 2rem;
     padding-bottom: 2rem;
-   /* width: 85%; /* Adjust the width to 85% to account for the narrower sidebar */
+    width: 85%; /* Adjust the width to 85% to account for the narrower sidebar */
+   max-width: none;
+   margin: 0 auto;
+   
 }
+
 
 .hamburger {
     display: none;
@@ -992,46 +844,12 @@ a:hover {
     font-weight: bold;
 }
 
-@media (min-width: 48em) {  
-    .bullet {
-            margin-left: 1em;
-            text-decoration-line: underline;
-           /* text-decoration-style: dotted;*/
-            text-decoration-thickness: 1%;
-    }
-    .sub-heading {
-            margin-left: 1em;
-     }
-    .btn-light-dark svg {
-            margin: auto;
-            width: 20px;
-            height: 20px;
-            color: black;
-    }
-     .container.content {
-            overflow-y: auto;
-            padding-right: 2rem;
-            flex-grow: 1;  
-            margin-left: 20%;    
-    }    
-    .sidebar {  
-      text-align: center; /* Center text */
-      overflow-y: auto;
-       width: 15%;
-       min-width: fit-content;
-       height: 100%;
-       align-items: center; /* Center align items in the sidebar */
-       box-sizing: border-box;        
-    }
-    .content {
-        max-width: 40rem;
-        margin-left: 18%;               
-      }
-    .post { 
-        margin-left: 4%;     
-    }
+.posts {
+    overflow: visible !important; /* Ensure it expands naturally */
+    height: auto !important; /* Remove any fixed height */
+    flex-grow: 1; /* Allow it to expand */
+    width: 100%;
 }
-
 .overlay {
     position: fixed;
     top: 0;
@@ -1045,27 +863,7 @@ a:hover {
 .overlay.active {
     display: block;
 }
-
- @media (min-width: 64em) {
-    .sidebar {        
-        text-align: center; /* Center text */
-        overflow-y: auto;
-        min-width: fit-content;
-        width: 15%;
-        height: 100%;
-        align-items: center; /* Center align items in the sidebar */
-        box-sizing: border-box; 
-    }           
-    .content {                   
-        margin-left: 25%;
-        max-width: 50rem;              
-    }
-    .sidebar-widgets {
-        width: 10%;
-        margin-left: 2%;
-        margin-right: 3%;
-    }
-}        
+    
 
 .wrapper {
     display: flex;
@@ -1085,7 +883,7 @@ a:hover {
   .sidebar-about h1 {
     color: #444;
     margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     font-weight: 300;
     font-size: 1.4em;
     font-family: "Abril Fatface", serif;
@@ -1262,6 +1060,349 @@ a:hover {
     fill: currentColor;
 }
 
+/* Ensure valid CSS syntax */
+body {
+    -webkit-text-size-adjust: 100%; /* Example correction */
+}
+
+.custom-class {
+    margin: 10px; /* Ensure margin value is valid */
+    max-width: 100%; /* Ensure max-width value is valid */
+}
+
+.image-container {
+    text-align: center;
+    margin: 1em 0;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto; 
+    margin-bottom: 0.2em;
+  }
+  
+  .image-note {
+    font-family: "Arial", sans-serif; /* Replace with your site's primary font */
+    font-size: 0.6em; /* Adjust size as needed */
+    font-style: italic; /* Optional: Italicize the note */
+    color: #555; /* Adjust to match your site's color scheme */
+    text-align: center; /* Center-align the note */
+    margin-top: 0.1em; /* Add spacing above the note */
+  }
+  
+  .note-container {
+    /* background-color: #f8f9fa; /* Light background for the note */
+    border-left: 4px solid #007bff; /* Blue border on the left */
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 5px;
+  }
+  
+  .note-text {
+    font-family: "Arial", sans-serif; /* Font family for the note text */
+    font-size: 0.5em;
+    color: #333; /* Dark text color for readability */
+    line-height: 1.5;
+    margin-top: 0.9em;
+    font-style: italic;
+  }
+  
+  .note-container .note-text {
+    margin: 0;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 10px 20px; /* Space between grid items */
+    justify-content: center;
+    padding: 15px;
+    max-height: none !important;
+    overflow: visible !important; 
+    margin: 0 auto; /* Centers the container */
+}
+
+.post-card {
+    border: none; /* Remove the border */
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    background-color: #fff;
+    transition: box-shadow 0.3s, transform 0.3s;
+   
+}
+
+
+.post-content {
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.read-more-link {
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+
+.post-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+
+.post-image img {
+    width: 100%;
+    height: auto;
+   max-height: 200px;
+    object-fit: cover; /* Crop images to fit */
+    border-bottom: 1px solid #ddd;
+    
+    margin-bottom: 0px;
+}
+
+
+.post-header {
+    margin-bottom: 0px;
+}
+
+.post-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+    color:#444
+}
+
+.post-title a {
+    text-decoration: none;
+    color: #444;
+}
+
+.post-title a:hover {
+    color: #F7A38F;
+}
+
+.post-date {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.summary {
+    font-size: 0.9em;
+    color: #333;
+    margin-top: 0px;
+}
+
+.summary a {
+    display: block;
+    margin-top: 5px;
+    color: #746A67;
+}
+
+.summary a:hover {
+    text-decoration: underline;
+}
+/* Make tag titles look clickable */
+/* Hide the post list by default */
+.hidden {
+    display: none;
+}
+
+.tag-title {
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Aligns everything to the left */
+    text-align: left; /* Ensures text itself is left-aligned */
+    width: 100%;
+    padding: 5px;
+    background: linear-gradient(to right, #f8f8f8, #ffffff);
+    border-radius: 1px;
+    transition: background-color 0.3s;
+       margin-top: 10px;
+}
+
+/* Dark mode */
+body.dark-theme .tag-title {
+    background: linear-gradient(to right, #333, #444);
+    color: #fff;
+}
+
+
+/* Change background when hovering over the title */
+.tag-title:hover {
+    background-color: #e0e0e0;
+}
+body.dark-theme .tag-title:hover {
+    background-color: #444; /* Slightly lighter on hover */
+}
+/* Add space between the arrow icon and text */
+.toggle-icon {
+    margin-right: 8px;
+    font-weight: bold;
+    flex-shrink: 0; /* Prevents icon from moving away */
+}
+
+.tag-list {
+    margin-top: 10px;
+ 
+    padding: 0;
+    list-style: none;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-in;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(-5px); /* Slight lift effect when appearing */
+}
+
+.tag-list:not(.hidden) {
+    font-size: 0.8em;
+    max-height: 500px;
+    overflow: visible;
+    opacity: 1;
+    transform: translateY(0); /* Drop smoothly into place */
+    padding-left: 1.5em;
+    margin-bottom: 0%;
+}
+.tag-list li {
+    padding: 5px 0;
+    margin-bottom: 0%;
+    border-bottom: 1px solid #ddd; /* Light separator */
+}
+
+.tag-list li:last-child {
+  
+    border-bottom: none; /* Remove last item border */
+}
+
+.tag-list a {
+    display: block;
+    font-size: 1em;
+    color: #333;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 3px;
+}
+
+.tag-list a:hover {
+    color: #F7A38F; /* Highlight on hover */
+}
+
+/* Dark Mode */
+body.dark-theme .tag-list a {
+    color: #F7A38F;
+}
+
+body.dark-theme .tag-list a:hover {
+    color: #FFD1C1;
+}
+
+
+/* Dark Mode Adjustments */
+body.dark-theme .tag-list li {
+    border-bottom: 1px solid #444;
+}
+
+
+/* Dark mode for post list */
+body.dark-theme .tag-list {
+    background-color: #2a2a2a; /* Darker background */
+    border-left: 4px solid #F7A38F; /* Highlight on expanded lists */
+}
+
+.tagged-posts-column {
+    padding: 2px;
+    border-radius: 1px;
+    background-color: #f8f8f8;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode */
+body.dark-theme .tagged-posts-column {
+    background-color: #252525;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+}
+
+
+/* Change links inside the post list for better contrast */
+body.dark-theme .tag-list a {
+    color: #F7A38F; /* Light orange/pink accent */
+    text-decoration: none;
+}
+
+body.dark-theme .tag-list a:hover {
+    text-decoration: underline;
+}
+
+/* Smooth transition for dark mode */
+body.dark-theme .tag-title,
+body.dark-theme .tag-list {
+    transition: background-color 0.3s, color 0.3s;
+}
+.see-more {
+    font-weight: bold;
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: 1px solid #ddd;
+}
+
+body.dark-theme .see-more {
+    border-top: 1px solid #444;
+
+}.homepage-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+@media (max-width: 1024px) {
+    .main-content {
+        flex-direction: column; /* Stack sidebar below list */
+    }
+    
+    .entries {
+        width: 100%; /* Full width on small screens */
+    }
+    
+    .sidebar {
+        width: 100%; /* Full width so it doesn’t squeeze */
+        max-width: none; /* Remove width restriction */
+    }
+}
+ 
+@media (max-width: 768px) {
+    .side-by-side .image-wrapper {
+      flex: 1 1 100%;
+    }
+  }
+
+  
+ @media (min-width: 64em) {
+    .sidebar {        
+        text-align: center; /* Center text */
+        overflow-y: auto;
+        min-width: fit-content;
+        width: 15%;
+        height: 100%;
+        align-items: center; /* Center align items in the sidebar */
+        box-sizing: border-box; 
+    }           
+    .content {                   
+        max-width: 50rem; 
+        margin-left: auto;
+        margin-right: auto;              
+    }
+    .sidebar-widgets {
+        width: 10%;
+        margin-left: 2%;
+        margin-right: 3%;
+    }
+}    
+
 @media (max-width: 48em) {
     .wrapper {
         flex-direction: column;
@@ -1294,14 +1435,155 @@ a:hover {
         padding-top: 4rem;
     }
 }
-
-/* Ensure valid CSS syntax */
-body {
-    -webkit-text-size-adjust: 100%; /* Example correction */
+@media (max-width:550px) {
+    .db-card { 
+        margin: 0.8rem 1rem; 
+    }
+    .db-card-comment { 
+        display: none; 
+    }
 }
 
-.custom-class {
-    margin: 10px; /* Ensure margin value is valid */
-    max-width: 100%; /* Ensure max-width value is valid */
+@media (max-width: 600px) {
+    .timeline-item {
+        width: 100%;
+    }
+
+    .timeline-item::before {
+        display: none;
+    }
+}
+@media (min-width: 10em) {
+    .bullet {
+        margin-left: 1em;
+        text-decoration-line: underline;
+       /* text-decoration-style: dotted;*/
+        text-decoration-thickness: 1%;
+    }
+    .sub-heading {
+        margin-left: 1em;
+    }
+    .btn-light-dark svg {
+        margin: auto;
+        width: 10px;
+        height: 10px;
+        color: black;
+    }
+    .container.content {
+        overflow-y: auto;
+        padding-right: 2rem;
+        flex-grow: 1;
+    }
 }
 
+@media (min-width: 48em) {  
+    .bullet {
+            margin-left: 1em;
+            text-decoration-line: underline;
+           /* text-decoration-style: dotted;*/
+            text-decoration-thickness: 1%;
+    }
+    .sub-heading {
+            margin-left: 1em;
+     }
+    .btn-light-dark svg {
+            margin: auto;
+            width: 20px;
+            height: 20px;
+            color: black;
+    }
+     .container.content {
+            overflow-y: auto;
+            padding-right: 2rem;
+            flex-grow: 1;  
+            margin-left: 20%;    
+    }    
+    .sidebar {  
+      text-align: center; /* Center text */
+      overflow-y: auto;
+       width: 15%;
+       min-width: fit-content;
+       height: 100%;
+       align-items: center; /* Center align items in the sidebar */
+       box-sizing: border-box;        
+    }
+    .content {
+        max-width: 50rem;
+        margin-left: auto;
+        margin-right: auto; /* Center it instead of fixed margin-left */
+        width: 70%; /* Allow dynamic sizing */             
+      }
+    .post { 
+        margin-left: 4%;     
+    }
+}
+@media (min-width: 48em) {  
+    .content {
+        max-width: 900px; /* Allows it to be wider */
+        width: 80%; /* Make it responsive */
+        margin-left: auto;
+        margin-right: auto; /* Center the content */
+    }
+}
+
+@media (min-width: 64em) {
+    .content {                   
+        max-width: 1200px; 
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto; 
+    }
+}
+.wrapper,
+.grid-container,
+.post-card {
+    min-width: 100% !important;
+}
+
+@media (min-width: 48em) and (max-width: 64em) {
+    .sidebar {
+        width: 20%; /* Prevent sidebar from pushing content */
+       
+    }
+    .content {
+        width: 75%; /* Give more space to post list */
+    }
+}
+ 
+/* Post card styles */
+.entries {
+    list-style: none;
+    padding: 0; 
+    width: 100%; /* Full width */
+    max-width: 900px; /* Prevent shrinking */
+    display: block;
+}
+
+/* Ensure each post-card takes full width */
+.entries .post-card {
+    display: block; /* Ensures post cards are stacked */
+    width: 100%;
+    max-width: 100%;
+}
+
+@media (min-width: 48em) and (max-width: 64em) {
+    .sidebar {
+        width: 18%; /* Reduce sidebar width */
+        /* Prevents it from shrinking too much */
+    }
+    .content {
+        width: 75%; /* Ensures post list gets more space */
+    }
+}
+/* Blog List Page: Ensure Full Width */
+
+
+/* Make Sure Sidebar Does Not Push Blog List */
+@media (min-width: 48em) and (max-width: 64em) {
+    .sidebar {
+        width: 15%; /* Reduce sidebar width */
+    }
+    .content {
+        width: 80%; /* Ensures more space for blog posts */
+    }
+}

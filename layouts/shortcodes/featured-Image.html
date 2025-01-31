@@ -1,3 +1,6 @@
+
 {{ if .Page.Params.featuredImage }}
-<img src="{{ .Page.Params.featuredImage }}" alt="Featured Image" style="width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ .Site.Params.imageBaseURL }}{{ .Page.Params.featuredImage }}" alt="Featured Image" style="width: 100%; height: auto; margin: 20px 0;">
 {{ end }}
+
+

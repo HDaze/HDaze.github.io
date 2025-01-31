@@ -17,7 +17,6 @@
         {{ else }}
           {{ .Scratch.Set "readingTime" "min" }}
         {{ end }}
-
         <span>{{ .ReadingTime }} {{ .Scratch.Get "readingTime" }} read</span>
       </span>
     </div>
@@ -33,8 +32,15 @@
     {{ end }}
   </div>
 
-  {{ if .Params.featuredImage }}
-  <p>
-    <img src="{{ .Params.featuredImage }}" alt="{{ .Title }}" class="homepage-featured-image"><br>
-  </p>
+  {{ if not .IsPage }}
+  <div class="post-image">
+    {{ if .Params.featuredImage }}
+        <img src="{{ .Site.Params.imageBaseURL }}{{ .Params.featuredImage }}" alt="{{ .Title }}">
+    
+    {{ end }}
+</div>
+
 {{ end }}
+
+
+
