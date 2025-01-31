@@ -1,7 +1,10 @@
 {{ define "main" -}}
 <div class="post">
   {{ partial "post/info.html" . }}
-  {{ .Content }}
+  <article class="blog-post">
+    {{ .Content }}
+</article>
+
   {{ if (.Site.Params.listmonk) }}
     {{ partial "post/listmonk_email_newsletters.html" . }}
   {{ end }}  
