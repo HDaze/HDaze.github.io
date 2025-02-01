@@ -10,7 +10,7 @@ pluralizelisttitles = false
     # remote_brand_image = 'https://github.com/USERNAME.png' # path to a remote file
     brand_image = "/logo1.png"    # path to the image shown in the sidebar
     # description = "Find Connections" # Used as default meta description if not specified in front matter
-    dark_mode = false                      # optional - defaults to false
+    dark_mode = true                      # optional - defaults to false
     favicon = "/favicon2.png"         # path to favicon (defaults to favicon.png)
 
     front_page_content = ["blog", "诗"] # Equivalent to the default value, add page bundle names to include them on the front page.
@@ -93,3 +93,15 @@ section = ["HTML"]
 # Add this to your config.toml if not already present
 summaryLength = 20  # Adjust the number of words to fit your needs
 
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = false
+
+  [[related.indices]]
+    name = "tags"
+    weight = 100
+
+  [[related.indices]]
+    name = "series"
+    weight = 50

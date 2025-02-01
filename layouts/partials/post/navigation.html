@@ -1,12 +1,12 @@
 <div class="footer-navigation" style="display: flex; justify-content: space-between; padding-top: 2rem; border-top: 1px solid #eee;">
   {{ if .PrevInSection }}
     <a class="previous-post" href="{{ .PrevInSection.Permalink }}?ref=footer" style="width: 45%; text-align: left;">
-      <span>« Previous</span><br>{{ .PrevInSection.Title | truncate 50 "..." }}
+      <span>« 上一篇</span><br>{{ .PrevInSection.Title | truncate 50 "..." }}
     </a>
   {{ end }}
   {{ if .NextInSection }}
     <a class="next-post" href="{{ .NextInSection.Permalink }}?ref=footer" style="width: 45%; text-align: right;">
-      <span>Next »</span><br>{{ .NextInSection.Title | truncate 50 "..." }}
+      <span>下一篇 »</span><br>{{ .NextInSection.Title | truncate 50 "..." }}
     </a>
   {{ end }}
 </div>

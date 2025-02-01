@@ -1,16 +1,13 @@
 {{ define "main" -}}
 <div class="post">
   {{ partial "post/info.html" . }}
-  <article class="blog-post">
+  
     {{ .Content }}
-</article>
 
-  {{ if (.Site.Params.listmonk) }}
-    {{ partial "post/listmonk_email_newsletters.html" . }}
-  {{ end }}  
   {{ partial "post/navigation.html" . }} 
-    {{ partial "related.html" . }}  
-    
+  
+    {{ partial "related-posts.html" . }}
+
    
     <div class="post-comments">
     {{ partial "post/comments.html" . }}

@@ -3,6 +3,8 @@
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
         document.body.classList.add("dark-theme");
+    } else if (savedTheme === "light") {
+        document.body.classList.remove("dark-theme");
     }
 })();
 
@@ -11,31 +13,71 @@ document.addEventListener("DOMContentLoaded", function () {
     const buttons = document.querySelectorAll(".btn-light-dark");
     const moons = document.querySelectorAll(".moon");
     const suns = document.querySelectorAll(".sun");
-    
-    // Get stored theme or fallback to Hugo default
+
+    // Get the theme stored in localStorage or fallback to default (light)
     const themeFromLS = localStorage.getItem("theme");
     const themeFromHugo = document.body.classList.contains("dark-theme") ? "dark" : "light";
     let currentTheme = themeFromLS ? themeFromLS : themeFromHugo;
 
-    function updateTheme(isDark) {
-        document.body.classList.toggle("dark-theme", isDark);
-        moons.forEach(moon => moon.style.display = isDark ? 'none' : 'block');
-        suns.forEach(sun => sun.style.display = isDark ? 'block' : 'none');
-        
-        if (document.getElementById("remark42")) {
-            window.REMARK42.changeTheme(isDark ? "dark" : "light");
+    function updateIcons() {
+        if (currentTheme === "dark") {
+            document.body.classList.add("dark-theme");
+            moons.forEach(moon => moon.style.display = 'none');
+            suns.forEach(sun => sun.style.display = 'block');
+        } else {
+            document.body.classList.remove("dark-theme");
+            moons.forEach(moon => moon.style.display = 'block');
+            suns.forEach(sun => sun.style.display = 'none');
         }
-        localStorage.setItem("theme", isDark ? "dark" : "light");
     }
 
-    // 🔄 Apply theme settings
-    updateTheme(currentTheme === "dark");
+    // Apply theme based on current value (either from LS or default)
+    updateIcons();
 
-    // 🔘 Toggle on button click
+    // Toggle theme on button click
     buttons.forEach(btn => {
         btn.addEventListener("click", function () {
-            currentTheme = document.body.classList.contains("dark-theme") ? "light" : "dark";
-            updateTheme(currentTheme === "dark");
+            // Toggle the theme class on the body element
+            document.body.classList.toggle("dark-theme");
+            
+            let theme = "light";
+
+            if (document.body.classList.contains("dark-theme")) {
+                theme = "dark";
+                moons.forEach(moon => moon.style.display = 'none');
+                suns.forEach(sun => sun.style.display = 'block');
+            } else {
+                moons.forEach(moon => moon.style.display = 'block');
+                suns.forEach(sun => sun.style.display = 'none');
+            }
+
+            // Save the theme to localStorage
+            localStorage.setItem("theme", theme);
         });
     });
+
+   // Dropdown menu toggle
+const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+if (dropdownToggles.length > 0) {
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            const dropdownMenu = this.nextElementSibling;
+            dropdownMenu.classList.toggle('show');
+        });
+    });
+
+    // Close dropdown menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const isClickInside = dropdownToggles[0].contains(event.target) || 
+                              dropdownToggles[0].nextElementSibling.contains(event.target);
+        if (!isClickInside) {
+            const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+            dropdownMenus.forEach(menu => {
+                menu.classList.remove('show');
+            });
+        }
+    });
+}
+
 });

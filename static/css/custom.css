@@ -1,5 +1,24 @@
 /* /static/css/custom.css */
 
+@font-face {
+    font-family: 'Source Han Serif';
+    src: url('https://cdn.thehdaze.com/theHDaze/static/fonts/SourceHanSerifSC-VF.otf.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+  
+ 
+  body {
+    font-family: 'Source Han Serif', 'Noto Serif SC', 'PingFang SC', 'Microsoft YaHei', serif;
+  }
+  strong {
+    background-color: #dde7e3 ; /* Subtle pastel matching your blog */
+  
+    border-radius: 1px;
+    padding: 0 0.2rem;
+  }
+  
+  
 /* Full-width image styles */
 .full-width-image {
     width:100%;
@@ -54,10 +73,6 @@
     border-radius: 8px;
   }
  
-
-
- 
-
 
 
 /* Recent updates section */
@@ -115,8 +130,7 @@
 /* Main content and sidebar layout */
 .main-content {
     display: flex;
-    flex-wrap: wrap;
-   
+    flex-wrap: wrap;   
     gap: 20px; /* Space between list and sidebar */
     margin-left: 15px; /* Adjust the left margin to account for the narrower sidebar */
     align-items: flex-start;}
@@ -180,6 +194,7 @@
     overflow: auto; 
     max-height: 5rem; 
     color: var(--card-text-color-main); 
+    font-family:Arial, Helvetica, sans-serif;
 }
 .db-card-cate { 
     position: absolute; 
@@ -235,16 +250,34 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-top: 1px solid #eee;
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically (if needed) */
+    flex-direction: column; /* Ensures heading and list stack vertically */
+    text-align: center; /* Centers the text */
   }
   
   .related-posts {
-    padding-left: 0;
     list-style: none;
-    
+    padding-left: 0;
+    display: inline-block; /* Ensures the list is treated as a block for centering */
+    text-align: left; /* Keeps list items left-aligned */
   }
   
-  .related-posts h3 {
+  .related h3 {
     margin-top: 0;
+    margin-bottom: 1rem;
+    color: #C98474 !important; /* Neutral subtle color */
+    font-size: 1.25rem; /* Slightly smaller font size for a subtle look */
+    font-weight: 500; /* Medium weight for a modern look */
+    font-family: 'Noto Serif SC', 'Source Han Serif', serif; /* Add a softer font family */
+    text-align: center; /* Keep it centered */
+  }
+  
+  
+  .related-posts li {
+    margin-bottom: 0.1rem;
+    font-size: 0.95rem; /* Add spacing between list items */
   }
   
   .related-posts li small {
@@ -260,6 +293,7 @@
   .related-posts li a:hover small {
     color: inherit;
   }
+  
   
   .footer-navigation {
     display: flex;
@@ -295,7 +329,7 @@
 .subtle-line {
     margin-top: 5px;
     margin-bottom: 5px;
-    border: 0.5;
+    border: 0.5px;
     height: 0.5px;
     background: #8b8a8a; /* Light gray color */
 }
@@ -398,7 +432,7 @@ body.dark-theme .sidebar img {
     max-height: 300px; /* Set a maximum height */
     height: auto; /* Maintain aspect ratio */
     display: block; /* Ensure the image is a block element */
-    margin: 0 10; /* Center the logo */
+    margin: 0 10px; /* Center the logo */
 }
 
 /* Tag and series container in dark theme */
@@ -591,16 +625,17 @@ body.dark-theme .content {
     z-index: 1000;
     /**transform: translateX(0%); /* Hide by default */
     transition: transform 0.3s ease-in-out;
-    align-items: right;
+    align-items: flex-end; 
     flex: 1;
     min-width: 250px;
     max-width: 300px;
     height: auto;
+    border-right: 2px solid #f9e9e5;
 }
 
 .sidebar .container {
     max-width: 140px; /* Adjust the max-width to fit within the new sidebar width */
-    align-items: right;
+    align-items: flex-end; 
     text-align: right;
 }
 
@@ -614,7 +649,7 @@ body.dark-theme .content {
     background-color: #F5EBE0; /* Menu background */
     padding-left: 0;
     color: #333; /* Default text color */
-    align-items: right;
+    align-items: flex-end; 
     text-align: right;
 }
 
@@ -623,13 +658,14 @@ body.dark-theme .content {
     padding: 8px 0; /* Adjust the padding for better spacing */
     font-size: 0.9em; /* Reduce font size */
     text-align: right;
+    font-weight: 700;
 }
 
 .sidebar .sidebar-nav .bullet a {
     color: #c98474; /* Link color */
     text-decoration: none; /* Remove underline */
     display: block;
-    padding: 8px 0;
+    padding: 5px 0;
     font-size: 0.9em;
     }
 
@@ -690,31 +726,34 @@ body {
     background-color: #FAF9F6; /* Light background color */
     color: #333; /* Default text color */
     font-size: 16px;
-    line-height: 1.6;
-    font-family: roboto,sans-serif;
+    line-height: 1.8;   
     letter-spacing: .33px;
     overflow: auto !important;
     height: auto !important;
     text-rendering: optimizeLegibility;
     margin: 0;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    font-weight: 400;
 }
 
 * {
     font-size: inherit;
 }
 
+
 h1, h2, h3, h4, h5, h6 {
     color: #C97675; /* Heading color */
+    font-weight: bold;
 }
 
 /* General Heading Styles */
-h1, h2, h3, h4, h5, h6 {
-    /* Choose a readable serif font */
+h1, h2, h3 {
+    font-family: 'PingFang SC', 'Noto Sans SC', sans-serif;
     font-weight: bold;
     line-height: 1.3;
     color: #C97675; /* A warm accent color that fits your theme */
 }
+
 /* Apply these styles only inside blog posts */
 .post h1, 
 .post h2, 
@@ -725,19 +764,20 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     line-height: 1.3;
     color: #C97675; /* A warm accent color */
+    font-family: 'PingFang SC', 'Noto Sans SC', sans-serif;
 }
 
 /* Main Title (H1) */
 .post h1 {
-    font-size: 2em !important; 
+    font-size: 2em ; 
     margin-bottom: 0.8em;
 }
 
 /* Section Title (H2) */
 .post h2 {
-    font-size: 1.8em;
-    margin-top: 1.2em;
-    margin-bottom: 0.8em;
+    font-size: 1.5em;
+    margin-top: 2em;
+    margin-bottom: 0.6em;
     color: #C98474;
     padding-left: 10px;
     border-left: 5px solid #C97675;
@@ -746,38 +786,53 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Subsections (H3) */
 .post h3 {
-    font-size: 1.5em;
-    margin-top: 1.1em;
-    margin-bottom: 0.7em;
-    font-weight: 600;
-    color: #6b7a8f;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
+    font-size: 1.25em; /* Slightly larger for emphasis */
+    margin-top: 1em; /* Increase spacing above the heading */
+    margin-bottom: 1em; /* Add spacing below the heading */
+    font-weight: 600; /* Medium weight for a refined appearance */
+    color: #C97675; /* Richer, earthy tone for elegance */
+    font-family: 'Noto Serif SC', 'Source Han Serif', serif; /* Keep serif fonts for sophistication */
+    text-align: left; /* Keep left alignment */
+    letter-spacing: 0.02em; /* Maintain slight letter spacing */
+ 
+  }
+  
 
 /* Subheadings (H4-H6) */
 .post h4 {
-    font-size: 1.3em;
-    font-weight: 600;
+    font-size: 1.2em;
+    font-weight: 400;
     color: #746A67;
 }
 .post h5 {
     font-size: 1.1em;
-    font-weight: 500;
+    font-weight: 400;
     color: #555;
 }
 .post h6 {
     font-size: 1em;
-    font-weight: 500;
+    font-weight: 400;
     color: #444;
     font-style: italic;
 }
-
+ul {
+    list-style: none;
+    padding-left: 1.5rem;
+  }
+  
+  .post li::before {
+    content: "•";
+    color: #6b7a8f; /* Accent color */
+    font-size: 1.2em;
+    margin-right: 0.5rem;
+  }
+  
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     h1 { font-size: 1.8em; }
-    h2 { font-size: 1.6em; }
-    h3 { font-size: 1.4em; }
-    h4 { font-size: 1.2em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1.2em; }
+    h4 { font-size: 1em; }
     h5 { font-size: 1em; }
 }
 body.dark-theme .post h1, 
@@ -820,7 +875,7 @@ body.dark-theme .post h6 {
 }
 
 a {
-    color: #6b7a8f; /* Link color */
+    color: #52776a;; /* Link color */
 }
 
 a:hover {
@@ -982,11 +1037,7 @@ a:hover {
     display: flex;
     height: 100vh;
 }
-  /* Sidebar links */
-  .sidebar a, li {
-    color: #444;
-    font-size: 1.1em;
-  }
+ 
   
   /* About section */
   .sidebar-about {
@@ -1165,7 +1216,7 @@ a:hover {
     text-align: center; /* Center the title text */
     color: #C97675;       
     font-weight: 300;  
-    font-family: "Abril Fatface", serif;       
+         
 }
 
 
@@ -1173,10 +1224,7 @@ a:hover {
     fill: currentColor;
 }
 
-/* Ensure valid CSS syntax */
-body {
-    -webkit-text-size-adjust: 100%; /* Example correction */
-}
+
 
 .custom-class {
     margin: 10px; /* Ensure margin value is valid */
@@ -1195,7 +1243,7 @@ body {
   }
   
   .image-note {
-    font-family: "Arial", sans-serif; /* Replace with your site's primary font */
+    
     font-size: 0.6em; /* Adjust size as needed */
     font-style: italic; /* Optional: Italicize the note */
     color: #555; /* Adjust to match your site's color scheme */
@@ -1212,7 +1260,7 @@ body {
   }
   
   .note-text {
-    font-family: "Arial", sans-serif; /* Font family for the note text */
+     /* Font family for the note text */
     font-size: 0.5em;
     color: #333; /* Dark text color for readability */
     line-height: 1.5;
@@ -1395,7 +1443,7 @@ body.dark-theme .tag-title:hover {
 .tag-list a {
     display: block;
     font-size: 1em;
-    color: #333;
+    color: #6B7A8F;
     font-weight: 500;
     text-decoration: none;
     padding: 3px;
@@ -1472,6 +1520,31 @@ body.dark-theme .see-more {
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
+.wrapper,
+.grid-container,
+.post-card {
+    min-width: 100% !important;
+}
+
+
+/* Post card styles */
+.entries {
+    list-style: none;
+    padding: 0; 
+    width: 100%; /* Full width */
+    max-width: 900px; /* Prevent shrinking */
+    display: block;
+}
+
+/* Ensure each post-card takes full width */
+.entries .post-card {
+    display: block; /* Ensures post cards are stacked */
+    width: 100%;
+    max-width: 100%;
+}
+
+ 
 @media (max-width: 1024px) {
     .main-content {
         flex-direction: column; /* Stack sidebar below list */
@@ -1487,36 +1560,12 @@ body.dark-theme .see-more {
     }
 }
  
-@media (max-width: 768px) {
-    .side-by-side .image-wrapper {
-      flex: 1 1 100%;
-    }
-  }
-
-  
- @media (min-width: 64em) {
-    .sidebar {        
-        text-align: center; /* Center text */
-        overflow-y: auto;
-        min-width: fit-content;
-        width: 15%;
-        height: 100%;
-        align-items: center; /* Center align items in the sidebar */
-        box-sizing: border-box; 
-    }           
-    .content {                   
-        max-width: 50rem; 
-        margin-left: auto;
-        margin-right: auto;              
-    }
-    .sidebar-widgets {
-        width: 10%;
-        margin-left: 2%;
-        margin-right: 3%;
-    }
-}    
+ 
 
 @media (max-width: 48em) {
+    .side-by-side .image-wrapper {
+        flex: 1 1 100%;
+      }
     .wrapper {
         flex-direction: column;
     }
@@ -1544,20 +1593,21 @@ body.dark-theme .see-more {
     }
     
     .content {
-        margin-left: 0;
-        padding-top: 4rem;
+        margin-left: auto; /* Center the content from the left */
+        margin-right: auto; /* Center the content from the right */
+        padding-top: 4rem; /* Space from the top */
+        padding: auto; /* Adjust padding */
+        width: 95%; /* Set width to 95% of the parent container */
+        text-align: left; /* Align text to the right inside the container */
     }
-}
-@media (max-width:550px) {
+    
+    
     .db-card { 
         margin: 0.8rem 1rem; 
     }
     .db-card-comment { 
         display: none; 
     }
-}
-
-@media (max-width: 600px) {
     .timeline-item {
         width: 100%;
     }
@@ -1565,7 +1615,11 @@ body.dark-theme .see-more {
     .timeline-item::before {
         display: none;
     }
+
 }
+
+
+
 @media (min-width: 10em) {
     .bullet {
         margin-left: 1em;
@@ -1584,119 +1638,72 @@ body.dark-theme .see-more {
     }
     .container.content {
         overflow-y: auto;
-        padding-right: 2rem;
+      
         flex-grow: 1;
     }
 }
 
 @media (min-width: 48em) {  
     .bullet {
-            margin-left: 1em;
-            text-decoration-line: underline;
-           /* text-decoration-style: dotted;*/
-            text-decoration-thickness: 1%;
-    }
-    .sub-heading {
-            margin-left: 1em;
-     }
-    .btn-light-dark svg {
-            margin: auto;
-            width: 20px;
-            height: 20px;
-            color: black;
-    }
-     .container.content {
-            overflow-y: auto;
-            padding-right: 2rem;
-            flex-grow: 1;  
-            margin-left: 20%;    
-    }    
-    .sidebar {  
-      text-align: center; /* Center text */
-      overflow-y: auto;
-       width: 15%;
-       min-width: fit-content;
-       height: 100%;
-       align-items: center; /* Center align items in the sidebar */
-       box-sizing: border-box;        
-    }
-    .content {
-        max-width: 50rem;
-        margin-left: auto;
-        margin-right: auto; /* Center it instead of fixed margin-left */
-        width: 70%; /* Allow dynamic sizing */             
-      }
-    .post { 
-        margin-left: 4%;     
-    }
+        margin-left: 1em;
+        text-decoration-line: underline;
+       /* text-decoration-style: dotted;*/
+        text-decoration-thickness: 1%;
 }
-@media (min-width: 48em) {  
-    .content {
-        max-width: 900px; /* Allows it to be wider */
-        width: 80%; /* Make it responsive */
-        margin-left: auto;
-        margin-right: auto; /* Center the content */
-    }
+.sub-heading {
+        margin-left: 1em;
+ }
+.btn-light-dark svg {
+        margin: auto;
+        width: 20px;
+        height: 20px;
+        color: black;
 }
+ .container.content {
+        overflow-y: auto;
+       
+        flex-grow: 1;  
+        margin-left: 20%;    
+}    
+.sidebar {  
+  text-align: center; /* Center text */
+  overflow-y: auto;
+   width: 15%;
+   min-width: fit-content;
+   height: 100%;
+   align-items: center; /* Center align items in the sidebar */
+   box-sizing: border-box;        
+}
+.content {
+    max-width: 20rm; 
+    margin-left: auto;
+    margin-right: auto; 
+    padding-left: 4rem;
+    width: 70%;  /* Allow dynamic sizing */             
+  }
+
+}
+
 
 @media (min-width: 64em) {
+    .sidebar {        
+        text-align: center; /* Center text */
+        overflow-y: auto;
+        min-width: fit-content;
+        width: 15%;
+        height: 100%;
+        align-items: center; /* Center align items in the sidebar */
+        box-sizing: border-box; 
+    }           
     .content {                   
-        max-width: 1200px; 
-        width: 85%;
+        max-width: 900px; 
         margin-left: auto;
         margin-right: auto; 
+        width: 85%;             
     }
-}
-.wrapper,
-.grid-container,
-.post-card {
-    min-width: 100% !important;
-}
-
-@media (min-width: 48em) and (max-width: 64em) {
-    .sidebar {
-        width: 20%; /* Prevent sidebar from pushing content */
-       
+    .sidebar-widgets {
+        width: 10%;
+        margin-left: 2%;
+        margin-right: 3%;
     }
-    .content {
-        width: 75%; /* Give more space to post list */
-    }
-}
- 
-/* Post card styles */
-.entries {
-    list-style: none;
-    padding: 0; 
-    width: 100%; /* Full width */
-    max-width: 900px; /* Prevent shrinking */
-    display: block;
-}
-
-/* Ensure each post-card takes full width */
-.entries .post-card {
-    display: block; /* Ensures post cards are stacked */
-    width: 100%;
-    max-width: 100%;
-}
-
-@media (min-width: 48em) and (max-width: 64em) {
-    .sidebar {
-        width: 18%; /* Reduce sidebar width */
-        /* Prevents it from shrinking too much */
-    }
-    .content {
-        width: 75%; /* Ensures post list gets more space */
-    }
-}
-/* Blog List Page: Ensure Full Width */
-
-
-/* Make Sure Sidebar Does Not Push Blog List */
-@media (min-width: 48em) and (max-width: 64em) {
-    .sidebar {
-        width: 15%; /* Reduce sidebar width */
-    }
-    .content {
-        width: 80%; /* Ensures more space for blog posts */
-    }
-}
+}    
