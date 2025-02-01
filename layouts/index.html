@@ -10,7 +10,7 @@
             <article class="post-card">
                 <div class="post-image">
                     {{ if .Params.featuredImage }}
-                        <img src="{{ .Site.Params.imageBaseURL }}{{ .Params.featuredImage }}" alt="{{ .Title }}">
+                        <img src="{{ .Site.Params.imageBaseURL }}{{ .Params.featuredImage }}" alt="{{ .Title }}" class="homepage-featured-image">
                                    
                     {{ end }}
                 </div>

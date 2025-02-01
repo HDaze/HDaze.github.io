@@ -10,7 +10,7 @@ pluralizelisttitles = false
     # remote_brand_image = 'https://github.com/USERNAME.png' # path to a remote file
     brand_image = "/logo1.png"    # path to the image shown in the sidebar
     # description = "Find Connections" # Used as default meta description if not specified in front matter
-    dark_mode = true                      # optional - defaults to false
+    dark_mode = false                      # optional - defaults to false
     favicon = "/favicon2.png"         # path to favicon (defaults to favicon.png)
 
     front_page_content = ["blog", "诗"] # Equivalent to the default value, add page bundle names to include them on the front page.
@@ -21,8 +21,6 @@ menu = [
     {Name = "黑雨 | Poems", URL = "/诗/", HasChildren = false},
     {Name = "关于 | About", URL = "/about/", HasChildren = false},
 ]
-[outputs]
-section = ["HTML"]
 
 
     
@@ -105,3 +103,5 @@ summaryLength = 20  # Adjust the number of words to fit your needs
   [[related.indices]]
     name = "series"
     weight = 50
+[outputs]
+section = ["HTML"]
