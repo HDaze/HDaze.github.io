@@ -87,11 +87,6 @@ body.dark-theme code {
 
 
 
-.full-width {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
 .side-by-side {
     display: flex;
     gap: 10px;
@@ -863,17 +858,7 @@ h1, h2, h3 {
     color: #444;
     font-style: italic;
 }
-ul {
-    list-style: none;
-    padding-left: 1.5rem;
-  }
-  
-  .post li::before {
-    content: "•";
-    color: #6b7a8f; /* Accent color */
-    font-size: 1.2em;
-    margin-right: 0.5rem;
-  }
+
   
 /* Responsive Adjustments */
 @media (max-width: 768px) {
@@ -931,12 +916,7 @@ background-color: #5d5856;}
 a:hover {
     color: #F7A38F;  /* Link hover color */
 }
-.post li {
-    font-size: inherit; /* Inherit the font size from the parent */
-    font-family: inherit; /* Inherit the font family from the parent */
-    color: inherit; /* Inherit the color from the parent */
-    line-height: inherit; /* Inherit the line height from the parent */
-}
+
 /* Card and widget background colors */
 .widget {
     background-color: #F5EBE0; /* Same as the surrounding background color */
@@ -1688,18 +1668,47 @@ body.dark-theme .see-more {
 .container.content {
     overflow-y: auto;
     flex-grow: 1;  
-    margin-left: 16%;
+    margin-left: 19%;
     margin-right: 4%;    
 }     
     .content {         
-        padding: auto;        
-        max-width:70%; 
-        margin-left: auto;
-        margin-right: auto; 
-        width: 70%;             
+        padding: 0;        
+        max-width:90%; 
+        margin-left: 0;
+        margin-right: 0; 
+        width: 85%;             
     }
     .sidebar-widgets {
         width: 14%;
  
     }
 }    
+
+/* Reset default list styling */
+ul, ol {
+    list-style-position: outside; /* Ensures bullets align outside text */
+    padding-left: 1.5rem; /* Add spacing for bullets */
+   /* margin: 1em 0; /* Space above and below lists */
+}
+
+/* Standardize list item spacing */
+li {
+    margin-bottom: 0.5em; /* Space between list items */
+    line-height: 1.6; /* Improve readability */
+}
+
+/* Ensure bullets and inline text align */
+p {
+    margin: 1em 0; /* Consistent spacing between paragraphs and other elements */
+}
+
+/* Optional: Adjust ::marker styling for bullet points */
+::marker {
+    color: #333; /* Match bullet color to text */
+    font-size: 1em; /* Adjust bullet size */
+}
+
+/* Remove any extra spacing from paragraphs within lists */
+ul li p {
+    margin: 0; /* Remove extra margins */
+}

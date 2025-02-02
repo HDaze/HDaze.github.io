@@ -1,13 +1,16 @@
 {{ define "main" -}}
-<div class="post">
-  {{ partial "post/info.html" . }}
-  
-    {{ .Content }}
+ 
+  <div class="post">
+      <div class="post-info">
+        {{ partial "post/info.html" . }}
+      </div>
+    
+      <div class="content">
+        {{ .Content }}
+      </div>
 
   {{ partial "post/navigation.html" . }} 
-  
     {{ partial "related-posts.html" . }}
-
    
     <div class="post-comments">
     {{ partial "post/comments.html" . }}

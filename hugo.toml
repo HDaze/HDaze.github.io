@@ -107,5 +107,5 @@ summaryLength = 20  # Adjust the number of words to fit your needs
 section = ["HTML"]
 
 
-enableEmoji = true
+
 
