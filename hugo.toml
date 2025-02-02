@@ -105,3 +105,7 @@ summaryLength = 20  # Adjust the number of words to fit your needs
     weight = 50
 [outputs]
 section = ["HTML"]
+
+
+enableEmoji = true
+
