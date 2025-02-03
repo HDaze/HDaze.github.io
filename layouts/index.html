@@ -1,36 +1,47 @@
 {{ define "main" -}}
 <div class="main-content full-width">
     <div class="posts-grid"> <!-- Changed class to posts-grid for styling -->
-       
-        {{ partial "tagged-posts.html" }}         
+
+        {{ partial "tagged-posts.html" }}
         <hr class="subtle-line">
-         <h2 style="margin-top: 20px;">最近更新</h2>
+        <h2 style="margin-top: 20px;">最近更新</h2>
         <div class="grid-container"> <!-- New div for grid layout -->
             {{ range (.Paginate (where .Site.RegularPages "Type" "in" .Site.Params.front_page_content)).Pages }}
             <article class="post-card">
                 <div class="post-image">
                     {{ if .Params.featuredImage }}
-                        <img src="{{ .Site.Params.imageBaseURL }}{{ .Params.featuredImage }}" alt="{{ .Title }}" class="homepage-featured-image">
-                                   
+                    <img src="{{ .Site.Params.imageBaseURL }}{{ .Params.featuredImage }}" alt="{{ .Title }}"
+                        class="homepage-featured-image">
+
                     {{ end }}
                 </div>
-                
+
                 <div class="post-content">
                     <h2 class="post-title">
                         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                     </h2>
                     <span class="post-date">{{ .Date | time.Format ":date_long" }}</span>
+                    <!-- Tags Section -->
+                    {{ with .Params.tags }}
+                    <div class="post-tags">
+                        <span>Tags:</span>
+                        {{ range . }}
+                        <a href="{{ " /tags/" | relURL }}{{ . | urlize }}" class="tag-link">#{{ . }}</a>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+
                     <div class="summary">
                         {{ .Summary | truncate 100 }}
                         {{ if gt (len .Summary) 100 }}
-                            <div class="read-more-link">
-                                <a href="{{ .RelPermalink }}">Read More…</a>
-                            </div>
+                        <div class="read-more-link">
+                            <a href="{{ .RelPermalink }}">Read More…</a>
+                        </div>
                         {{ end }}
                     </div>
                 </div>
             </article>
-            
+
             {{- end }}
         </div>
     </div>

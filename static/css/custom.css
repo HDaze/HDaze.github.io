@@ -9,7 +9,8 @@
   
  
   body {
-    font-family: 'Source Han Serif', 'Noto Serif SC', 'PingFang SC', 'Microsoft YaHei', serif;
+    font-family: 'Source Han Serif',  "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+    font-display: swap;
   }
   strong {
     background-color: #dde7e3 ; /* Subtle pastel matching your blog */
@@ -1689,12 +1690,14 @@ ul, ol {
     list-style-position: outside; /* Ensures bullets align outside text */
     padding-left: 1.5rem; /* Add spacing for bullets */
    /* margin: 1em 0; /* Space above and below lists */
+   font-weight: 400;
 }
 
 /* Standardize list item spacing */
 li {
     margin-bottom: 0.5em; /* Space between list items */
     line-height: 1.6; /* Improve readability */
+    font-weight: 400;
 }
 
 /* Ensure bullets and inline text align */
@@ -1704,11 +1707,42 @@ p {
 
 /* Optional: Adjust ::marker styling for bullet points */
 ::marker {
-    color: #333; /* Match bullet color to text */
+    /* Match bullet color to text */
     font-size: 1em; /* Adjust bullet size */
+    font-weight: 400;
 }
 
 /* Remove any extra spacing from paragraphs within lists */
 ul li p {
     margin: 0; /* Remove extra margins */
 }
+.post-tags {
+    margin:0;
+    padding-top: 0;
+    
+}
+
+.post-date, .post-header {margin-bottom:0;
+    padding-bottom: 0;}
+
+    .post-tags span {
+        font-weight: bold;
+        margin-right: 5px;
+    }
+    
+    .post-tags .tag-link {
+        display: inline-block; /* Ensures background wraps only around the text */
+        background-color: #f3f3f3; /* Light background color */
+        color: #333;
+        padding: 2px 6px; /* Small padding around text */
+        margin: 2px;
+        border-radius: 5px; /* Rounded corners */
+        text-decoration: none;
+        font-size: 12px;
+        white-space: nowrap; /* Prevents wrapping */
+    }
+    
+    .post-tags .tag-link:hover {
+        background-color: #ddd;
+    }
+    
