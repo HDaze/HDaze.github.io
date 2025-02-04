@@ -1733,7 +1733,7 @@ ul li p {
     .post-tags .tag-link {
         display: inline-block; /* Ensures background wraps only around the text */
         background-color: #f3f3f3; /* Light background color */
-        color: #333;
+        color: #333 !important;
         padding: 2px 6px; /* Small padding around text */
         margin: 2px;
         border-radius: 5px; /* Rounded corners */
