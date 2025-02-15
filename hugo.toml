@@ -27,7 +27,7 @@ pluralizelisttitles = false
       
   mastodon_url = "https://m.cmx.im/@HDaze"
    
-  
+  sidebar_socials_color = "#f26522"   
   
 
     # NOTE: If using Remark42 as commenting engine, uncomment and configure these lines

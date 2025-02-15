@@ -1,7 +1,7 @@
-+++ title = "如何给 Hugo 博客添加一个可爱又有填充动画的点赞按钮" 
++++ title = "给博客添加一个有填充动画的点赞爱心按钮" 
 date = "2025-02-14" 
 tags = ['博客装修'] 
-draft = true
+draft = false
 +++
 
 {{<preface>}}
@@ -9,45 +9,33 @@ draft = true
 
 {{</preface>}}
 
-## 功能概览
-
-- 每篇文章下显示一个可爱的心形点赞按钮。
+## 概览
+- 后端布置使用了**Cloudflare Worker + D1**
+- 每篇文章下显示一个心形点赞按钮。
 - 每位访客**最多可以点赞 2 次**，填充的心形颜色根据点击次数动态变化。
 - 点赞数据**保存在 Cloudflare D1 数据库**，刷新页面不会丢失点赞数。
 
 ---
+我在做这个点赞按钮前从来没接触过 Cloudflare worker，现在只是大致懂得了它在我这个小项目里的用处：它接收前端的请求，处理点赞操作，并把新的点赞总数返回给前端。点赞数等数据则保存在 Cloudflare D1 数据库。
+
+流程为：访问者点击按钮 → 前端JavaScript发送请求 → 后端 Workers 处理点赞 → 返回总点赞数 → 前端显示更新数值。
+
 
 ## 具体步骤 
-### 1、开通 Cloudflare Workers 和 D1 数据库
+### 1、开通 Cloudflare Workers 和 D1 数据库 （大致步骤）
 
 - 注册 Cloudflare 账号
 - [参考官方指南](https://developers.cloudflare.com/workers/get-started/guide/) 创建一个 Worker project。
-    - 这部分我也参考了这位博友的教程。不过对方使用了KV (Key-Value Store)，我后来选择了D1.
-- 创建一个 D1 数据库，例如命名为 `likes-db`。
-- 在 Worker 绑定 D1 数据库：进入 Worker 设置页面，在 **Bindings** 区域添加 D1 数据库，取名为 `DB`。
-- 最后我的wrangler.jsonc 的代码如下
+    - 这部分我也参考了这位[白石京博友的教程](https://thirdshire.com/hugo-stack-renovation-part-three/)。不过对方使用了KV (Key-Value Store)，我后来选择了D1.
+- 创建一个 D1 数据库，[可参考官方指南](https://developers.cloudflare.com/d1/get-started/)，我直接在cloudflare 网页操作的: Storage & Databases -- D1 SQL database -- Click "Create Database":。
+- D1数据库命名为 `likes-db`或者其他名字，只要保持前后一致就好。
+- 在 Worker 绑定 D1 数据库
+Bind the D1 database:
 
-```jsonc
-{
-  "name": "heart-reaction",
-  "main": "src/index.ts",
-  "compatibility_date": "2024-02-14",
-  "d1_databases": [
-    {
-      "binding": "DB",
-      "database_name": "likes-db",
-      "database_id": "YOUR database_id"
-    }
-  ],
-  "env": {
-    "production": {
-      "vars": {
-        "SALT": "randomnumbers"
-      }
-    }
-  }
-}
-```
+   - Under Settings → Bindings → D1 Database Bindings → Add binding.
+   -  Binding Name: DB (must match the name in the code).
+   -  Database: Select your likes-db database.
+
 - 目前没有用到SALT，但我还是保留了这个变量。后来又手动添加了一次variable (SALT)
     - Workers & Pages/heart-reaction (your worker name)/settings, and then find **Variables and Secrets**
 
@@ -149,7 +137,7 @@ layouts/partials/like-button.html
 ```
 
 
-Like 按钮 HTML 代码:
+Like 按钮 HTML 完整代码（css也包括在内）:
 
 ```html
 <div class="like-button-wrapper" data-post-slug="{{ .File.BaseFileName }}">
