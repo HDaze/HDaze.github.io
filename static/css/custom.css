@@ -718,6 +718,7 @@ body.dark-theme .content {
     text-decoration: none;
     margin: 0 5px;
 }
+
 .sidebar .social-icons a img {
     filter: invert(29%) sepia(35%) saturate(365%) hue-rotate(160deg) brightness(93%) contrast(91%);
 }
@@ -815,6 +816,7 @@ h1, h2, h3 {
 .post h1 {
     font-size: 2em ; 
     margin-bottom: 0.8em;
+    color: #333;
 }
 
 /* Section Title (H2) */
@@ -911,6 +913,7 @@ body.dark-theme .post h6 {
 a {
     color: #52776a;; /* Link color */
 }
+
 body.dark-theme a { color: #66b2ff;}
 body.dark-theme .tags a { color: #f6a6b5;
 background-color: #5d5856;}
@@ -1685,23 +1688,10 @@ body.dark-theme .see-more {
     }
 }    
 
-/* Reset default list styling */
-ul, ol {
-    list-style-position: outside; /* Ensures bullets align outside text */
-    padding-left: 1.5rem; /* Add spacing for bullets */
-   /* margin: 1em 0; /* Space above and below lists */
-   font-weight: 400;
-}
-
-/* Standardize list item spacing */
-li {
-    margin-bottom: 0.5em; /* Space between list items */
-    line-height: 1.6; /* Improve readability */
-    font-weight: 400;
-}
 
 /* Ensure bullets and inline text align */
 p {
+    line-height: 1.8;
     margin: 1em 0; /* Consistent spacing between paragraphs and other elements */
 }
 
@@ -1745,4 +1735,88 @@ ul li p {
     .post-tags .tag-link:hover {
         background-color: #ddd;
     }
+
+
+    .rss-icon {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 3px; /* or adjust as you like */
+         }
+      
+      .rss-icon svg {
+        width: 1.6em; /* Adjust this to make the icon bigger or smaller */
+        height: 1.6em;
+        fill: #f26522 !important; /* Orange, classic RSS color, or any color you like */
+        vertical-align:middle;
+      }
+      
+      .rss-icon:hover svg {
+        fill: #ff9800 !important; /* Slightly lighter orange on hover */
+      }
+      
+ .content ul {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  padding-left: 1.5em; /* 控制缩进 */
+  line-height: 1.8; 
+  color: #333 !important;
+}
+body.dark-theme ul, ol {color: #eee !important;}
+
+/* 优化有序列表 */
+.content ol {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  padding-left: 1.8em;
+  line-height: 1.8;
+  color: #333 !important;
+}
+
+/* 列表项微调，让点和文字不挤 */
+ul li, ol li {
+  margin-bottom: 0.4em; /* 列表项间距 */
+}
+/* Reset default list styling */
+ul, ol {
+    list-style-position: outside; /* Ensures bullets align outside text */
+    padding-left: 1.5rem; /* Add spacing for bullets */
+   /* margin: 1em 0; /* Space above and below lists */
+   font-weight: 400;
+}
+
+/* Standardize list item spacing */
+li {
+    margin-bottom: 0.5em; /* Space between list items */
+    line-height: 1.6; /* Improve readability */
+    font-weight: 400;
+}
+
+/* Add external link icon after links in post content */
+.content p a[href^="http"]:not([href*="thehdaze.com"])::after,
+.content li a[href^="http"]:not([href*="thehdaze.com"])::after,
+.content blockquote a[href^="http"]:not([href*="thehdaze.com"])::after,
+.preface-content a[href^="http"]:not([href*="thehdaze.com"])::after {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-left: 4px;
+    background-color: #52776a; /* or your preferred color */
+    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M18 13v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"/><polyline points=\"15 3 21 3 21 9\"/><line x1=\"10\" y1=\"14\" x2=\"21\" y2=\"3\"/></svg>');
+    mask-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M18 13v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"/><polyline points=\"15 3 21 3 21 9\"/><line x1=\"10\" y1=\"14\" x2=\"21\" y2=\"3\"/></svg>');
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+  
+  body.dark-theme .content p a[href^="http"]:not([href*="thehdaze.com"])::after,
+  body.dark-theme .content li a[href^="http"]:not([href*="thehdaze.com"])::after,
+  body.dark-theme .content blockquote a[href^="http"]:not([href*="thehdaze.com"])::after {
     
+    background-color: #268bd2 ; /* or your preferred color */
+   
+  }
+  
+  
+  

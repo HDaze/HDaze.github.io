@@ -1,14 +1,16 @@
+
 {{ define "main" -}}
  
   <div class="post">
       <div class="post-info">
         {{ partial "post/info.html" . }}
       </div>
-    
-      <div class="content">
+          <div class="content">
         {{ .Content }}
       </div>
-
+ <!-- Like Button Partial Included -->
+ {{ partial "like-button.html" . }}
+ 
   {{ partial "post/navigation.html" . }} 
     {{ partial "related-posts.html" . }}
    
@@ -16,7 +18,7 @@
     {{ partial "post/comments.html" . }}
   </div>
 </div>
-{{- end }}
+{{ end }}
 {{ define "sidebar" }}
   {{ if and (not .Params.hideToc) (not .Site.Params.hideToc) }}
     {{ partial "table_of_contents.html" . }}

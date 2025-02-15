@@ -60,7 +60,7 @@
       {{- with $authorEmail }}<author>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</author>{{ end }}
     <guid isPermaLink="true">{{ .Permalink }}</guid>
 
-      <description>{{ .Content | transform.XMLEscape | safeHTML }}</description>
+      <description>{{ .Summary  | transform.XMLEscape | safeHTML }}</description>
     </item>
     {{- end }}
   </channel>

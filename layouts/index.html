@@ -4,7 +4,12 @@
 
         {{ partial "tagged-posts.html" }}
         <hr class="subtle-line">
-        <h2 style="margin-top: 20px;">最近更新</h2>
+        <div style="display: flex; align-items: center; gap: 8px; margin-top: 20px;">
+            <h2 style="margin: 0;">最近更新</h2>
+            {{ partial "rssicon.html" . }}
+          </div>
+          
+
         <div class="grid-container"> <!-- New div for grid layout -->
             {{ range (.Paginate (where .Site.RegularPages "Type" "in" .Site.Params.front_page_content)).Pages }}
             <article class="post-card">
