@@ -43,9 +43,11 @@ body.dark-theme code {
 .full-width-image {
     width:100%;
     height: auto;
+    max-height: 500px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    object-fit: contain;
 }
 .center-image {
     max-width: 100%;
@@ -1279,7 +1281,7 @@ a:hover {
   
   .image-note {
     
-    font-size: 0.6em; /* Adjust size as needed */
+    font-size: 0.8em; /* Adjust size as needed */
     font-style: italic; /* Optional: Italicize the note */
     color: #6e6d6d; /* Adjust to match your site's color scheme */
     text-align: center; /* Center-align the note */
@@ -1577,7 +1579,7 @@ body.dark-theme .see-more {
 
  
 
-@media (max-width: 64em) {
+@media (max-width: 60em) {
     .side-by-side .image-wrapper {
         flex: 1 1 100%;
       }
@@ -1645,7 +1647,7 @@ body.dark-theme .see-more {
      
 }
 
-@media (min-width: 64em) {  
+@media (min-width: 60em) {  
     .bullet {
         margin-left: 1em;
         text-decoration-line: underline;
@@ -1687,6 +1689,11 @@ body.dark-theme .see-more {
     .sidebar-widgets {
         width: 14%;
  
+    }
+    .article-toc {
+        display: block;
+        font-size: 0.8em;
+        
     }
 }    
 
@@ -1818,22 +1825,51 @@ li {
     
     background-color: #268bd2 ; /* or your preferred color */
    
-  }
-  
-  blockquote p {
-        color: #555 !important;
-        font-size: 0.9rem;
-        
-}
+  } 
 
-  
-blockquote {
-    
-   
-    color: #7a7a7a;
-    border-left: .25rem solid #e5e5e5;
-  }
+
+blockquote p {color: #5c5c5c;
+font-size: 0.9rm;
+font-family: "Source Han Serif", "思源宋体", serif;}
 
   blockquote p:last-child {
     margin: 0;
   }
+
+  blockquote {
+    position: relative;
+    padding: 16px 20px;
+    margin: 20px 10px;
+    border-left: 2px solid #6c757d;
+    border-radius: 6px; /* Optional: adds soft corners */
+  }
+  
+  blockquote::before {
+    content: "“";
+    font-size: 1.5em; /* Smaller than before */
+    font-weight: normal;
+    color: #6c757d;
+    position: absolute;
+    top: 0px;
+    left: 5px;
+    opacity: 0.6; /* Makes it more subtle */
+    font-family: Georgia, serif;
+  }
+ 
+  
+
+
+body.dark-theme blockquote {
+  background: rgba(255, 255, 255, 0.1);
+  border-left-color: #aaaaaa;
+}
+
+body.dark-theme blockquote p {
+  color: #cccccc !important;
+}
+body.dark-theme blockquote::before {color: #cccccc !important;}
+
+@media screen and (min-width: 60em) {
+    .article-toc {
+        display: block;
+    }}
