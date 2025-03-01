@@ -68,7 +68,7 @@ enableEmoji = true
 
 [outputs]
 section = ["HTML"]
-home = ["HTML"]
+home = ["HTML", 'rss']
 
 
 
