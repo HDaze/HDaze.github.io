@@ -1020,7 +1020,6 @@ a:hover {
 .content {   
     padding-top: 2rem;
     padding-bottom: 2rem;
-    
     width: 85%; /* Adjust the width to 85% to account for the narrower sidebar */
    max-width: none;
    margin: 0 auto;
@@ -1608,7 +1607,7 @@ body.dark-theme .see-more {
     .content {
         margin-left: auto; /* Center the content from the left */
         margin-right: auto; /* Center the content from the right */
-        padding-top: 4rem; /* Space from the top */
+        padding-top: 1rem; /* Space from the top */
         padding: auto; /* Adjust padding */
         width: 95%; /* Set width to 95% of the parent container */
         text-align: left; /* Align text to the right inside the container */
@@ -1640,7 +1639,9 @@ body.dark-theme .see-more {
             width: 30%; 
             max-width: 110px; 
         }
-    
+    .post {
+        padding-top: 4rem;
+    }
      
 }
 
@@ -1819,5 +1820,20 @@ li {
    
   }
   
+  blockquote p {
+        color: #555 !important;
+        font-size: 0.9rem;
+        
+}
+
   
-  
+blockquote {
+    
+   
+    color: #7a7a7a;
+    border-left: .25rem solid #e5e5e5;
+  }
+
+  blockquote p:last-child {
+    margin: 0;
+  }

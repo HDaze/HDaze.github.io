@@ -43,6 +43,7 @@ pluralizelisttitles = false
     # publisher_icon = ""                 # path to publisher icon - defaults to favicon, used in schema
  
   summaryLength = 20  # Adjust the number of words to fit your needs
+enableEmoji = true
 
 [params.meta]
     favicon = true
