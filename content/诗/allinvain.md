@@ -1,5 +1,5 @@
 +++
-title = 'All in Vain Are the Oceans'
+title = 'The Sea, The Sea'
 date = 2025-04-07T14:02:21-07:00
 
 +++
