@@ -1,0 +1,95 @@
+{{ define "content" }}
+
+<div class="home-intro content-margin">
+  
+  <p>Find connections in ordinary days.</p>
+<!--
+  <div class="home-links">
+    <a href="/blog/">博客 | Blog</a>
+    <a href="/诗/">黑雨 | Poems</a>
+    <a href="/tags/">标签 | Tags</a>
+    <a href="/index.xml">RSS</a>
+  </div>
+</div>
+-->
+
+<div class="home-section content-margin">
+  <h2>最近更新</h2>
+</div>
+
+{{ $blogPages := where .Site.RegularPages "Section" "blog" }}
+{{ $latestBlog := first 5 $blogPages }}
+
+<div class="postcard-layout content-margin">
+
+  {{ range $latestBlog }}
+  {{ $page := . }}
+
+  <a href="{{ $page.RelPermalink }}" class="postcard-link">
+    <div class="postcard-item custom-postcard-item">
+
+      {{ with $page.Param "featuredImage" }}
+      <div class="postcard-cover">
+        <img
+          src="{{ printf "%s%s" $.Site.Params.imageBaseURL . }}"
+          alt="{{ $page.Title }}"
+          loading="lazy"
+          decoding="async"
+        >
+      </div>
+      {{ end }}
+
+      <div class="postcard-body">
+        <div class="postcard-title">
+          <span>{{ $page.Title }}</span>
+        </div>
+
+        <div class="postcard-summary">
+          <span>{{ $page.Summary | plainify | truncate 120 }}</span>
+        </div>
+
+        {{ with $page.Params.tags }}
+        <div class="postcard-tags">
+          {{ range . }}
+            <span>{{ . }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+
+        <div class="postcard-metadata">
+          <span>{{ $page.Date.Format "2006/01/02" }} · blog</span>
+        </div>
+      </div>
+
+    </div>
+  </a>
+
+  {{ end }}
+
+</div>
+
+<div class="home-section content-margin">
+  <h2>黑雨 | Poems</h2>
+
+  {{ $poems := where .Site.RegularPages "Section" "诗" }}
+  {{ $latestPoems := first 5 $poems }}
+
+  <ul class="home-poem-list">
+    {{ range $latestPoems }}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <span>{{ .Date.Format "2006/01/02" }}</span>
+    </li>
+    {{ end }}
+  </ul>
+
+  <p class="home-more">
+    <a href="/诗/">View all poems →</a>
+  </p>
+</div>
+
+<div class="home-section content-margin home-more">
+  <a href="/blog/">View all blog posts →</a>
+</div>
+
+{{ end }}

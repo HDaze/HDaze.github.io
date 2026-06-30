@@ -1,0 +1,23 @@
+{{ $socials := .Page.Site.Params.socials }}
+
+{{ if $socials }}
+<span class="social-links-inline icon-only" aria-label="Social links">
+
+  {{ with $socials.mastodon }}
+  <a class="social-link social-mastodon" href="{{ . }}" target="_blank" rel="me noopener noreferrer" aria-label="Mastodon" title="Mastodon"></a>
+  {{ end }}
+
+  {{ with $socials.rss }}
+  <a class="social-link social-rss" href="{{ . }}" aria-label="RSS" title="RSS"></a>
+  {{ end }}
+
+  {{ with $socials.github }}
+  <a class="social-link social-github" href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"></a>
+  {{ end }}
+
+  {{ with $socials.email }}
+  <a class="social-link social-email" href="{{ . }}" aria-label="Email" title="Email"></a>
+  {{ end }}
+
+</span>
+{{ end }}
