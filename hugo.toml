@@ -1,57 +1,83 @@
-baseURL = 'https://thehdaze.com/'
-languageCode = 'en-us'
-title = 'HDaze'
-theme = 'poison'
-paginate = 10
-pluralizelisttitles = false
+baseURL = "https://thehdaze.com/"
+locale = "en-US"
+title = "HDaze"
+theme = "hugo-theme-monochrome"
 
-[params]
-    brand = "HDaze"                      # name of your site - appears in the sidebar
-    # remote_brand_image = 'https://github.com/USERNAME.png' # path to a remote file
-    brand_image = "/logo1.png"    # path to the image shown in the sidebar
-    # description = "Find Connections" # Used as default meta description if not specified in front matter
-    dark_mode = false                      # optional - defaults to false
-    favicon = "/favicon2.png"         # path to favicon (defaults to favicon.png)
-
-    front_page_content = ["blog", "诗"] # Equivalent to the default value, add page bundle names to include them on the front page.
-    imageBaseURL = "https://cdn.thehdaze.com/theHDaze/static/images/"
-  
-  menu = [
-    {Name = "博客 | Blog", URL = "/blog/", HasChildren = false},
-    {Name = "黑雨 | Poems", URL = "/诗/", HasChildren = false},
-    {Name = "关于 | About", URL = "/about/", HasChildren = false},
-  ]
- 
-  rss_icon = true
-  rss_section = "blog"
-      
-  mastodon_url = "https://m.cmx.im/@HDaze"
-   
-  sidebar_socials_color = "#f26522"   
-  
-
-    # NOTE: If using Remark42 as commenting engine, uncomment and configure these lines
-    # remark42 = true
-    # remark42_host = "https://yourhost.com"
-    # remark42_site_id = "your_site_id"
-
-    # NOTE: The following three params are optional and are used to create meta tags + enhance SEO.
-    # og_image = ""                       # path to social icon - front matter: image takes precedent, then og_image, then brand_url
-                                          # this is also used in the schema output as well. Image is resized to max 1200x630
-                                          # For this to work though og_image and brand_url must be a path inside the assets directory
-                                          # e.g. /assets/images/site/og-image.png becomes images/site/og-image.png
-    # publisher_icon = ""                 # path to publisher icon - defaults to favicon, used in schema
- 
-  summaryLength = 20  # Adjust the number of words to fit your needs
+pluralizeListTitles = false
+summaryLength = 20
 enableEmoji = true
 
-[params.meta]
-    favicon = true
+[pagination]
+  pagerSize = 10
 
+[params]
+  navbar_title = "HDaze"
+  footer = "Copyright © 2026 HDaze"
+  color_scheme = "light" # "light" or "dark"
+  imageBaseURL = "https://cdn.thehdaze.com/theHDaze/static/images/"
+  enable_toc = true
+  toc_position = "right"
+  enable_collapsible_toc = false
+  enable_collapsible_changelogs = false
+
+  hide_navbar_on_scroll = true
+  navbar_width = "wide" # "normal" | "wide" | "extra-wide"
+
+  enable_header_anchor = true
+  enable_zooming_js = true
+  enable_math = false
+
+  enable_site_search = true
+  enable_open_graph = true
+  enable_twitter_cards = true
+
+  [params.author]
+    name = "HDaze"
+
+  [params.list_layout]
+    enable_group_by_year = true
+    enable_show_date = true
+    enable_pagination = true
+
+  [params.syntax_highlight]
+    lib = "builtin" # "builtin" | "prism.js"
+
+    [params.syntax_highlight.builtin]
+      enable_code_copy = true
+
+[[menu.navbar]]
+  identifier = "nav-blog"
+  name = "博客 | Blog"
+  url = "/blog/"
+  weight = 10
+
+[[menu.navbar]]
+  identifier = "nav-poems"
+  name = "黑雨 | Poems"
+  url = "/诗/"
+  weight = 20
+
+[[menu.navbar]]
+  identifier = "nav-about"
+  name = "关于 | About"
+  url = "/about/"
+  weight = 30
+
+[[menu.navbar]]
+  identifier = "nav-tags"
+  name = "标签 | Tags"
+  url = "/tags/"
+  weight = 40
+
+[[menu.navbar]]
+  identifier = "nav-rss"
+  name = "RSS"
+  url = "/index.xml"
+  weight = 50
 [taxonomies]
-    series = 'series'
-    tags = 'tags'
-
+  category = "categories"
+  tag = "tags"
+  series = "series"
 
 [related]
   includeNewer = true
@@ -67,8 +93,15 @@ enableEmoji = true
     weight = 50
 
 [outputs]
-section = ["HTML"]
-home = ["HTML", 'rss']
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
 
+  [services]
+  [services.rss]
+    limit = 20
 
-
+[params.socials]
+  mastodon = "https://m.cmx.im/@HDaze"
+ # rss = "/index.xml"
+  # github = "https://github.com/yourname"
+  # email = "mailto:you@example.com"

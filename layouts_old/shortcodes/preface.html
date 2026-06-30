@@ -1,0 +1,73 @@
+<div class="preface">
+
+    <div class="preface-content">
+        {{ .Inner | markdownify }}
+    </div>
+</div>
+
+
+
+<style>
+/* Light Mode (Default) */
+.preface {
+    background: #f9f9f9;
+    padding: 1.5em;
+    border-left: 1.5px solid #ff9900;
+    border-radius: 8px;
+    margin-bottom: 1em;
+}
+
+.preface-title {
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 0.5em;
+    color: #ff6600;
+}
+
+.preface-content {
+    font-size: 0.9em;
+    line-height: 1.3;
+    color: #333;
+}
+
+.preface-content p {
+    margin-bottom: 1em;
+}
+
+.preface-content ul {
+    list-style-type: disc;
+    padding-left: 1.5em;
+    margin-bottom: 1em;
+}
+
+.preface-content li {
+    margin-bottom: 0.5em;
+}
+
+/* Dark Mode */
+body.dark-theme .preface {
+    background: #2a2a2a; /* Darker background for better contrast */
+    border-left: 5px solid #ffaa33; /* Softer orange border */
+}
+
+body.dark-theme .preface-title {
+    color: #ffcc66; /* Lighter orange for visibility */
+}
+
+body.dark-theme .preface-content {
+    color: #ddd; /* Light text color for readability */
+}
+
+body.dark-theme .preface-content a {
+    color: #ffcc66; /* Ensure links are visible in dark mode */
+}
+
+body.dark-theme .preface-content ul {
+    color: #ccc;
+}
+
+body.dark-theme .preface-content li {
+    color: #ccc;
+}
+
+</style>

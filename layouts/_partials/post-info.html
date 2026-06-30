@@ -1,0 +1,42 @@
+{{- if in (slice "blog" "诗") .Section -}}
+<div class="info">
+  <h1 class="post-title">
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      {{ with .Date }}
+      <time datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}" class="post-date">
+        {{ .Format "January 2, 2006" }}
+      </time>
+      {{ end }}
+
+      <span> - </span>
+
+      <span class="reading-time">
+        {{ $plain := .Plain }}
+        {{ $chars := strings.CountRunes $plain }}
+        {{ $minutes := math.Ceil (div (float $chars) 550.0) }}
+
+       {{ if lt $minutes 1 }}
+        {{ $minutes = 1 }}
+      {{ end }}
+
+    <span>{{ $minutes }} 分钟阅读 | {{ $minutes }} min read</span>
+</span>
+    </div>
+
+    {{ with .Params.tags }}
+    <ul class="tags">
+      {{ range . }}
+      <li class="tag-{{ . | urlize }}">
+        <a href="{{ printf "/tags/%s/" (. | urlize) | relLangURL }}">{{ . }}</a>
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </div>
+
+
+{{- end -}}

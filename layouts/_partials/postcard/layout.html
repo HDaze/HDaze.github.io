@@ -1,0 +1,70 @@
+{{ $ctx := .ctx }}
+{{ $pages := .pages }}
+
+<div class="postcard-layout content-margin">
+
+  {{ range ($ctx.Paginator).Pages }}
+  {{ $page := . }}
+
+  <a href="{{ $page.RelPermalink }}" class="postcard-link">
+    <div class="postcard-item custom-postcard-item">
+
+      {{ with $page.Param "featuredImage" }}
+      <div class="postcard-cover">
+        <img
+          src="{{ printf "%s%s" $ctx.Site.Params.imageBaseURL . }}"
+          alt="{{ $page.Title }}"
+          loading="lazy"
+          decoding="async"
+        >
+      </div>
+      {{ end }}
+
+      <div class="postcard-body">
+        <div class="postcard-title">
+          <span>{{ $page.Title }}</span>
+        </div>
+
+        <div class="postcard-summary">
+          <span>{{ $page.Summary | plainify }}</span>
+        </div>
+       {{ with $page.Params.tags }}
+        <div class="postcard-tags">
+        {{ range . }}
+            <span>{{ . }}</span>
+        {{ end }}
+        </div>
+        {{ end }}
+
+        <div class="postcard-metadata">
+          <span>{{ $page.Date.Format "2006/01/02" }} · {{ template "breadcrumbtext" (dict "p1" $page.Parent) }}</span>
+        </div>
+      </div>
+
+    </div>
+  </a>
+
+  {{ end }}
+
+  {{ partial "pagination.html" $ctx }}
+
+</div>
+
+{{ define "breadcrumbtext" }}
+
+  {{ if .p1.Parent }}
+    {{ if not .p1.Parent.IsHome }}
+      {{ template "breadcrumbtext" (dict "p1" .p1.Parent) }}
+    {{ end }}
+  {{ end }}
+
+  {{ if .p1.Parent }}
+    {{ if .p1.Parent.IsHome }}
+      <span>{{ .p1.Title }}</span>
+    {{ else }}
+      <span>/</span>
+      <span>{{ .p1.Title }}</span>
+    {{ end }}
+  {{ end }}
+
+{{ end }}
