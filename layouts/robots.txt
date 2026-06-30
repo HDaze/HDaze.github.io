@@ -1,0 +1,49 @@
+{{- if hugo.IsProduction -}}
+# Allow normal search indexing
+User-agent: *
+Allow: /
+
+# OpenAI
+User-agent: GPTBot
+Disallow: /
+
+# OpenAI search crawler, block this only if you do NOT want ChatGPT/Search visibility
+User-agent: OAI-SearchBot
+Disallow: /
+
+# Anthropic / Claude
+User-agent: ClaudeBot
+Disallow: /
+
+# Google AI training opt-out
+User-agent: Google-Extended
+Disallow: /
+
+# Common Crawl
+User-agent: CCBot
+Disallow: /
+
+# Apple AI training opt-out
+User-agent: Applebot-Extended
+Disallow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Disallow: /
+
+# ByteDance / TikTok
+User-agent: Bytespider
+Disallow: /
+
+# Meta external crawler
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+Sitemap: {{ "sitemap.xml" | absURL }}
+{{- else -}}
+User-agent: *
+Disallow: /
+{{- end -}}

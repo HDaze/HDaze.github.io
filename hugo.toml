@@ -2,7 +2,7 @@ baseURL = "https://thehdaze.com/"
 locale = "en-US"
 title = "HDaze"
 theme = "hugo-theme-monochrome"
-
+enableRobotsTXT = true
 pluralizeListTitles = false
 summaryLength = 20
 enableEmoji = true
@@ -98,7 +98,10 @@ enableEmoji = true
 
   [services]
   [services.rss]
-    limit = 20
+    limit = 20    
+  [services.googleAnalytics]
+    id = "G-DPGNBHMMQL"
+
 
 [params.socials]
   mastodon = "https://m.cmx.im/@HDaze"
